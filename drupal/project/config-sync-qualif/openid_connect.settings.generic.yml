@@ -1,0 +1,11 @@
+enabled: true
+settings:
+  redirect_url: ''
+  client_id: agent-standard
+  client_secret: 566e0446-08e1-4178-8394-60787de01679
+  authorization_endpoint: 'https://qualif-sso.ternum-bfc.fr/auth/realms/ternum/protocol/openid-connect/auth'
+  token_endpoint: 'https://qualif-sso.ternum-bfc.fr/auth/realms/ternum/protocol/openid-connect/token'
+  userinfo_endpoint: 'https://qualif-sso.ternum-bfc.fr/auth/realms/ternum/protocol/openid-connect/userinfo'
+_core:
+  default_config_hash: FJ7FfwlYzcbFfG0AqVPlqsLJIRhkzS1Rv6eO1vssSkM
+langcode: fr

@@ -1,0 +1,14 @@
+uuid: bf91986a-f050-48bc-9723-8ae45e2b30c6
+name: 'Générateur de sites'
+mail: vfa@atolcd.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

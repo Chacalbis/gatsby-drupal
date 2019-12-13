@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DOCKER_COMPOSE="$(which docker-compose)"
+
+sh -c "${DOCKER_COMPOSE} exec php /entrypoint ./html/vendor/drupal/console/bin/drupal $@"

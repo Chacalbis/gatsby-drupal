@@ -1,0 +1,11 @@
+enabled: false
+settings:
+  client_id: null
+  client_secret: null
+  authorization_endpoint: 'https://example.com/oauth2/authorize'
+  token_endpoint: 'https://example.com/oauth2/token'
+  userinfo_endpoint: 'https://example.com/oauth2/UserInfo'
+  logout_url: 'https://example.com/oauth2/logout'
+_core:
+  default_config_hash: dCIV8kfgGVmF_gG_LP6K80bunWcZg6OQmotEDsH0wWI
+langcode: fr

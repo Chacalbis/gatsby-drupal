@@ -1,0 +1,59 @@
+{
+  "name": "ternum-generateur",
+  "private": true,
+  "description": "Static sites generator project using gatsby-source-drupal plugin",
+  "version": "0.1.0",
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@bumped-inc/gatsby-plugin-optional-chaining": "^1.0.0",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.17.4",
+    "gatsby-image": "^2.2.29",
+    "gatsby-plugin-manifest": "^2.2.23",
+    "gatsby-plugin-offline": "^3.0.17",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sass": "^2.1.20",
+    "gatsby-plugin-sharp": "^2.2.31",
+    "gatsby-source-drupal": "^3.3.10",
+    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-sharp": "^2.2.23",
+    "icomoon-react": "^1.0.0",
+    "node-sass": "^4.13.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "run-s build:*",
+    "build:pre-build": "run-p lint:*",
+    "build:main": "gatsby build",
+    "develop": "gatsby develop --host=0.0.0.0",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint:prettier": "prettier --check \"**/*.{js,jsx,json,md}\"",
+    "lint": "run-p lint:*",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}

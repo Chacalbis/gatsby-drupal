@@ -1,0 +1,16 @@
+www
+dependency
+vendor
+lib
+sql/*
+!sql/import
+sql/import/*
+!sql/import/.gitkeep
+cache/*
+logs/*
+tmp/*
+html
+node_modules/*
+.env
+.editorconfig
+.gitattributes

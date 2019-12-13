@@ -1,0 +1,8 @@
+# dotenv environment variables file
+.env
+
+/.cache/*
+
+/node_modules/*
+
+/public/*

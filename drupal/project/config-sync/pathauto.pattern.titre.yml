@@ -1,0 +1,14 @@
+uuid: 43af85ee-4509-41ec-b5a0-bb1db3b288ca
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: titre
+label: Titre
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

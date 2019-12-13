@@ -1,0 +1,32 @@
+#!/bin/bash
+
+DOCKER_COMPOSE="$(which docker-compose)"
+
+case "$1" in
+        connect-root)
+            sh -c "${DOCKER_COMPOSE} exec postgres sh -c 'psql -U\${POSTGRES_USER} -W\${POSTGRES_PASSWORD} -d \${POSTGRES_DB}'"
+            ;;
+
+        connect)
+            sh -c "${DOCKER_COMPOSE} exec postgres sh -c 'psql -U\${POSTGRES_USER} -W\${POSTGRES_PASSWORD} -d \${POSTGRES_DB}'"
+            ;;
+
+        dump)
+            currentdate=`date +"%Y_%m_%d_%H_%M_%S"`
+            dumpfilename=`echo "./sql/ternum_database_${currentdate}.sql"`
+            echo "Export to : ${dumpfilename}"
+            pg_dumpoptionstructure=`echo " --no-data --add-drop-table --create-options --disable-keys --quick --set-charset"`
+            pg_dumpoptiondatas=`echo " --complete-insert --add-locks --no-create-info --extended-insert=FALSE --disable-keys --lock-tables --quick --set-charset"`
+            # export structure
+            echo "Export table definition"
+            sh -c "${DOCKER_COMPOSE} exec postgres sh -c 'export PGPASSWORD='\${POSTGRES_PASSWORD}';pg_dump -U\${POSTGRES_USER} -s -F p -d \${POSTGRES_DB}' > ${dumpfilename} 2> /dev/null"
+            # export datas
+            echo "Export datas"
+            sh -c "${DOCKER_COMPOSE} exec postgres sh -c 'export PGPASSWORD='\${POSTGRES_PASSWORD}';pg_dump -U\${POSTGRES_USER} -a -F p -d \${POSTGRES_DB}' >> ${dumpfilename} 2> /dev/null"
+            echo "Done !"
+            ;;
+        *)
+            echo $"Usage: $0 {connect|connect-root|dump}"
+            exit 1
+
+esac
