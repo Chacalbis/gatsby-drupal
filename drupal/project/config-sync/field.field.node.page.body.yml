@@ -17,7 +17,11 @@ label: Corps
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    summary: ''
+    value: "<p>test</p>\r\n"
+    format: basic_html
 default_value_callback: ''
 settings:
   display_summary: true

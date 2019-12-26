@@ -1,0 +1,19 @@
+uuid: 37ad0277-bd16-4ed2-bbe0-7b9f01be279d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_complement_d_adresse
+field_name: field_complement_d_adresse
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

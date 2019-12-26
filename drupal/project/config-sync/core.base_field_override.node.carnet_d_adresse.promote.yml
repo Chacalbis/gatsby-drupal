@@ -1,0 +1,22 @@
+uuid: 5b2630f6-101c-42df-a336-cacb4578a0bd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse.promote
+field_name: promote
+entity_type: node
+bundle: carnet_d_adresse
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,8 @@
+uuid: 6e132b0c-7ee1-41bb-9621-81e68d593333
+langcode: fr
+status: true
+dependencies: {  }
+name: Thématiques
+vid: evenements
+description: 'Liste des termes pouvant filtrer les contenus carnet d''adresse et événement'
+weight: 0

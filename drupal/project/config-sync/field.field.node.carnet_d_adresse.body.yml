@@ -1,0 +1,22 @@
+uuid: 8a79cfbf-fa40-4549-82ee-ded48d3dbca1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.carnet_d_adresse
+  module:
+    - text
+id: node.carnet_d_adresse.body
+field_name: body
+entity_type: node
+bundle: carnet_d_adresse
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

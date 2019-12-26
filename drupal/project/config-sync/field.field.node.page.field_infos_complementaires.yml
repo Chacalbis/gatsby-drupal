@@ -1,0 +1,21 @@
+uuid: dd9b21dc-ae7e-462d-84e9-2a5ce719e20c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_infos_complementaires
+    - node.type.page
+  module:
+    - text
+id: node.page.field_infos_complementaires
+field_name: field_infos_complementaires
+entity_type: node
+bundle: page
+label: 'Informations complémentaires'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

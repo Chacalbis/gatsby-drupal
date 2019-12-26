@@ -1,0 +1,19 @@
+uuid: 9f11e54d-0d82-4329-9149-511c31c6e4cf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_infos_complementaires
+field_name: field_infos_complementaires
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

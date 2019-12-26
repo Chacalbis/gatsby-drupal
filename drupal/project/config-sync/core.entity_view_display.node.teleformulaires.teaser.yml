@@ -1,0 +1,31 @@
+uuid: a7f9a10c-2210-4300-8af9-f60c5bf20b95
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.teleformulaires.body
+    - node.type.teleformulaires
+  module:
+    - text
+    - user
+id: node.teleformulaires.teaser
+targetEntityType: node
+bundle: teleformulaires
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,22 @@
+uuid: e460720f-28f5-40e6-897c-caaea63250c6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.zone_libre
+  module:
+    - text
+id: taxonomy_term.zone_libre.default
+targetEntityType: taxonomy_term
+bundle: zone_libre
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

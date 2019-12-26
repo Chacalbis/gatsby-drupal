@@ -1,0 +1,8 @@
+uuid: 97c4034d-98f6-4620-bc54-a9eed6b7429d
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Zone libre'
+vid: zone_libre
+description: ''
+weight: 0

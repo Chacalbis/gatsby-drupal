@@ -1,0 +1,41 @@
+uuid: c168b633-b865-490a-bb99-7c494a6a6f52
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.teleformulaires.body
+    - field.field.node.teleformulaires.field_lien_demarches_simplifiees
+    - field.field.node.teleformulaires.field_taxonomie_zone_libre
+    - node.type.teleformulaires
+  module:
+    - link
+    - text
+    - user
+id: node.teleformulaires.default
+targetEntityType: node
+bundle: teleformulaires
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_lien_demarches_simplifiees:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_taxonomie_zone_libre: true
+  langcode: true
+  links: true

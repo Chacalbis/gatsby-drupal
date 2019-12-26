@@ -1,0 +1,11 @@
+uuid: 967f17e4-6216-4afc-9070-1b89c45bd118
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.teleformulaires
+id: taxonomy_term.teleformulaires
+target_entity_type_id: taxonomy_term
+target_bundle: teleformulaires
+default_langcode: site_default
+language_alterable: false

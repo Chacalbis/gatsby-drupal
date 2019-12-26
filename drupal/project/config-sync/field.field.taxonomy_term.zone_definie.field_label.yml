@@ -1,0 +1,19 @@
+uuid: 8c936322-fcab-48ce-8c24-b74bd775441a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_label
+    - taxonomy.vocabulary.zone_definie
+id: taxonomy_term.zone_definie.field_label
+field_name: field_label
+entity_type: taxonomy_term
+bundle: zone_definie
+label: Label
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

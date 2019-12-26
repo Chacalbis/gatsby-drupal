@@ -1,0 +1,17 @@
+uuid: d9ef3eee-e732-4b20-82d7-a00e7c2a295a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Carnet d''adresse'
+type: carnet_d_adresse
+description: 'Le contenu "carnet d''adresse" est un contenu qui vous permet de créer des pages concernant certains des établissements de votre collectivité.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

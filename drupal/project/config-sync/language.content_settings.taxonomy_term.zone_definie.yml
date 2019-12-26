@@ -1,0 +1,11 @@
+uuid: 34e04a26-2ba6-4c4c-b175-744a0fd01aa1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.zone_definie
+id: taxonomy_term.zone_definie
+target_entity_type_id: taxonomy_term
+target_bundle: zone_definie
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,48 @@
+uuid: 85db5d1c-ea4c-45af-ace1-309af85b9774
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.actualites.body
+    - field.field.node.actualites.field_image_actus
+    - field.field.node.actualites.field_infos_complementaires
+    - node.type.actualites
+  module:
+    - image
+    - text
+    - user
+id: node.actualites.default
+targetEntityType: node
+bundle: actualites
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image_actus:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_infos_complementaires:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

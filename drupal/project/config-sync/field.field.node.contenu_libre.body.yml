@@ -1,0 +1,22 @@
+uuid: d0295235-bbcf-46e1-a446-eb0296253fd7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.contenu_libre
+  module:
+    - text
+id: node.contenu_libre.body
+field_name: body
+entity_type: node
+bundle: contenu_libre
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

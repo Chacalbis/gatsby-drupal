@@ -1,0 +1,19 @@
+uuid: 77511a48-b8e1-472a-98d8-1a0162973138
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_voie
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse.field_voie
+field_name: field_voie
+entity_type: node
+bundle: carnet_d_adresse
+label: Voie
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

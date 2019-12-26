@@ -1,0 +1,31 @@
+uuid: 44c41bd5-d6b4-4c3b-ae77-f0e9cb237706
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.zone_definie.field_label
+    - taxonomy.vocabulary.zone_definie
+  module:
+    - text
+id: taxonomy_term.zone_definie.default
+targetEntityType: taxonomy_term
+bundle: zone_definie
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_label:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

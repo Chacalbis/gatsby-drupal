@@ -1,0 +1,22 @@
+uuid: 5132e016-d0a7-4a30-b4a5-1fb612842a52
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.contenu_libre
+id: node.contenu_libre.promote
+field_name: promote
+entity_type: node
+bundle: contenu_libre
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

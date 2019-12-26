@@ -1,0 +1,19 @@
+uuid: 50e95397-e57d-485c-9b15-78f37bbd82d8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mail
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse.field_mail
+field_name: field_mail
+entity_type: node
+bundle: carnet_d_adresse
+label: Mail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

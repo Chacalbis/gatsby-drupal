@@ -1,0 +1,11 @@
+uuid: 79e0d179-5902-4d59-a421-261ea2eb5bb9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.teleformulaires
+id: node.teleformulaires
+target_entity_type_id: node
+target_bundle: teleformulaires
+default_langcode: site_default
+language_alterable: false

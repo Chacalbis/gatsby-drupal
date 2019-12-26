@@ -1,0 +1,8 @@
+uuid: 5d8ffa83-269c-48d2-ad3e-f7f0876fcb92
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Type de lien direct'
+vid: type_de_lien_direct
+description: ''
+weight: 0

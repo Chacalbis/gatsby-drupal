@@ -1,0 +1,24 @@
+uuid: a09cc7ee-c732-4325-b5e7-85d57238c28f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ordre_carnet_d_adresse
+    - node.type.carnet_d_adresse
+  module:
+    - weight
+id: node.carnet_d_adresse.field_ordre_carnet_d_adresse
+field_name: field_ordre_carnet_d_adresse
+entity_type: node
+bundle: carnet_d_adresse
+label: 'Ordre carnet d''adresse'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight

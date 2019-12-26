@@ -1,0 +1,29 @@
+uuid: 6a2e0508-0581-45d9-903b-9d4c09cb1527
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomie_zone_libre
+    - node.type.teleformulaires
+    - taxonomy.vocabulary.zone_libre
+id: node.teleformulaires.field_taxonomie_zone_libre
+field_name: field_taxonomie_zone_libre
+entity_type: node
+bundle: teleformulaires
+label: 'Taxonomie zone libre'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      zone_libre: zone_libre
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,11 @@
+uuid: 3ade0364-b4a2-45f4-acf1-f070179220f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.contenu_libre
+id: node.contenu_libre
+target_entity_type_id: node
+target_bundle: contenu_libre
+default_langcode: site_default
+language_alterable: false

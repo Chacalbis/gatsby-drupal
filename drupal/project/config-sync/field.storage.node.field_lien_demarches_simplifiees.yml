@@ -1,0 +1,19 @@
+uuid: f6f07e55-9bdb-42dd-926c-acb065a2035c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_lien_demarches_simplifiees
+field_name: field_lien_demarches_simplifiees
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

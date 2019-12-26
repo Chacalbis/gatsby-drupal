@@ -1,22 +1,20 @@
-uuid: eb5f56c3-2114-46eb-a6ef-81055a9252a6
+uuid: 5170aaed-0f6b-4d10-b6a5-a2dbded27a6c
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - node.type.article
+    - field.storage.node.field_image_adresse
+    - node.type.carnet_d_adresse
   module:
     - image
-_core:
-  default_config_hash: tgJzhA7Swh4M_gWU5FwFe5lPxPj5rebpMbvhpdNrERs
-id: node.article.field_image
-field_name: field_image
+id: node.carnet_d_adresse.field_image_adresse
+field_name: field_image_adresse
 entity_type: node
-bundle: article
-label: Image
+bundle: carnet_d_adresse
+label: 'Image adresse'
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -26,11 +24,11 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: true
-  title_field: false
   alt_field_required: true
+  title_field: false
   title_field_required: false
   default_image:
-    uuid: null
+    uuid: ''
     alt: ''
     title: ''
     width: null

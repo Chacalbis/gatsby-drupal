@@ -1,0 +1,22 @@
+uuid: 4e4314af-3c2f-4d61-ba6a-36539e7b247a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.evenements
+  module:
+    - text
+id: taxonomy_term.evenements.default
+targetEntityType: taxonomy_term
+bundle: evenements
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

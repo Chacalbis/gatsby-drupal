@@ -1,0 +1,11 @@
+uuid: 5242b755-2a1c-4b33-8453-93d78f82b54f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.zone_libre
+id: taxonomy_term.zone_libre
+target_entity_type_id: taxonomy_term
+target_bundle: zone_libre
+default_langcode: site_default
+language_alterable: false

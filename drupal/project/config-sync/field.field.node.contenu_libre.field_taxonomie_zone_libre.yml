@@ -1,0 +1,29 @@
+uuid: c15c1e1e-f9e7-4e72-acbf-40d576c76a43
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomie_zone_libre
+    - node.type.contenu_libre
+    - taxonomy.vocabulary.zone_libre
+id: node.contenu_libre.field_taxonomie_zone_libre
+field_name: field_taxonomie_zone_libre
+entity_type: node
+bundle: contenu_libre
+label: 'Taxonomie zone libre'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      zone_libre: zone_libre
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

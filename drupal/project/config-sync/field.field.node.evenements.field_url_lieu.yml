@@ -1,0 +1,23 @@
+uuid: 57ae76d0-b2a8-4380-a63f-24a3b2319c0a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_lieu
+    - node.type.evenements
+  module:
+    - link
+id: node.evenements.field_url_lieu
+field_name: field_url_lieu
+entity_type: node
+bundle: evenements
+label: 'Url lieu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

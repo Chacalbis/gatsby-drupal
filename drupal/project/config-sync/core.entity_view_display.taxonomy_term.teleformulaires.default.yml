@@ -1,0 +1,22 @@
+uuid: b267781a-a344-40e3-b966-d2c6386c0c02
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.teleformulaires
+  module:
+    - text
+id: taxonomy_term.teleformulaires.default
+targetEntityType: taxonomy_term
+bundle: teleformulaires
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

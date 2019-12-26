@@ -1,0 +1,24 @@
+uuid: cae8c6b4-6f69-4686-89cd-f632f07acfce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ordre
+    - node.type.page
+  module:
+    - weight
+id: node.page.field_ordre
+field_name: field_ordre
+entity_type: node
+bundle: page
+label: 'Ordre page de base'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight

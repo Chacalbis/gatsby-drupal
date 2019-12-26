@@ -1,0 +1,31 @@
+uuid: b8530123-d0e1-4843-9ef7-8c8167d821e1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.carnet_d_adresse.body
+    - node.type.carnet_d_adresse
+  module:
+    - text
+    - user
+id: node.carnet_d_adresse.teaser
+targetEntityType: node
+bundle: carnet_d_adresse
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: d020a36f-908a-469c-8603-57bb103ed4c0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse.title
+field_name: title
+entity_type: node
+bundle: carnet_d_adresse
+label: 'Nom du lieu'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

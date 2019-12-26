@@ -1,0 +1,23 @@
+uuid: bbb13106-f79a-498d-b012-1139b6e098ac
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lien_demarches_simplifiees
+    - node.type.teleformulaires
+  module:
+    - link
+id: node.teleformulaires.field_lien_demarches_simplifiees
+field_name: field_lien_demarches_simplifiees
+entity_type: node
+bundle: teleformulaires
+label: 'Lien démarches simplifiées'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

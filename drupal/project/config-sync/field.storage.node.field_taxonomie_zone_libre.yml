@@ -1,0 +1,20 @@
+uuid: e4931dfd-1b40-45c6-95f3-94de36bdb907
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_taxonomie_zone_libre
+field_name: field_taxonomie_zone_libre
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 3a2b1c5a-81e2-4da3-94ae-36ce29d91595
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - weight
+id: node.field_ordre_carnet_d_adresse
+field_name: field_ordre_carnet_d_adresse
+entity_type: node
+type: weight
+settings:
+  unsigned: false
+module: weight
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: ff85440a-3552-4653-a7a8-d7c0110ab130
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_label
+    - taxonomy.vocabulary.type_de_lien_direct
+id: taxonomy_term.type_de_lien_direct.field_label
+field_name: field_label
+entity_type: taxonomy_term
+bundle: type_de_lien_direct
+label: Label
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

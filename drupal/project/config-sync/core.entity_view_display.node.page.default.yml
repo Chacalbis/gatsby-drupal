@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_image_page_de_base
+    - field.field.node.page.field_infos_complementaires
+    - field.field.node.page.field_mise_en_avant
+    - field.field.node.page.field_ordre
     - node.type.page
   module:
+    - image
     - text
     - user
 _core:
@@ -18,12 +23,28 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 101
+  field_image_page_de_base:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_infos_complementaires:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
 hidden:
+  field_mise_en_avant: true
+  field_ordre: true
   langcode: true
+  links: true

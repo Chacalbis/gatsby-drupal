@@ -1,0 +1,117 @@
+uuid: 61f61b64-3dd4-436d-bf3b-1ca2f2c1c600
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.carnet_d_adresse.body
+    - field.field.node.carnet_d_adresse.field_code_postal
+    - field.field.node.carnet_d_adresse.field_complement_d_adresse
+    - field.field.node.carnet_d_adresse.field_image_adresse
+    - field.field.node.carnet_d_adresse.field_infos_complementaires
+    - field.field.node.carnet_d_adresse.field_mail
+    - field.field.node.carnet_d_adresse.field_numero
+    - field.field.node.carnet_d_adresse.field_ordre_carnet_d_adresse
+    - field.field.node.carnet_d_adresse.field_telephone
+    - field.field.node.carnet_d_adresse.field_ville
+    - field.field.node.carnet_d_adresse.field_voie
+    - node.type.carnet_d_adresse
+  module:
+    - image
+    - text
+    - user
+id: node.carnet_d_adresse.default
+targetEntityType: node
+bundle: carnet_d_adresse
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_code_postal:
+    weight: 4
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_complement_d_adresse:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image_adresse:
+    weight: 9
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_infos_complementaires:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_mail:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_numero:
+    weight: 1
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_ordre_carnet_d_adresse:
+    weight: 12
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_telephone:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ville:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_voie:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  links: true

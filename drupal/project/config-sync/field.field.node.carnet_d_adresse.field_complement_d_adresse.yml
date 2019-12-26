@@ -1,0 +1,19 @@
+uuid: d1b2cfb8-415a-4d38-b509-2085c176f8a9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_complement_d_adresse
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse.field_complement_d_adresse
+field_name: field_complement_d_adresse
+entity_type: node
+bundle: carnet_d_adresse
+label: 'Complément d''adresse'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

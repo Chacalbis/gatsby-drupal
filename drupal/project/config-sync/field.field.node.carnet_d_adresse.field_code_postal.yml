@@ -1,0 +1,23 @@
+uuid: aa5083f7-ba11-4a50-9b85-57c9c1098a0b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code_postal
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse.field_code_postal
+field_name: field_code_postal
+entity_type: node
+bundle: carnet_d_adresse
+label: 'Code postal'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 99999
+  prefix: ''
+  suffix: ''
+field_type: integer

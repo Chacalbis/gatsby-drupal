@@ -1,0 +1,128 @@
+uuid: d834705c-7de0-432b-96ca-3c8e38968b8a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.carnet_d_adresse.body
+    - field.field.node.carnet_d_adresse.field_code_postal
+    - field.field.node.carnet_d_adresse.field_complement_d_adresse
+    - field.field.node.carnet_d_adresse.field_image_adresse
+    - field.field.node.carnet_d_adresse.field_infos_complementaires
+    - field.field.node.carnet_d_adresse.field_mail
+    - field.field.node.carnet_d_adresse.field_numero
+    - field.field.node.carnet_d_adresse.field_ordre_carnet_d_adresse
+    - field.field.node.carnet_d_adresse.field_telephone
+    - field.field.node.carnet_d_adresse.field_ville
+    - field.field.node.carnet_d_adresse.field_voie
+    - image.style.thumbnail
+    - node.type.carnet_d_adresse
+  module:
+    - image
+    - text
+    - weight
+id: node.carnet_d_adresse.default
+targetEntityType: node
+bundle: carnet_d_adresse
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_code_postal:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_complement_d_adresse:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_image_adresse:
+    weight: 9
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_infos_complementaires:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_mail:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_numero:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_ordre_carnet_d_adresse:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: weight_selector
+    region: content
+  field_telephone:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ville:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_voie:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

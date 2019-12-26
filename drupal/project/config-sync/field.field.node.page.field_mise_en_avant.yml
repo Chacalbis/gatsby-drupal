@@ -1,0 +1,23 @@
+uuid: e936d381-c435-4d81-afd9-cda1391714fa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mise_en_avant
+    - node.type.page
+id: node.page.field_mise_en_avant
+field_name: field_mise_en_avant
+entity_type: node
+bundle: page
+label: 'Mise en avant'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

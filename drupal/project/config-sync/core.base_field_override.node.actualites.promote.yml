@@ -1,0 +1,22 @@
+uuid: 05684ec4-889e-4c6a-b9b9-76371d930ecd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.actualites
+id: node.actualites.promote
+field_name: promote
+entity_type: node
+bundle: actualites
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

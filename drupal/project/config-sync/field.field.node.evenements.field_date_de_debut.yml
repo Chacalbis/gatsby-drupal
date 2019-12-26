@@ -1,0 +1,21 @@
+uuid: 732948e7-3708-4d63-b364-49054bcfa422
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_de_debut
+    - node.type.evenements
+  module:
+    - datetime
+id: node.evenements.field_date_de_debut
+field_name: field_date_de_debut
+entity_type: node
+bundle: evenements
+label: 'Date de début'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

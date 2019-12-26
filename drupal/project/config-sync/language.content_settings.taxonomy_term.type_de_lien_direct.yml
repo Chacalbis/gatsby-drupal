@@ -1,0 +1,11 @@
+uuid: 137422fc-7db5-48b7-82c0-82c618d6c9fb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.type_de_lien_direct
+id: taxonomy_term.type_de_lien_direct
+target_entity_type_id: taxonomy_term
+target_bundle: type_de_lien_direct
+default_langcode: site_default
+language_alterable: false

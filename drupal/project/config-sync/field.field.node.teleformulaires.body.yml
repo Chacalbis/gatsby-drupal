@@ -1,0 +1,22 @@
+uuid: a679c4a7-61c5-4f10-b5a6-f70635259092
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.teleformulaires
+  module:
+    - text
+id: node.teleformulaires.body
+field_name: body
+entity_type: node
+bundle: teleformulaires
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,22 @@
+uuid: accdf216-1a58-452e-8a4c-93a19a1c1afb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.evenements
+  module:
+    - text
+id: node.evenements.body
+field_name: body
+entity_type: node
+bundle: evenements
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

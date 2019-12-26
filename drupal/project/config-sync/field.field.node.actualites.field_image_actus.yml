@@ -1,0 +1,38 @@
+uuid: 1a4023df-cf0c-4540-8861-bba6404e38e0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_actus
+    - node.type.actualites
+  module:
+    - image
+id: node.actualites.field_image_actus
+field_name: field_image_actus
+entity_type: node
+bundle: actualites
+label: 'Image actus'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 8a3a2950-2ea6-4d5e-9b1a-15c72a9abf13
+    alt: 'image de base lune'
+    title: 'image de base lune'
+    width: 500
+    height: 333
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

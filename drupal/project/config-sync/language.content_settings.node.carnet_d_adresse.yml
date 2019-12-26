@@ -1,0 +1,11 @@
+uuid: f4f47df3-aecb-43ad-b87b-f1f92aa3e705
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.carnet_d_adresse
+id: node.carnet_d_adresse
+target_entity_type_id: node
+target_bundle: carnet_d_adresse
+default_langcode: site_default
+language_alterable: false
