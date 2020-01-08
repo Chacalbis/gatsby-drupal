@@ -1,0 +1,8 @@
+name: 'Entité Lien Direct'
+version: '1'
+type: module
+description: 'Permet la création et édition des entités lien direct'
+core: 8.x
+package: 'atolcd'
+'interface translation project': direct_link_entity
+'interface translation server pattern': modules/custom/direct_link_entity/translations/direct_link_entity-fr.po

@@ -1,0 +1,20 @@
+add direct link entity entities:
+  title: 'Create new Direct link entity entities'
+
+administer direct link entity entities:
+  title: 'Administer Direct link entity entities'
+  description: 'Allow to access the administration form to configure Direct link entity entities.'
+  restrict access: true
+
+delete direct link entity entities:
+  title: 'Delete Direct link entity entities'
+
+edit direct link entity entities:
+  title: 'Edit Direct link entity entities'
+
+view published direct link entity entities:
+  title: 'View published Direct link entity entities'
+
+view unpublished direct link entity entities:
+  title: 'View unpublished Direct link entity entities'
+

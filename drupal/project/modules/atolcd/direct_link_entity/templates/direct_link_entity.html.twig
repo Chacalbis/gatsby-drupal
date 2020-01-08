@@ -1,0 +1,22 @@
+{#
+/**
+ * @file direct_link_entity.html.twig
+ * Default theme implementation to present Direct link entity data.
+ *
+ * This template is used when viewing Direct link entity pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_direct_link_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('direct_link_entity') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

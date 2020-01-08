@@ -39,7 +39,8 @@
         "drupal/token": "^1.5",
         "drupal/weight": "^3.1",
         "drush/drush": "*",
-        "atolcd/openid_connect": "*"
+        "atolcd/openid_connect": "*",
+        "atolcd/direct_link_entity": "*"
     },
     "conflict": {
         "drupal/drupal": "*"

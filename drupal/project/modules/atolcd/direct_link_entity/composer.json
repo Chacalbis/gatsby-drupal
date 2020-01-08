@@ -1,0 +1,6 @@
+{
+    "name": "atolcd/direct_link_entity",
+    "type": "drupal-custom-module",
+    "description": "Create and edit direct link entities",
+    "minimum-stability": "dev"
+}
