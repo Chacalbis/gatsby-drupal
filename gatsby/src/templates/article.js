@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ContentTransformer from  "../components/content-transformer"
 
 const ArticleTemplate = ({ data }) => {
   const article = data.nodeArticle
@@ -38,7 +39,7 @@ const ArticleAuthor = ({ article }) => (
 const ArticleContent = ({ article }) => (
   <div>
     {article.body.summary && article.body.summary}
-    <div dangerouslySetInnerHTML={{ __html: article.body?.processed }} />
+    <ContentTransformer content={article.body?.processed} />
   </div>
 )
 
