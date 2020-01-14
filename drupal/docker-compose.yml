@@ -19,7 +19,6 @@ services:
         - "VERSION=${PHP_VERSION}-${COMPOSER_VERSION}"
       dockerfile: Dockerfile
     environment:
-      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
       PHP_XDEBUG: 1
       PHP_XDEBUG_REMOTE_ENABLE: 1
       PHP_XDEBUG_REMOTE_PORT: 9000
@@ -30,6 +29,7 @@ services:
       - ./:/var/www
       - ./:/srv
       - ~/.composer/:/home/.composer/
+      - ./docker/php/php-mail.conf:/usr/local/etc/php/conf.d/mailconf.ini
 
   apache:
     image: wodby/apache:$APACHE_TAG
