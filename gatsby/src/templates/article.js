@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ContentTransformer from  "../components/content-transformer"
+import ContentTransformer from "../components/content-transformer"
 
 const ArticleTemplate = ({ data }) => {
   const article = data.nodeArticle

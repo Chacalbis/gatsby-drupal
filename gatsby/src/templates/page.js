@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import NonStretchedImage from "../components/non-stretched-image"
 import AdditionalInformation from "../components/additional-information"
-import ContentTransformer from  "../components/content-transformer"
+import ContentTransformer from "../components/content-transformer"
 
 const PageTemplate = ({ data }) => {
   const page = data.nodePage
