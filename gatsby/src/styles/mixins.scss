@@ -1,0 +1,53 @@
+@import "./variables.scss";
+
+@mixin linkInTitle($color) {
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -4px;
+    background: $b1;
+    height: 4px;
+    transition-property: right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover::before {
+    right: 0;
+  }
+}
+
+@mixin linkOutTitle($color) {
+  a & {
+    position: relative;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -4px;
+      background: $b1;
+      height: 4px;
+      transition-property: right;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-out;
+    }
+  }
+
+  a:hover &::before {
+    right: 0;
+  }
+}
