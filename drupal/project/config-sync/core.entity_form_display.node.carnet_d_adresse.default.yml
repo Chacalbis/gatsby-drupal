@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.carnet_d_adresse.field_mail
     - field.field.node.carnet_d_adresse.field_numero
     - field.field.node.carnet_d_adresse.field_ordre_carnet_d_adresse
+    - field.field.node.carnet_d_adresse.field_taxonomie_thematique
     - field.field.node.carnet_d_adresse.field_telephone
     - field.field.node.carnet_d_adresse.field_ville
     - field.field.node.carnet_d_adresse.field_voie
@@ -85,6 +86,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: weight_selector
+    region: content
+  field_taxonomie_thematique:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_telephone:
     weight: 8

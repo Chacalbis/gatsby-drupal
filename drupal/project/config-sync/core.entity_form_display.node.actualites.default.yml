@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.actualites.body
     - field.field.node.actualites.field_image_actus
     - field.field.node.actualites.field_infos_complementaires
+    - field.field.node.actualites.field_taxonomie_thematique
     - image.style.thumbnail
     - node.type.actualites
   module:
@@ -47,6 +48,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_taxonomie_thematique:
+    weight: 124
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   langcode:
     type: language_select
