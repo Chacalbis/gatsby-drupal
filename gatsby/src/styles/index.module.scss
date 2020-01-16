@@ -43,14 +43,16 @@
   }
 }
 
-.section-first {
+.section-first,
+.section-second {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
 }
 
 @media (max-width: 900px) {
-  .section-first {
+  .section-first,
+  .section-second {
     flex-direction: column;
   }
 }

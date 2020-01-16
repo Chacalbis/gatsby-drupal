@@ -3,11 +3,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ListActualites from "../components/listActualites"
 import ContenuLibre from "../components/contenuLibre"
+import CarnetAdresse from "../components/carnetAdresse"
 import {
   background,
   backgroundText,
   backgroundContainer,
   sectionFirst,
+  sectionSecond,
   backgroundWrapper,
 } from "../styles/index.module.scss"
 import "../styles/mixins.scss"
@@ -29,6 +31,9 @@ const IndexPage = () => {
       <div className={sectionFirst}>
         <ContenuLibre zoneTaxoLibre="zone_accueil_1" />
         <ListActualites />
+      </div>
+      <div className={sectionSecond}>
+        <CarnetAdresse/>
       </div>
     </Layout>
   )

@@ -1,0 +1,152 @@
+@import "./variables.scss";
+
+.list-adresses-container {
+  width: 50%;
+  padding: 2rem;
+  flex-grow: 1;
+  max-width: 50%;
+  background-color: $a3;
+
+  .list-adresses-title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 15px;
+    background-color: $a1;
+  }
+
+  .adresses-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+
+    .adress-item {
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      width: calc(33.3333% - 1rem);
+      max-width: calc(33.3333% - 1rem);
+      margin: 0.5rem;
+      padding: 0.5rem;
+      background-color: #fff;
+      -webkit-transition: box-shadow 0.3s;
+      -o-transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s;
+
+      &:hover {
+        box-shadow: 5px 8px 5px 5px #ddd;
+      }
+
+      .adress-item-name {
+        text-decoration: none;
+        height: 100%;
+
+        .adress-item-title {
+          display: inline-block;
+          color: $a1;
+          font-weight: 500;
+          margin: 0.5rem 0;
+        }
+
+        .adress-item-adress {
+          font-size: 15px;
+          font-weight: 600;
+          margin: 0.5rem 0;
+          color: black;
+
+          & > div {
+            margin: -0.5rem 0;
+          }
+        }
+      }
+
+      .adress-item-contacts {
+        font-size: 15px;
+        font-weight: 600;
+
+        & > p {
+          margin: 0.5rem 0;
+        }
+
+        .adress-item-mail,
+        .adress-item-tel {
+          display: flex;
+          flex-wrap: wrap;
+          -webkit-box-align: center;
+          align-items: center;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          & > a {
+            text-decoration: none;
+            color: black;
+          }
+
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 0.5rem;
+          }
+        }
+
+        .adress-item-mail::before {
+          background: url("../images/letter.svg") no-repeat center/contain;
+        }
+        .adress-item-tel::before {
+          background: url("../images/tel.svg") no-repeat center/contain;
+        }
+      }
+
+      .adress-more {
+        text-align: right;
+        color: $a1;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        text-decoration: none;
+        margin-bottom: -0.5rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .all-adresses {
+    width: 100%;
+    text-align: right;
+
+    & > a {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1400px), (max-width: 599px) {
+  .list-adresses-container > .adresses-container > .adress-item {
+    width: calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .list-adresses-container {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .list-adresses-container > .adresses-container > .adress-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
