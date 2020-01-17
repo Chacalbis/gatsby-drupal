@@ -96,6 +96,12 @@
           width: 25%;
         }
 
+        a:hover + .actualite-infos a {
+          &::before {
+            right: 0;
+          }
+        }
+
         .actualite-img {
           border-radius: 10px;
           display: block;
