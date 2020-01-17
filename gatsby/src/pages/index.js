@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import ListActualites from "../components/listActualites"
 import ContenuLibre from "../components/contenuLibre"
 import CarnetAdresse from "../components/carnetAdresse"
+import AgendaEvenements from "../components/agendaEvenements"
 import {
   background,
   backgroundText,
@@ -34,6 +35,7 @@ const IndexPage = () => {
       </div>
       <div className={sectionSecond}>
         <CarnetAdresse/>
+        <AgendaEvenements />
       </div>
     </Layout>
   )
