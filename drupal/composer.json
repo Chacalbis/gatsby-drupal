@@ -38,6 +38,7 @@
         "drupal/sitemap": "^1.5",
         "drupal/token": "^1.5",
         "drupal/weight": "^3.1",
+        "drupal/svg_image": "^1.9",
         "drush/drush": "*",
         "atolcd/openid_connect": "*",
         "atolcd/direct_link_entity": "*"

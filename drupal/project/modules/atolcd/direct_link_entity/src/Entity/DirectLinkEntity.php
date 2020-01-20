@@ -143,9 +143,9 @@ class DirectLinkEntity extends ContentEntityBase implements DirectLinkEntityInte
       ->setDescription(t('The image of the direct link entity.'))
       ->setTranslatable(TRUE)
       ->setSettings([
-        'file_directory' => 'sites/default/files/direct-links',
+        'file_directory' => 'direct-links',
         'alt_field_required' => FALSE,
-        'file_extensions' => 'png jpg jpeg',
+        'file_extensions' => 'png jpg jpeg svg',
       ])
       ->setDisplayOptions('view', array(
         'label' => 'hidden',

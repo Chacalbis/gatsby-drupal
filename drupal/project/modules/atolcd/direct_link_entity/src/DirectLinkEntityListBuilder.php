@@ -49,12 +49,11 @@ class DirectLinkEntityListBuilder extends EntityListBuilder {
     if (!empty($image)) {
       /** @var File $file */
       if ($file = File::load($image->getValue()['target_id'])) {
-        $imageArr = array(
-          '#theme' => 'image_style',
-          '#style_name' => 'thumbnail',
-          '#width' => '70',
+        $imageArr = [
+          '#theme' => 'image',
+          '#width' => '60',
           '#uri' => $file->getFileUri(),
-        );
+        ];
         $renderer = \Drupal::service('renderer')->render($imageArr);
         $row['image_direct_link'] = $renderer;
       }
