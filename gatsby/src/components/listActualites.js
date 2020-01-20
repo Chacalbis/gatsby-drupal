@@ -49,9 +49,11 @@ const Actu = ({ actu, myClassName }) => (
       </Link>
     )}
     <div className={actualiteInfos}>
-      <span className={actualiteCategorie}>
-        <p>{actu.relationships.field_taxonomie_thematique[0].name}</p>
-      </span>
+      {actu.relationships.field_taxonomie_thematique && (
+        <div className={actualiteCategorie}>
+          <p>{actu.relationships.field_taxonomie_thematique[0].name}</p>
+        </div>
+      )}
       <h3 className={actualiteTitle}>
         <Link to={actu.path.alias}>{actu.title}</Link>
       </h3>
