@@ -5,12 +5,14 @@ import ListActualites from "../components/listActualites"
 import ContenuLibre from "../components/contenuLibre"
 import CarnetAdresse from "../components/carnetAdresse"
 import AgendaEvenements from "../components/agendaEvenements"
+import ListNePasManquer from "../components/listNePasManquer"
 import {
   background,
   backgroundText,
   backgroundContainer,
   sectionFirst,
   sectionSecond,
+  sectionNePasManquer,
   backgroundWrapper,
 } from "../styles/index.module.scss"
 import "../styles/mixins.scss"
@@ -36,6 +38,9 @@ const IndexPage = () => {
       <div className={sectionSecond}>
         <CarnetAdresse/>
         <AgendaEvenements />
+      </div>
+      <div className={sectionNePasManquer}>
+        <ListNePasManquer />
       </div>
     </Layout>
   )

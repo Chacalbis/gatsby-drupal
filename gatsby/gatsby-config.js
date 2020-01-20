@@ -3,6 +3,9 @@ module.exports = {
     title: `Gatsby with Drupal`,
     description: `Générateur de sites statiques basé sur Gatsby et Drupal`,
     author: `atolcd`,
+    config: {
+      nepasManquerSlogan: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quisquam illo molestias, harum iusto perspiciatis pariatur corrupti hic aut iste.`,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
