@@ -51,6 +51,11 @@
   display: flex;
   flex-flow: row nowrap;
 }
+.section-partenaires {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 .section-ne-pas-manquer {
   flex-direction: column;

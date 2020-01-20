@@ -6,6 +6,7 @@ import ContenuLibre from "../components/contenuLibre"
 import CarnetAdresse from "../components/carnetAdresse"
 import AgendaEvenements from "../components/agendaEvenements"
 import ListNePasManquer from "../components/listNePasManquer"
+import ListPartenaires from "../components/listPartenaires"
 import {
   background,
   backgroundText,
@@ -13,6 +14,7 @@ import {
   sectionFirst,
   sectionSecond,
   sectionNePasManquer,
+  sectionPartenaires,
   backgroundWrapper,
 } from "../styles/index.module.scss"
 import "../styles/mixins.scss"
@@ -41,6 +43,9 @@ const IndexPage = () => {
       </div>
       <div className={sectionNePasManquer}>
         <ListNePasManquer />
+      </div>
+      <div className={sectionPartenaires}>
+        <ListPartenaires />
       </div>
     </Layout>
   )
