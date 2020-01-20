@@ -35,3 +35,7 @@ a + .actualite-infos a {
     transition-timing-function: ease-out;
   }
 }
+
+.btn {
+  @include btnHover($b1, $a1, #fff);
+}

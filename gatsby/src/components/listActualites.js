@@ -30,7 +30,9 @@ const RenderActualites = ({ actualiteData }) => {
           return <Actu myClassName={actualiteContainer} actu={node} />
         })}
         <div>
-          <Link to="">Toutes nos actualités</Link>
+          <Link className="btn" to="">
+            Toutes nos actualités
+          </Link>
         </div>
       </div>
     </>

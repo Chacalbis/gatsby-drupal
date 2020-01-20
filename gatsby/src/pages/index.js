@@ -12,6 +12,7 @@ import {
 } from "../styles/index.module.scss"
 import "../styles/mixins.scss"
 import "../styles/animations.scss"
+import "../styles/buttons.scss"
 
 const IndexPage = () => {
   return (
