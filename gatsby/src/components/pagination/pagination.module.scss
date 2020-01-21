@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.pagination-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  a,
+  .pagination-numbers-container {
+    font-size: 0.9em;
+    background: $a2;
+    border-radius: 3px;
+    color: #fff;
+  }
+
+  a,
+  span {
+    padding: 16px 20px;
+  }
+
+  span {
+    color: $a1;
+  }
+
+  a:hover {
+    background: $a1;
+    text-decoration: none;
+  }
+
+  .pagination-numbers-container {
+    display: flex;
+    padding: 16px 0;
+  }
+}

@@ -1,25 +1,25 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import NonStretchedImage from "../components/non-stretched-image"
-import AdditionalInformation from "../components/additional-information"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import NonStretchedImage from "../../components/non-stretched-image"
+import AdditionalInformation from "../../components/additional-information"
 
-const AddressTemplate = ({ data }) => {
+const AdresseTemplate = ({ data }) => {
   const addressBook = data.nodeCarnetDAdresse
 
   return (
     <Layout>
       <SEO title={addressBook.title} description={addressBook.body.summary} />
       <div key={addressBook.path.alias}>
-        <TeleformHeader address={addressBook} />
-        <TeleformContent address={addressBook} />
+        <AddressHeader address={addressBook} />
+        <AddressContent address={addressBook} />
       </div>
     </Layout>
   )
 }
 
-const TeleformHeader = ({ address }) => (
+const AddressHeader = ({ address }) => (
   <h2>
     <Link
       to={address.path.alias}
@@ -28,10 +28,10 @@ const TeleformHeader = ({ address }) => (
   </h2>
 )
 
-const TeleformContent = ({ address }) => (
+const AddressContent = ({ address }) => (
   <div>
     <div dangerouslySetInnerHTML={{ __html: address.body?.processed }} />
-    <TeleformContact address={address} />
+    <AddressContact address={address} />
     {address.relationships?.field_image_adresse?.map(image => (
       <NonStretchedImage {...image.localFile.childImageSharp} />
     ))}
@@ -39,7 +39,7 @@ const TeleformContent = ({ address }) => (
   </div>
 )
 
-const TeleformContact = ({ address }) => (
+const AddressContact = ({ address }) => (
   <ul>
     <li>
       {address.field_numero} {address.field_voie}
@@ -53,7 +53,7 @@ const TeleformContact = ({ address }) => (
   </ul>
 )
 
-export default AddressTemplate
+export default AdresseTemplate
 
 export const query = graphql`
   query($slug: String!) {

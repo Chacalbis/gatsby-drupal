@@ -26,7 +26,7 @@ const IndexPage = () => {
         </div>
       </div>
       <div className={sectionFirst}>
-        <ContenuLibre zoneTaxoLibre="zone_accueil_1"/>
+        <ContenuLibre zoneTaxoLibre="zone_accueil_1" />
         <ListActualites />
       </div>
     </Layout>

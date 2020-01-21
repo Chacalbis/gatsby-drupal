@@ -3,7 +3,7 @@ import React from "react"
 import { zoneLibre, zoneLibreTitle } from "../styles/contenuLibre.module.scss"
 import ContentTransformer from "../components/content-transformer"
 
-const ContenuLibre = ({zoneTaxoLibre}) => {
+const ContenuLibre = ({ zoneTaxoLibre }) => {
   const data = useStaticQuery(graphql`
     query ContenuLibreQuery {
       allNodeContenuLibre(sort: { fields: created, order: DESC }) {
@@ -27,8 +27,7 @@ const ContenuLibre = ({zoneTaxoLibre}) => {
   const result = contenusLibre
     .filter(
       ({ node }) =>
-        node.relationships?.field_taxonomie_zone_libre?.name ===
-        zoneTaxoLibre
+        node.relationships?.field_taxonomie_zone_libre?.name === zoneTaxoLibre
     )
     .shift()
   return (
