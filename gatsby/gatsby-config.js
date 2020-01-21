@@ -5,6 +5,9 @@ module.exports = {
     author: `atolcd`,
     config: {
       nepasManquerSlogan: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quisquam illo molestias, harum iusto perspiciatis pariatur corrupti hic aut iste.`,
+      bgImagePath: `lune-2000px.jpg`,
+      bgImageAlt: `background`,
+      slogan: `Bienvenue sur ce nouveau thème !`,
     },
   },
   plugins: [

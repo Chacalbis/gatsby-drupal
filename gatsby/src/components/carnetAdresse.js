@@ -108,7 +108,9 @@ const CarnetAdresse = () => {
         <RenderAdresses adressesData={data} />
       </div>
       <div className={allAdresses}>
-        <Link className="btn" to="/address">Voir le carnet complet</Link>
+        <Link className="btn" to="/address">
+          Voir le carnet complet
+        </Link>
       </div>
     </div>
   )

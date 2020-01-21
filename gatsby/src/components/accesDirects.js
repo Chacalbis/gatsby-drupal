@@ -10,15 +10,28 @@ import {
 } from "../styles/accesDirects.module.scss"
 
 const AccesDirect = ({ accesDirect }) => {
-  let image = ''
-  if (accesDirect.relationships.image_direct_link.localFile.extension === 'svg') {
-    image = <img className={accesDirectItemImg} src={accesDirect.relationships.image_direct_link.localFile.publicURL} alt={accesDirect.image_direct_link.alt || ""} />
-  }
-  else if (accesDirect.relationships?.image_direct_link?.localFile?.childImageSharp.fluid) {
-    image = <NonStretchedImage
-      className={accesDirectItemImg}
-      {...accesDirect.relationships.image_direct_link.localFile.childImageSharp}
-    />
+  let image = ""
+  if (
+    accesDirect.relationships.image_direct_link.localFile.extension === "svg"
+  ) {
+    image = (
+      <img
+        className={accesDirectItemImg}
+        src={accesDirect.relationships.image_direct_link.localFile.publicURL}
+        alt={accesDirect.image_direct_link.alt || ""}
+      />
+    )
+  } else if (
+    accesDirect.relationships?.image_direct_link?.localFile?.childImageSharp
+      .fluid
+  ) {
+    image = (
+      <NonStretchedImage
+        className={accesDirectItemImg}
+        {...accesDirect.relationships.image_direct_link.localFile
+          .childImageSharp}
+      />
+    )
   }
   return (
     <Link to={accesDirect.url}>

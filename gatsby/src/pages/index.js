@@ -8,16 +8,13 @@ import AgendaEvenements from "../components/agendaEvenements"
 import ListNePasManquer from "../components/listNePasManquer"
 import ListPartenaires from "../components/listPartenaires"
 import AccesDirects from "../components/accesDirects"
+import BackgroundImage from "../components/backgroundImage"
 import {
-  background,
-  backgroundText,
-  backgroundContainer,
   sectionFirst,
   sectionSecond,
   sectionNePasManquer,
   sectionPartenaires,
   sectionAccesDirect,
-  backgroundWrapper,
 } from "../styles/index.module.scss"
 import "../styles/mixins.scss"
 import "../styles/animations.scss"
@@ -27,14 +24,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className={backgroundContainer}>
-        <div className={backgroundWrapper}>
-          <img className={background} alt="bg" src="lune-2000px.jpg"></img>
-          <div className={backgroundText}>
-            <p>Bienvenue sur ce nouveau thème !</p>
-          </div>
-        </div>
-      </div>
+      <BackgroundImage />
       <div className={sectionFirst}>
         <ContenuLibre zoneTaxoLibre="zone_accueil_1" />
         <ListActualites />
@@ -43,7 +33,7 @@ const IndexPage = () => {
         <AccesDirects />
       </div>
       <div className={sectionSecond}>
-        <CarnetAdresse/>
+        <CarnetAdresse />
         <AgendaEvenements />
       </div>
       <div className={sectionNePasManquer}>

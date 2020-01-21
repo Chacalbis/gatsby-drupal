@@ -11,6 +11,9 @@ export const useSiteMetadata = () => {
             author
             config {
               nepasManquerSlogan
+              bgImagePath
+              bgImageAlt
+              slogan
             }
           }
         }

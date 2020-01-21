@@ -66,14 +66,14 @@ const ListNePasManquer = () => {
   return (
     <>
       <h2 className={nePasManquerTitle}>À ne pas manquer</h2>
-      <p className={nePasManquerResume}>
-        {metaData.config.nepasManquerSlogan}
-      </p>
+      <p className={nePasManquerResume}>{metaData.config.nepasManquerSlogan}</p>
       <div className={nePasManquerContainer}>
         <RenderNePasManquer nePasManquerData={data} />
       </div>
       <div className={allNePasManquer}>
-        <Link className="btn" to="/page">Voir plus</Link>
+        <Link className="btn" to="/page">
+          Voir plus
+        </Link>
       </div>
     </>
   )

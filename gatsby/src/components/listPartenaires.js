@@ -18,9 +18,11 @@ const Partenaire = ({ partenaire }) => (
 )
 
 const RenderPartenaires = ({ partenairesData }) => {
-  return partenairesData.allDirectLinkEntityDirectLinkEntity.edges.map(({ node }) => {
-    return <Partenaire partenaire={node} />
-  })
+  return partenairesData.allDirectLinkEntityDirectLinkEntity.edges.map(
+    ({ node }) => {
+      return <Partenaire partenaire={node} />
+    }
+  )
 }
 
 const ListPartenaires = () => {
@@ -52,12 +54,12 @@ const ListPartenaires = () => {
     }
   `)
   return (
-      <div className={listPartenairesContainer}>
-        <h2 className={partenairesTitle}>Nos partenaires</h2>
-        <div className={partenairesContainer}>
-          <RenderPartenaires partenairesData={data} />
-        </div>
+    <div className={listPartenairesContainer}>
+      <h2 className={partenairesTitle}>Nos partenaires</h2>
+      <div className={partenairesContainer}>
+        <RenderPartenaires partenairesData={data} />
       </div>
+    </div>
   )
 }
 
