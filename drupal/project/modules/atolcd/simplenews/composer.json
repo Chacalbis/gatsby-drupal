@@ -1,0 +1,6 @@
+{
+    "name": "atolcd/simplenews",
+    "type": "drupal-custom-module",
+    "description": "Create and edit newsletter using Paperboy API",
+    "minimum-stability": "dev"
+}

@@ -41,7 +41,8 @@
         "drupal/svg_image": "^1.9",
         "drush/drush": "*",
         "atolcd/openid_connect": "*",
-        "atolcd/direct_link_entity": "*"
+        "atolcd/direct_link_entity": "*",
+        "atolcd/simplenews": "*"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f54887eaced7ec003c0487718bcbbde",
+    "content-hash": "701ed3f8c794524c851bf31a4f8729b6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -155,6 +155,17 @@
                 "source": "http://cgit.drupalcode.org/openid_connect"
             },
             "time": "2019-11-22T13:35:28+00:00"
+        },
+        {
+            "name": "atolcd/simplenews",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "project/modules/atolcd/simplenews",
+                "reference": "76c3732351bb3f81858953cea8315b9034fcdb3d"
+            },
+            "type": "drupal-custom-module",
+            "description": "Create and edit newsletter using Paperboy API"
         },
         {
             "name": "brumann/polyfill-unserialize",
@@ -7023,7 +7034,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "atolcd/simplenews": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

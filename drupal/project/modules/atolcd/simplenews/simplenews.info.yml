@@ -1,0 +1,14 @@
+name: Simplenews
+version: '1'
+type: module
+description: 'Send newsletters to subscribed email addresses using the Paperboy API. For uninstall go to Configuration > Web services > Simplenews > Settings and hit "Prepare uninstall".'
+core: '8.x'
+package: atolcd
+dependencies:
+  - drupal:node
+  - drupal:field
+  - drupal:options
+  - drupal:views
+test_dependencies:
+  - monitoring:monitoring
+configure: simplenews.newsletter_list
