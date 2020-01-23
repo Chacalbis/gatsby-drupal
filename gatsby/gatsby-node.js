@@ -16,6 +16,7 @@ async function onCreateNode({ node, actions: { createNodeField } }) {
 exports.onCreateNode = onCreateNode
 
 let allTypeToCreate = {}
+let allTaxoToCreate = {}
 
 allTypeToCreate["allNodeActualites"] = {
   detailTemplate: path.resolve(`./src/templates/details/actualite.js`),
@@ -48,12 +49,21 @@ allTypeToCreate["allNodeTeleformulaires"] = {
   detailTemplate: path.resolve(`./src/templates/details/teleform.js`),
 }
 
-const requestBuilder = name => {
+allTaxoToCreate["allTaxonomyTermThematiques"] = {
+  listTemplate: path.resolve(`./src/templates/list/taxo-thematiques.js`),
+  nodesPerPage: 5,
+  baseLink: "taxonomy/term",
+}
+allTaxoToCreate["allTaxonomyTermTeleformulaires"] = {
+  listTemplate: path.resolve(`./src/templates/list/taxo-teleformulaires.js`),
+  nodesPerPage: 5,
+}
+
+const typeRequestBuilder = name => {
   return `{
     ${name} {
       edges {
         node {
-          title
           path {
             alias
           }
@@ -63,38 +73,88 @@ const requestBuilder = name => {
   }`
 }
 
+const taxoRequestBuilder = name => {
+  return `{
+    ${name} {
+      edges {
+        node {
+          name
+          drupal_internal__tid
+        }
+      }
+    }
+  }`
+}
+const thematiqueRequestBuilder = term => {
+  return `{
+    allNodeCarnetDAdresse(filter: {relationships: {field_taxonomie_thematique: {elemMatch: {name: {eq: "${term}"}}}}}) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+    allNodeActualites(filter: {relationships: {field_taxonomie_thematique: {elemMatch: {name: {eq: "${term}"}}}}}) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+    allNodeEvenements(filter: {relationships: {field_taxonomie_thematique: {elemMatch: {name: {eq: "${term}"}}}}}) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }`
+}
+const teleformRequestBuilder = term => {
+  return `{
+    allNodeTeleformulaires(filter: {relationships: {field_taxonomie_teleformulaire: {elemMatch: {name: {eq: "${term}" }}}}}) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }`
+}
+
 exports.createPages = ({ graphql, actions: { createPage } }) => {
-  let promises = Object.entries(allTypeToCreate).map(entity => {
+  // const allEntitiesToCreate = {...allTypeToCreate, ...allTaxoToCreate}
+  // let promises = Object.entries(allEntitiesToCreate).map(entity => {
+  let typePromises = Object.entries(allTypeToCreate).map(entity => {
     let entityName = entity[0]
     let entityConf = entity[1]
-    let request = requestBuilder(entityName)
+    let request = typeRequestBuilder(entityName)
 
     return new Promise(resolve => {
       graphql(request).then(result => {
         if (result.errors) throw result.errors
         if (!result.data || !(entityName in result.data)) resolve()
 
-        // entities details page creation
-        result.data[entityName].edges.forEach(({ node }) => {
-          const slug = node.path.alias
-          createPage({
-            path: slug,
-            component: entityConf.detailTemplate,
-            context: {
-              slug: slug,
-            },
+        // types details page creation
+        if (entityConf.detailTemplate) {
+          result.data[entityName].edges.forEach(({ node }) => {
+            const slug = node.path.alias
+            createPage({
+              path: slug,
+              component: entityConf.detailTemplate,
+              context: {
+                slug: slug,
+              },
+            })
           })
-        })
+        }
 
-        // Creating entities list with pagination
-        if (result.data[entityName] && entityConf.listTemplate) {
-          const entitiesWithoutFeatured = result.data[entityName].edges.filter(
-            ({ node }) => {
-              return !node.relationships
-            }
-          )
+        // Creating types list with pagination
+        if (entityConf.listTemplate) {
           const perPage = entityConf.nodesPerPage
-          const numPages = Math.ceil(entitiesWithoutFeatured.length / perPage)
+          const numPages = Math.ceil(
+            result.data[entityName].edges.length / perPage
+          )
           Array.from({ length: numPages }).forEach((_, i) => {
             createPage({
               path:
@@ -118,5 +178,57 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     })
   })
 
-  return Promise.all(promises)
+  let taxoPromises = Object.entries(allTaxoToCreate).map(entity => {
+    let entityName = entity[0]
+    let entityConf = entity[1]
+    let request = taxoRequestBuilder(entityName)
+
+    return new Promise(resolve => {
+      graphql(request).then(result => {
+        if (result.errors) throw result.errors
+        if (!result.data || !(entityName in result.data)) resolve()
+        result.data[entityName].edges.forEach(({ node }) => {
+          let slugTerm = node.name
+          switch (entityName) {
+            case "allTaxonomyTermThematiques":
+              request = thematiqueRequestBuilder(slugTerm)
+              break
+            case "allTaxonomyTermTeleformulaires":
+              request = teleformRequestBuilder(slugTerm)
+              break
+          }
+
+          return new Promise(resolve => {
+            graphql(request).then(result => {
+              if (result.errors) throw result.errors
+              const perPage = entityConf.nodesPerPage
+              const allNodes = [...Object.entries(result.data)]
+              const numPages = Math.ceil(allNodes.length / perPage)
+              const baseLink = `taxonomy/term/${node.drupal_internal__tid}`
+              // Creating taxo list with pagination
+              Array.from({ length: numPages }).forEach((_, i) => {
+                createPage({
+                  path: i === 0 ? baseLink : `/${baseLink}/page/${i + 1}`,
+                  component: entityConf.listTemplate,
+                  context: {
+                    limit: perPage,
+                    skip: i * perPage,
+                    currentPage: i + 1,
+                    numPages,
+                    baseLink: baseLink,
+                    slugTerm: slugTerm,
+                  },
+                })
+              })
+
+              resolve()
+            })
+          })
+        })
+
+        resolve()
+      })
+    })
+  })
+  return Promise.all([typePromises, taxoPromises])
 }
