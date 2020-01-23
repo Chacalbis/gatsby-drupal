@@ -14,6 +14,8 @@ export const useSiteMetadata = () => {
               bgImagePath
               bgImageAlt
               slogan
+              logoPath
+              logoAlt
             }
           }
         }

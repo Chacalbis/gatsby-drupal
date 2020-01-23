@@ -8,6 +8,8 @@ module.exports = {
       bgImagePath: `lune-2000px.jpg`,
       bgImageAlt: `background`,
       slogan: `Bienvenue sur ce nouveau thème !`,
+      logoPath: `atolcd-icon.png`,
+      logoAlt: `logo`,
     },
   },
   plugins: [
