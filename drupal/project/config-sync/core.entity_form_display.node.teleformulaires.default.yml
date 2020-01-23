@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.teleformulaires.body
     - field.field.node.teleformulaires.field_lien_demarches_simplifiees
+    - field.field.node.teleformulaires.field_taxonomie_teleformulaire
     - field.field.node.teleformulaires.field_taxonomie_zone_libre
     - node.type.teleformulaires
   module:
@@ -32,14 +33,17 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_taxonomie_teleformulaire:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_taxonomie_zone_libre:
     weight: 26
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   title:
     type: string_textfield

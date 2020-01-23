@@ -1,0 +1,20 @@
+uuid: e47153e0-1f57-4636-8fb2-31a2c5cebacc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_taxonomie_teleformulaire
+field_name: field_taxonomie_teleformulaire
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
