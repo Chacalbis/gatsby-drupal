@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_taxonomie_thematique
     - node.type.carnet_d_adresse
-    - taxonomy.vocabulary.evenements
+    - taxonomy.vocabulary.thematiques
 id: node.carnet_d_adresse.field_taxonomie_thematique
 field_name: field_taxonomie_thematique
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      evenements: evenements
+      thematiques: thematiques
     sort:
       field: name
       direction: asc

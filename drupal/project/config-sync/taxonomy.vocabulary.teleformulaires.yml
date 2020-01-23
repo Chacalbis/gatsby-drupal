@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Téléformulaires
 vid: teleformulaires
-description: ''
+description: 'Liste des termes pouvant filtrer les contenus téléformulaires'
 weight: 0

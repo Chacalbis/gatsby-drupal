@@ -1,26 +1,26 @@
-uuid: 6e1f69ab-fb90-469d-ab98-5194319e73d0
+uuid: 5b6d34ac-6130-4757-ba80-6ad348eb95eb
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_taxonomie_evenement
+    - field.storage.node.field_taxonomie_thematique
     - node.type.evenements
-    - taxonomy.vocabulary.evenements
-id: node.evenements.field_taxonomie_evenement
-field_name: field_taxonomie_evenement
+    - taxonomy.vocabulary.thematiques
+id: node.evenements.field_taxonomie_thematique
+field_name: field_taxonomie_thematique
 entity_type: node
 bundle: evenements
-label: 'Taxonomie évènement'
+label: 'Taxonomie thématique'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      evenements: evenements
+      thematiques: thematiques
     sort:
       field: name
       direction: asc

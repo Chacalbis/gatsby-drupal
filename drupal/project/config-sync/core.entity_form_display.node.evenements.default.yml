@@ -8,14 +8,14 @@ dependencies:
     - field.field.node.evenements.field_date_de_fin
     - field.field.node.evenements.field_image_event
     - field.field.node.evenements.field_infos_complementaires
-    - field.field.node.evenements.field_taxonomie_evenement
+    - field.field.node.evenements.field_taxonomie_thematique
     - field.field.node.evenements.field_url_lieu
     - image.style.thumbnail
     - node.type.evenements
   module:
     - datetime
-    - image
     - link
+    - svg_image
     - text
 id: node.evenements.default
 targetEntityType: node
@@ -59,7 +59,7 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_taxonomie_evenement:
+  field_taxonomie_thematique:
     weight: 6
     settings: {  }
     third_party_settings: {  }

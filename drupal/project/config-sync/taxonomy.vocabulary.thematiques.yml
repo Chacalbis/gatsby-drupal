@@ -1,0 +1,8 @@
+uuid: 20863de4-11d4-4b69-9fe1-550193837914
+langcode: fr
+status: true
+dependencies: {  }
+name: Thématiques
+vid: thematiques
+description: 'Liste des termes pouvant filtrer les contenus carnet d''adresse, actualités et événement'
+weight: 0

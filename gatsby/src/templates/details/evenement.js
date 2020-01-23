@@ -105,7 +105,7 @@ export const query = graphql`
             }
           }
         }
-        field_taxonomie_evenement {
+        field_taxonomie_thematique {
           name
           path {
             alias

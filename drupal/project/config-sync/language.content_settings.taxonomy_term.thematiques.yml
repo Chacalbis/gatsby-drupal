@@ -1,11 +1,11 @@
-uuid: 3d701a9b-dffc-462c-9fe3-26d6f9d0ce90
+uuid: a65cd6bc-01b2-483e-8dc9-556dba893ad2
 langcode: fr
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.evenements
-id: taxonomy_term.evenements
+    - taxonomy.vocabulary.thematiques
+id: taxonomy_term.thematiques
 target_entity_type_id: taxonomy_term
-target_bundle: evenements
+target_bundle: thematiques
 default_langcode: site_default
 language_alterable: false
