@@ -1,29 +1,27 @@
 # AtolCD : Template Drupal 8
 
 ## .env
-You need to change some information in the .env
+You need to copy .env.dist content in .env
 
--- PROJECT SETTINGS --
-PROJECT_NAME=example_drupal
-PROJECT_BASE_URL=example_drupal.docker.localhost
-
--- DATABASE --
-DB_NAME=example_name
+## Import SQL dump
+Just copy the needed SQL dump from `sql` to `sql/import`
+All SQL will be imported at docker stack creation.
+* `0_fresh_installed_drupal.sql` => The freshest drupal database you could dream of (only user shortcuts were removed)
 
 ## Docker & Docker Compose
 Install docker
 Install docker-compose : https://docs.docker.com/compose/install/
 
-To run the development stack just run : `docker-compose up -d`
+To run the development stack : `docker-compose up -d`
 To stop it : `docker-compose stop`
 
-If you need to initiate the database (the first time) just place your SQL dump in `sql/import`
-all SQL are imported at docker stack creation.
-
 ## Composer
-Install composer : https://getcomposer.org/doc/00-intro.md
+You could use composer with docker without having to install it : https://redmine.atolcd.com/questions/173-utiliser-composer-sans-l-installer-avec-docker
+
 You can now initiate all dependency : `./bin/composer install`
 If you need new module or update existing on, edit composer.json and launch : `./bin/composer update`
+
+At this point you should have a functional Drupal 8 site
 
 ## Connect to Docker database
 Use the script sql2docker.
@@ -31,5 +29,6 @@ You can connect with drupal user : `./pg2docker connect`
 You can connect with root user : `./pg2docker connect-root`
 You can dump your drupal database : `./pg2docker dump`
 
-## Configuration of Drupal
-You can start the Drupal configuration.
+## Default Admin user
+User: `admin`
+Password: `bw8l$D1x989nHTcQ`

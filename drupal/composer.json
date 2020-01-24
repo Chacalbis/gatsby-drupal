@@ -83,6 +83,11 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "patches": {
+            "drupal/core": {
+                "Fix json api": "https://www.drupal.org/files/issues/2019-11-22/class_instance_issue-2996114-85.patch"
+            }
+        },
         "installer-paths": {
             "html/core": [
                 "type:drupal-core"
