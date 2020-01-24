@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import {
   paginationWrapper,
   paginationNumbersContainer,
+  activeLink,
 } from "./pagination.module.scss"
 
 const Pagination = ({ numPages, currentPage, contextPage }) => {
@@ -12,29 +13,54 @@ const Pagination = ({ numPages, currentPage, contextPage }) => {
   // for each templates, entity property passed in pageContext will be different
   const baseLink = contextPage ? contextPage : ""
   const { startPage, endPage } = defineRange(currentPage, numPages)
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage =
+    currentPage - 1 === 1
+      ? baseLink
+      : baseLink + "/page/" + (currentPage - 1).toString()
+  const nextPage = baseLink + "/page/" + (currentPage + 1).toString()
   return (
-    <div className={paginationWrapper}>
-      <div>
-        <div className={paginationNumbersContainer}>
-          {Array.from({ length: numPages })
-            .slice(startPage, endPage)
-            .map((_, i) => {
-              const index = i + startPage + 1
-              const link =
-                index === 1 ? `${baseLink}` : `${baseLink}/page/${index}`
-              return (
-                <div current={currentPage === index} key={link}>
-                  {currentPage === index ? (
-                    <span>{index}</span>
-                  ) : (
-                    <Link to={link}>{index}</Link>
-                  )}
-                </div>
-              )
-            })}
-        </div>
-      </div>
-    </div>
+    <nav className={paginationWrapper}>
+      <ul className={paginationNumbersContainer}>
+        {!isFirst && (
+          <>
+            <li>
+              <Link to={baseLink}>&lt;&lt;</Link>
+            </li>
+            <li>
+              <Link to={prevPage}>&lt;</Link>
+            </li>
+          </>
+        )}
+        {Array.from({ length: numPages })
+          .slice(startPage, endPage)
+          .map((_, i) => {
+            const index = i + startPage + 1
+            const link =
+              index === 1 ? `${baseLink}` : `${baseLink}/page/${index}`
+            return (
+              <li current={currentPage === index} key={link}>
+                {currentPage === index ? (
+                  <span className={activeLink}>{index}</span>
+                ) : (
+                  <Link to={link}>{index}</Link>
+                )}
+              </li>
+            )
+          })}
+        {!isLast && (
+          <>
+            <li>
+              <Link to={nextPage}>&gt;</Link>
+            </li>
+            <li>
+              <Link to={`${baseLink}/page/${endPage}`}>&gt;&gt;</Link>
+            </li>
+          </>
+        )}
+      </ul>
+    </nav>
   )
 }
 
