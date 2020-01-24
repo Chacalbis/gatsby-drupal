@@ -2,59 +2,108 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Pagination from "../../components/pagination/pagination"
+import ContenuLibre from "../../components/contenuLibre"
+import {
+  zoneAdressesLibreBas,
+  zoneAdressesLibreHaut,
+  listAdressesContainer,
+  adressesContainer,
+  adressItem,
+  adressItemAdress,
+  adressItemCompAdress,
+  adressItemVoie,
+  adressItemName,
+  adressItemTitle,
+  adressItemContacts,
+  adressItemTel,
+  adressItemMail,
+  adressMore,
+} from "../../styles/listAdresses.module.scss"
 
-const AddressesTemplate = ({ data, pageContext }) => {
+const AdresseInfos = ({ adress }) => (
+  <Link className={adressItemName} to={adress.path.alias}>
+    <p className={adressItemTitle}>{adress.title}</p>
+    <div className={adressItemAdress}>
+      <div className={adressItemVoie}>
+        {adress.field_numero} {adress.field_voie}
+      </div>
+      {adress.field_complement_d_adresse && (
+        <div className={adressItemCompAdress}>
+          {adress.field_complement_d_adresse}
+        </div>
+      )}
+      <div>
+        {adress.field_code_postal} {adress.field_ville}
+      </div>
+    </div>
+  </Link>
+)
+
+const AdresseContact = ({ adress }) => {
+  const mail = `mailto:${adress.field_mail}`
+  const tel = `tel:${adress.field_telephone}`
+  return (
+    <>
+      {adress.field_mail && adress.field_telephone && (
+        <div className={adressItemContacts}>
+          {adress.field_mail && (
+            <p className={adressItemMail}>
+              <Link to={mail}>{adress.field_mail}</Link>
+            </p>
+          )}
+          {adress.field_telephone && (
+            <p className={adressItemTel}>
+              <Link to={tel}>{adress.field_telephone}</Link>
+            </p>
+          )}
+        </div>
+      )}
+      <Link className={adressMore} to={adress.path.alias}>
+        Plus d'infos
+      </Link>
+    </>
+  )
+}
+
+const RenderAdresses = ({ adressesData }) => {
+  const adresses = adressesData.allNodeCarnetDAdresse.edges
+  return (
+    <>
+      {adresses.map(({ node }) => (
+        <div className={adressItem}>
+          <AdresseInfos adress={node} />
+          <AdresseContact adress={node} />
+        </div>
+      ))}
+    </>
+  )
+}
+
+const AdressesTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages, baseLink } = pageContext
   return (
     <Layout>
-      <div>
-        <h5>
-          Page {currentPage} sur {numPages}
-        </h5>
-      </div>
-      <div>
-        {data.allNodeCarnetDAdresse.edges.map(({ node }) => {
-          return (
-            <div>
-              <AddressHeader address={node} />
-              <AddressContent address={node} />
-            </div>
-          )
-        })}
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        numPages={numPages}
-        contextPage={baseLink}
-      />
+      <section className={zoneAdressesLibreHaut}>
+        <ContenuLibre zoneTaxoLibre="zone_carnet_d_adresse_haut" />
+      </section>
+      <section className={listAdressesContainer}>
+        <div className={adressesContainer}>
+          <RenderAdresses adressesData={data} />
+        </div>
+        <Pagination
+          currentPage={currentPage}
+          numPages={numPages}
+          contextPage={baseLink}
+        />
+      </section>
+      <section className={zoneAdressesLibreBas}>
+        <ContenuLibre zoneTaxoLibre="zone_carnet_d_adresse_bas" />
+      </section>
     </Layout>
   )
 }
 
-const AddressHeader = ({ address }) => (
-  <h2>
-    <Link
-      to={address.path.alias}
-      dangerouslySetInnerHTML={{ __html: address.title }}
-    />
-  </h2>
-)
-
-const AddressContent = ({ address }) => (
-  <ul>
-    <li>
-      {address.field_numero} {address.field_voie}
-    </li>
-    <li>{address.field_complement_d_adresse}</li>
-    <li>
-      {address.field_code_postal} {address.field_ville}
-    </li>
-    <li>{address.field_mail}</li>
-    <li>{address.field_telephone}</li>
-  </ul>
-)
-
-export default AddressesTemplate
+export default AdressesTemplate
 
 export const query = graphql`
   query addressesListQuery($skip: Int!, $limit: Int!) {
