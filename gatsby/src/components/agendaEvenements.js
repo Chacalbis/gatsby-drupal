@@ -79,7 +79,7 @@ const AgendaEvenements = () => {
               alias
             }
             relationships {
-              field_taxonomie_evenement {
+              field_taxonomie_thematique {
                 name
               }
               field_image_event {
