@@ -28,4 +28,10 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_date_de_debut: true
+  field_date_de_fin: true
+  field_image_event: true
+  field_infos_complementaires: true
+  field_taxonomie_thematique: true
+  field_url_lieu: true
   langcode: true

@@ -1,12 +1,16 @@
 # AtolCD : Template Drupal 8
 
 ## .env
-You need to copy .env.dist content in .env
+You need to copy `.env.dist` content in `.env` file
+
+You'll have to generate a value for `DRUPAL_HASH_SALT` which will be use in settings.php.
+To do so, use the following command `openssl rand -base64 48`
+
 
 ## Import SQL dump
-Just copy the needed SQL dump from `sql` to `sql/import`
-All SQL will be imported at docker stack creation.
+Just copy the needed SQL dump from `sql` to `sql/import`, which will be imported at docker stack creation.
 * `0_fresh_installed_drupal.sql` => The freshest drupal database you could dream of (only user shortcuts were removed)
+* `1_dummy_content_created.sql` => Database state with content, menu links and terms created
 
 ## Docker & Docker Compose
 Install docker

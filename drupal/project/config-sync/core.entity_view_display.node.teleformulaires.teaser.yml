@@ -28,4 +28,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_lien_demarches_simplifiees: true
+  field_taxonomie_teleformulaire: true
+  field_taxonomie_zone_libre: true
   langcode: true

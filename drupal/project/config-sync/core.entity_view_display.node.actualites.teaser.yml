@@ -28,4 +28,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_image_actus: true
+  field_infos_complementaires: true
+  field_taxonomie_thematique: true
   langcode: true

@@ -28,4 +28,15 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_code_postal: true
+  field_complement_d_adresse: true
+  field_image_adresse: true
+  field_infos_complementaires: true
+  field_mail: true
+  field_numero: true
+  field_ordre_carnet_d_adresse: true
+  field_taxonomie_thematique: true
+  field_telephone: true
+  field_ville: true
+  field_voie: true
   langcode: true

@@ -1,148 +1,149 @@
 {
-    "name": "ternum/generateur-sites",
-    "version": "0.1.0",
-    "description": "TerNum générateur de sites avec Gatsby et Drupal",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Valentin Fayard",
-            "role": ""
-        }
-    ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },
-        {
-          "type": "vcs",
-          "url": "https://forge.ternum-bfc.fr/gitlab/atol-cd/drupal-contrib.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://forge.ternum-bfc.fr/gitlab/worldline/drupal-soclecms.git"
-        },
-        {
-            "type": "path",
-            "url": "project/modules/atolcd/*"
-        }
-    ],
-    "require": {
-        "ternum/drupal-soclecms": "*",
-        "drupal/console": "^1.9",
-        "drupal/ctools": "^3.2",
-        "drupal/devel": "^2.1",
-        "drupal/jsonapi_permission": "^1.0",
-        "drupal/pathauto": "^1.4",
-        "drupal/sitemap": "^1.5",
-        "drupal/token": "^1.5",
-        "drupal/weight": "^3.1",
-        "drupal/svg_image": "^1.9",
-        "drush/drush": "*",
-        "atolcd/openid_connect": "*",
-        "atolcd/direct_link_entity": "*",
-        "atolcd/simplenews": "*"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "vendor-dir": "html/vendor",
-        "sort-packages": true
-    },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "fix-right-on-site": "chmod u+w -R html/sites/default || true",
-        "pre-install-cmd": [
-            "TerNumGenerateur\\composer\\ScriptHandler::checkComposerVersion",
-            "@fix-right-on-site"
-        ],
-        "pre-update-cmd": [
-            "TerNumGenerateur\\composer\\ScriptHandler::checkComposerVersion",
-            "@fix-right-on-site"
-        ],
-        "post-install-cmd": [
-            "@drupal-scaffold",
-            "TerNumGenerateur\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "@drupal-scaffold",
-            "TerNumGenerateur\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
-    "extra": {
-        "composer-exit-on-patch-failure": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "patches": {
-            "drupal/core": {
-                "Fix json api": "https://www.drupal.org/files/issues/2019-11-22/class_instance_issue-2996114-85.patch"
-            }
-        },
-        "installer-paths": {
-            "html/core": [
-                "type:drupal-core"
-            ],
-            "html/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "html/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "html/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "html/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "html/drush/Commands/{$name}": [
-                "type:drupal-drush"
-            ],
-            "html/console/{$name}": [
-                "type:drupal-console-language"
-            ],
-            "html/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "html/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
-            ]
-        },
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "html/"
-            },
-            "includes": [
-                "index.php",
-                "sites/default/default.services.yml",
-                ".htaccess",
-                "robots.txt",
-                "update.php"
-            ],
-            "excludes": [
-                "sites/default/default.settings.php",
-                "sites/example.sites.php",
-                "sites/example.settings.local.php",
-                "sites/development.services.yml",
-                "web.config",
-                ".ht.router.php",
-                ".gitattributes",
-                ".eslintrc.json",
-                ".eslintignore",
-                ".editorconfig",
-                ".csslintrc"
-            ],
-            "initial": {
-            }
-        }
+  "name": "ternum/generateur-sites",
+  "version": "0.1.0",
+  "description": "TerNum générateur de sites avec Gatsby et Drupal",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Valentin Fayard",
+      "role": ""
     }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "vcs",
+      "url": "https://forge.ternum-bfc.fr/gitlab/atol-cd/drupal-contrib.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://forge.ternum-bfc.fr/gitlab/worldline/drupal-soclecms.git"
+    },
+    {
+      "type": "path",
+      "url": "project/modules/atolcd/*"
+    }
+  ],
+  "require": {
+    "ternum/drupal-soclecms": "*",
+    "drupal/console": "^1.9",
+    "drupal/ctools": "^3.2",
+    "drupal/devel": "^2.1",
+    "drupal/jsonapi_permission": "^1.0",
+    "drupal/pathauto": "^1.4",
+    "drupal/sitemap": "^1.5",
+    "drupal/token": "^1.5",
+    "drupal/weight": "^3.1",
+    "drupal/svg_image": "^1.9",
+    "drush/drush": "*",
+    "atolcd/openid_connect": "*",
+    "atolcd/direct_link_entity": "*",
+    "atolcd/simplenews": "*"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "vendor-dir": "html/vendor",
+    "sort-packages": true
+  },
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "fix-right-on-site": "chmod u+w -R html/sites/default || true",
+    "pre-install-cmd": [
+      "TerNumGenerateur\\composer\\ScriptHandler::checkComposerVersion",
+      "@fix-right-on-site"
+    ],
+    "pre-update-cmd": [
+      "TerNumGenerateur\\composer\\ScriptHandler::checkComposerVersion",
+      "@fix-right-on-site"
+    ],
+    "post-install-cmd": [
+      "@drupal-scaffold",
+      "TerNumGenerateur\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "@drupal-scaffold",
+      "TerNumGenerateur\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "extra": {
+    "composer-exit-on-patch-failure": true,
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "patches": {
+      "drupal/core": {
+        "Fix menu link view permissions": "https://www.drupal.org/files/issues/2018-03-19/menu_link_content-view-permissions-2915792-16.patch",
+        "Internal check ressource type of routes": "patchs/routes-internal-check.patch"
+      }
+    },
+    "installer-paths": {
+      "html/core": [
+        "type:drupal-core"
+      ],
+      "html/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "html/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "html/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "html/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "html/drush/Commands/{$name}": [
+        "type:drupal-drush"
+      ],
+      "html/console/{$name}": [
+        "type:drupal-console-language"
+      ],
+      "html/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "html/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
+      ]
+    },
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "html/"
+      },
+      "includes": [
+        "index.php",
+        "sites/default/default.services.yml",
+        ".htaccess",
+        "robots.txt",
+        "update.php"
+      ],
+      "excludes": [
+        "sites/default/default.settings.php",
+        "sites/example.sites.php",
+        "sites/example.settings.local.php",
+        "sites/development.services.yml",
+        "web.config",
+        ".ht.router.php",
+        ".gitattributes",
+        ".eslintrc.json",
+        ".eslintignore",
+        ".editorconfig",
+        ".csslintrc"
+      ],
+      "initial": {
+      }
+    }
+  }
 }
