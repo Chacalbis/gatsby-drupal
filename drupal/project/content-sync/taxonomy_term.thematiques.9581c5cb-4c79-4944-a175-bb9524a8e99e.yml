@@ -1,0 +1,50 @@
+uuid:
+  -
+    value: 9581c5cb-4c79-4944-a175-bb9524a8e99e
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: thematiques
+    target_type: taxonomy_vocabulary
+    target_uuid: 20863de4-11d4-4b69-9fe1-550193837914
+revision_created:
+  -
+    value: '2020-01-24T14:45:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: tourisme
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:45:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /tourisme
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

@@ -29,20 +29,21 @@
     }
   ],
   "require": {
-    "ternum/drupal-soclecms": "*",
+    "atolcd/direct_link_entity": "*",
+    "atolcd/openid_connect": "*",
+    "atolcd/simplenews": "*",
     "drupal/console": "^1.9",
+    "drupal/content_sync": "^2.1",
     "drupal/ctools": "^3.2",
     "drupal/devel": "^2.1",
     "drupal/jsonapi_permission": "^1.0",
     "drupal/pathauto": "^1.4",
     "drupal/sitemap": "^1.5",
+    "drupal/svg_image": "^1.9",
     "drupal/token": "^1.5",
     "drupal/weight": "^3.1",
-    "drupal/svg_image": "^1.9",
     "drush/drush": "*",
-    "atolcd/openid_connect": "*",
-    "atolcd/direct_link_entity": "*",
-    "atolcd/simplenews": "*"
+    "ternum/drupal-soclecms": "*"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -87,6 +88,9 @@
       "drupal/core": {
         "Fix menu link view permissions": "https://www.drupal.org/files/issues/2018-03-19/menu_link_content-view-permissions-2915792-16.patch",
         "Internal check ressource type of routes": "patchs/routes-internal-check.patch"
+      },
+      "drupal/content_sync": {
+        "3052772 - Entity manager implemented during import": "https://www.drupal.org/files/issues/2019-05-06/content_sync-entity_manager_refs.patch"
       }
     },
     "installer-paths": {

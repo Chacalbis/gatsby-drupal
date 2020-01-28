@@ -1,0 +1,87 @@
+uuid:
+  -
+    value: 906147ac-d1c7-4fb6-b693-b1d560d7c3c5
+langcode:
+  -
+    value: fr
+type:
+  -
+    target_id: actualites
+    target_type: node_type
+    target_uuid: e4e0a77d-a5a5-4004-9bbb-c2138f432273
+revision_timestamp:
+  -
+    value: '2020-01-24T14:57:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+title:
+  -
+    value: 'Exemple d''actualité'
+created:
+  -
+    value: '2020-01-24T14:55:10+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T14:57:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /exemple-dactualite
+body:
+  -
+    value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>\r\n"
+    format: basic_html
+    processed: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>'
+    summary: ''
+    summary_processed: ''
+field_image_actus:
+  -
+    alt: 'petite lune'
+    title: ''
+    width: 150
+    height: 100
+    target_type: file
+    target_uuid: 269e7103-fecd-4a66-82a4-53d6601ebca9
+field_infos_complementaires:
+  -
+    value: "<p>Etiam dui nisl, molestie nec sodales in, semper eget ipsum. Suspendisse id leo nec leo sagittis tempus. Donec tempus in lectus ut rhoncus. Nulla facilisi. Aenean tristique nisl nisl, at ultrices nisl laoreet convallis. Sed egestas ligula nec hendrerit semper. Quisque id tempus ante.</p>\r\n"
+    format: basic_html
+    processed: '<p>Etiam dui nisl, molestie nec sodales in, semper eget ipsum. Suspendisse id leo nec leo sagittis tempus. Donec tempus in lectus ut rhoncus. Nulla facilisi. Aenean tristique nisl nisl, at ultrices nisl laoreet convallis. Sed egestas ligula nec hendrerit semper. Quisque id tempus ante.</p>'
+field_taxonomie_thematique:
+  -
+    target_type: taxonomy_term
+    target_uuid: fe5260b1-659f-433c-8078-be9377cb63f5
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+    file:
+      - file.file.269e7103-fecd-4a66-82a4-53d6601ebca9
+    taxonomy_term:
+      - taxonomy_term.thematiques.fe5260b1-659f-433c-8078-be9377cb63f5

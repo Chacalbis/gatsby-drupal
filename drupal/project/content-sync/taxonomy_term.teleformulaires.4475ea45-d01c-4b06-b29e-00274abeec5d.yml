@@ -1,0 +1,50 @@
+uuid:
+  -
+    value: 4475ea45-d01c-4b06-b29e-00274abeec5d
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: teleformulaires
+    target_type: taxonomy_vocabulary
+    target_uuid: 49eba5b7-0642-447c-943a-92018cfae3ee
+revision_created:
+  -
+    value: '2020-01-24T14:47:28+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: autorisation
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:47:28+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /autorisation
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

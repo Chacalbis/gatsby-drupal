@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: b216e302-4b05-403d-ba1d-bfd61ae78935
+langcode:
+  -
+    value: fr
+bundle:
+  -
+    value: menu_link_content
+revision_created:
+  -
+    value: '2020-01-27T12:42:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+enabled:
+  -
+    value: true
+title:
+  -
+    value: 'Social / Santé'
+description: {  }
+menu_name:
+  -
+    value: main
+link:
+  -
+    uri: 'internal:/social-sante'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: -44
+expanded:
+  -
+    value: false
+parent: {  }
+changed:
+  -
+    value: '2020-01-27T12:51:37+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content

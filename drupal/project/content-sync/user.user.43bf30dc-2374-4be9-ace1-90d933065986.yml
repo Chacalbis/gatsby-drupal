@@ -1,0 +1,56 @@
+uuid:
+  -
+    value: 43bf30dc-2374-4be9-ace1-90d933065986
+langcode:
+  -
+    value: fr
+preferred_langcode:
+  -
+    value: fr
+preferred_admin_langcode: {  }
+name:
+  -
+    value: admin
+mail:
+  value: cms@atolcd.com
+timezone:
+  -
+    value: Europe/Paris
+status:
+  value: '1'
+created:
+  -
+    value: '2020-01-24T11:46:39+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T12:22:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+access:
+  -
+    value: '2020-01-28T10:39:57+00:00'
+    format: 'Y-m-d\TH:i:sP'
+login:
+  -
+    value: '2020-01-28T09:03:38+00:00'
+    format: 'Y-m-d\TH:i:sP'
+init:
+  -
+    value: cms@atolcd.com
+roles:
+  - authenticated
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: fr
+user_picture: {  }
+_content_sync:
+  entity_type: user
+pass:
+  -
+    value: $S$E35nQ2b79GB5POTcLGkrAZp5Ajt/xIV620qpU4aQRAeToZ5jb3en
+    pre_hashed: true

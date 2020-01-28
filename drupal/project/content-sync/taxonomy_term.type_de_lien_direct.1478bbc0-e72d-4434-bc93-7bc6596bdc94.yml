@@ -1,0 +1,51 @@
+uuid:
+  -
+    value: 1478bbc0-e72d-4434-bc93-7bc6596bdc94
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: type_de_lien_direct
+    target_type: taxonomy_vocabulary
+    target_uuid: 5d8ffa83-269c-48d2-ad3e-f7f0876fcb92
+revision_created:
+  -
+    value: '2020-01-24T14:44:05+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: acces_direct
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:44:05+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /acces-direct
+field_label: {  }
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

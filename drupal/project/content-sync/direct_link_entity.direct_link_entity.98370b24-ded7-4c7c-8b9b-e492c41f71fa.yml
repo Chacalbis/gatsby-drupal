@@ -1,0 +1,48 @@
+uuid:
+  -
+    value: 98370b24-ded7-4c7c-8b9b-e492c41f71fa
+langcode:
+  -
+    value: fr
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Exemple de lien direct'
+url:
+  -
+    value: 'https://atolcd.com'
+image_direct_link:
+  -
+    alt: 'Atol CD logo'
+    title: ''
+    width: 100
+    height: 95
+    target_type: file
+    target_uuid: 6b3e60d7-4624-4abf-a580-6ac97e9b4bad
+highlight:
+  -
+    value: true
+direct_link_type:
+  -
+    target_type: taxonomy_term
+    target_uuid: 1478bbc0-e72d-4434-bc93-7bc6596bdc94
+created:
+  -
+    value: '2020-01-24T14:44:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T14:54:51+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: direct_link_entity
+  entity_dependencies:
+    file:
+      - file.file.6b3e60d7-4624-4abf-a580-6ac97e9b4bad
+    taxonomy_term:
+      - taxonomy_term.type_de_lien_direct.1478bbc0-e72d-4434-bc93-7bc6596bdc94

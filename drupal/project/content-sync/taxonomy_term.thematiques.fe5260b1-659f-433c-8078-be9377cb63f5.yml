@@ -1,0 +1,50 @@
+uuid:
+  -
+    value: fe5260b1-659f-433c-8078-be9377cb63f5
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: thematiques
+    target_type: taxonomy_vocabulary
+    target_uuid: 20863de4-11d4-4b69-9fe1-550193837914
+revision_created:
+  -
+    value: '2020-01-24T14:45:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: ceremonie
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:45:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /ceremonie
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

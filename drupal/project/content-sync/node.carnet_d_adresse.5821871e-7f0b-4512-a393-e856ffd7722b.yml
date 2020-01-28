@@ -1,0 +1,111 @@
+uuid:
+  -
+    value: 5821871e-7f0b-4512-a393-e856ffd7722b
+langcode:
+  -
+    value: fr
+type:
+  -
+    target_id: carnet_d_adresse
+    target_type: node_type
+    target_uuid: d9ef3eee-e732-4b20-82d7-a00e7c2a295a
+revision_timestamp:
+  -
+    value: '2020-01-27T12:35:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+title:
+  -
+    value: 'Exemple d''adresse'
+created:
+  -
+    value: '2020-01-24T15:00:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-27T12:35:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /exemple-dadresse
+body:
+  -
+    value: "<p>Mairie de Gevrey-Chambertin</p>\r\n"
+    format: basic_html
+    processed: '<p>Mairie de Gevrey-Chambertin</p>'
+    summary: ''
+    summary_processed: ''
+field_code_postal:
+  -
+    value: 21220
+field_complement_d_adresse:
+  -
+    value: 'complément d''adresse'
+field_image_adresse:
+  -
+    alt: 'petite lune'
+    title: ''
+    width: 150
+    height: 100
+    target_type: file
+    target_uuid: bbc3084b-7c63-42cf-b167-238fe591fdbc
+field_infos_complementaires:
+  -
+    value: "<p>Etiam dui nisl, molestie nec sodales in, semper eget ipsum. Suspendisse id leo nec leo sagittis tempus. Donec tempus in lectus ut rhoncus. Nulla facilisi. Aenean tristique nisl nisl, at ultrices nisl laoreet convallis. Sed egestas ligula nec hendrerit semper. Quisque id tempus ante.</p>\r\n"
+    format: basic_html
+    processed: '<p>Etiam dui nisl, molestie nec sodales in, semper eget ipsum. Suspendisse id leo nec leo sagittis tempus. Donec tempus in lectus ut rhoncus. Nulla facilisi. Aenean tristique nisl nisl, at ultrices nisl laoreet convallis. Sed egestas ligula nec hendrerit semper. Quisque id tempus ante.</p>'
+field_mail:
+  -
+    value: mairie@exemple.com
+field_numero:
+  -
+    value: 2
+field_ordre_carnet_d_adresse:
+  -
+    value: 0
+field_taxonomie_thematique:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9581c5cb-4c79-4944-a175-bb9524a8e99e
+field_telephone:
+  -
+    value: '0102030405'
+field_ville:
+  -
+    value: Gevrey-Chambertin
+field_voie:
+  -
+    value: 'Rue Souvert'
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+    file:
+      - file.file.bbc3084b-7c63-42cf-b167-238fe591fdbc
+    taxonomy_term:
+      - taxonomy_term.thematiques.9581c5cb-4c79-4944-a175-bb9524a8e99e

@@ -1,0 +1,50 @@
+uuid:
+  -
+    value: cb58f344-010c-42f9-881a-d0b4918fce32
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: teleformulaires
+    target_type: taxonomy_vocabulary
+    target_uuid: 49eba5b7-0642-447c-943a-92018cfae3ee
+revision_created:
+  -
+    value: '2020-01-24T14:47:21+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: attestation
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:47:21+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /attestation
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

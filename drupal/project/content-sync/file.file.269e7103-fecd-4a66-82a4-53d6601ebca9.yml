@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 269e7103-fecd-4a66-82a4-53d6601ebca9
+langcode:
+  -
+    value: fr
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+filename:
+  -
+    value: lune-150px_0.jpg
+uri:
+  -
+    value: 'public://2020-01/lune-150px_0.jpg'
+    url: /sites/default/files/2020-01/lune-150px_0.jpg
+filemime:
+  -
+    value: image/jpeg
+filesize:
+  -
+    value: 24920
+status:
+  -
+    value: true
+created:
+  -
+    value: '2020-01-24T14:56:34+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T14:57:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986

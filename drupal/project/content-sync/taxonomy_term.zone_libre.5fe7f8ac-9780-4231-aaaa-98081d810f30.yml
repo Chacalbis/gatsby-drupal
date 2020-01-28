@@ -1,0 +1,50 @@
+uuid:
+  -
+    value: 5fe7f8ac-9780-4231-aaaa-98081d810f30
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: zone_libre
+    target_type: taxonomy_vocabulary
+    target_uuid: 97c4034d-98f6-4620-bc54-a9eed6b7429d
+revision_created:
+  -
+    value: '2020-01-24T14:48:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: zone_accueil_3
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:48:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /zone-accueil-3
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

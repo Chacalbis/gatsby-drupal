@@ -2,6 +2,8 @@
 // Project configuration
 
 $config_directories = [];
+global $content_directories;
+$content_directories['sync'] = 'content-sync';
 
 $settings['hash_salt'] = getenv('DRUPAL_HASH_SALT');
 

@@ -37,14 +37,19 @@ class ScriptHandler {
 
     // Create symbolic link
     if (!$fs->exists($drupalRoot . "/config-sync")) {
-      $fs->symlink(Path::makeRelative($projectRoot . "/project/config-sync", $drupalRoot), $drupalRoot . "/config-sync");
+      $fs->symlink(Path::makeRelative($projectRoot . "/project/config-sync",
+        $drupalRoot), $drupalRoot . "/config-sync");
+    }
+    if (!$fs->exists($drupalRoot . "/content-sync")) {
+      $fs->symlink(Path::makeRelative($projectRoot . "/project/content-sync",
+        $drupalRoot), $drupalRoot . "/content-sync");
     }
 
     // Copy project settings on default one
     $fs->copy($projectRoot . "/project/conf/settings.php",
       $drupalRoot . '/sites/default/default.settings.php', TRUE);
     $event->getIO()
-      ->write("Created a sites/default/default.settings.php without project content");
+          ->write("Created a sites/default/default.settings.php without project content");
 
     // Prepare the settings file for installation
     $fs->copy($drupalRoot . '/sites/default/default.settings.php',
@@ -52,7 +57,7 @@ class ScriptHandler {
 
     $fs->chmod($drupalRoot . '/sites/default/settings.php', 0644);
     $event->getIO()
-      ->write("Created a sites/default/settings.php file with chmod 0644");
+          ->write("Created a sites/default/settings.php file with chmod 0644");
 
     // Create the files directory with chmod 0777
     if (!$fs->exists($drupalRoot . '/sites/default/files')) {
@@ -60,7 +65,7 @@ class ScriptHandler {
       $fs->mkdir($drupalRoot . '/sites/default/files', 0777);
       umask($oldmask);
       $event->getIO()
-        ->write("Created a sites/default/files directory with chmod 0777");
+            ->write("Created a sites/default/files directory with chmod 0777");
     }
 
     // Manage config sync dir by environment
@@ -74,8 +79,10 @@ class ScriptHandler {
         $fs->mkdir($drupalRoot . '/' . $oneConfigSync);
       }
 
-      $fs->mirror($projectRoot . '/project/config-sync', $drupalRoot . '/' . $oneConfigSync, NULL, ['delete' => TRUE]);
-      $fs->mirror($projectRoot . '/project/' . $oneConfigSync, $drupalRoot . '/' . $oneConfigSync,NULL, ['override' => TRUE]);
+      $fs->mirror($projectRoot . '/project/config-sync',
+        $drupalRoot . '/' . $oneConfigSync, NULL, ['delete' => TRUE]);
+      $fs->mirror($projectRoot . '/project/' . $oneConfigSync,
+        $drupalRoot . '/' . $oneConfigSync, NULL, ['override' => TRUE]);
     }
   }
 

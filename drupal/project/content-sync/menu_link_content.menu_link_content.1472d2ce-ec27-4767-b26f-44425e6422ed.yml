@@ -1,0 +1,63 @@
+uuid:
+  -
+    value: 1472d2ce-ec27-4767-b26f-44425e6422ed
+langcode:
+  -
+    value: fr
+bundle:
+  -
+    value: menu_link_content
+revision_created:
+  -
+    value: '2020-01-27T12:46:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+enabled:
+  -
+    value: true
+title:
+  -
+    value: 'Libellé du sous menu'
+description: {  }
+menu_name:
+  -
+    value: main
+link:
+  -
+    uri: 'internal:/sous-menu-4'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: 0
+expanded:
+  -
+    value: false
+parent:
+  -
+    value: 'menu_link_content:84e7ba78-5141-489b-b0a7-56b66bf739fb'
+  -
+    target_type: menu_link_content
+    target_uuid: 84e7ba78-5141-489b-b0a7-56b66bf739fb
+changed:
+  -
+    value: '2020-01-27T12:46:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content
+  entity_dependencies:
+    menu_link_content:
+      - menu_link_content.menu_link_content.84e7ba78-5141-489b-b0a7-56b66bf739fb

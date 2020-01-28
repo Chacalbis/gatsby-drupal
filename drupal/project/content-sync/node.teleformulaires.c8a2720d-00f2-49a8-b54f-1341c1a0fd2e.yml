@@ -1,0 +1,110 @@
+uuid:
+  -
+    value: c8a2720d-00f2-49a8-b54f-1341c1a0fd2e
+langcode:
+  -
+    value: fr
+type:
+  -
+    target_id: teleformulaires
+    target_type: node_type
+    target_uuid: c7bb2733-8849-417b-8a96-0d510f650c53
+revision_timestamp:
+  -
+    value: '2020-01-24T15:12:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+title:
+  -
+    value: 'Exemple de téléformulaire'
+created:
+  -
+    value: '2020-01-24T15:10:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T15:12:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /exemple-de-teleformulaire
+body:
+  -
+    value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>\r\n"
+    format: basic_html
+    processed: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>'
+    summary: ''
+    summary_processed: ''
+field_lien_demarches_simplifiees:
+  -
+    uri: 'https://www.demarches-simplifiees.fr/commencer/cert-pc-epe-44-renseignements-europe'
+    title: 'Demande de renseignement concernant votre dossier d''échange de permis issu d''un pays européen'
+    options: {  }
+  -
+    uri: 'https://www.demarches-simplifiees.fr/commencer/cert-pc-epe-44-renseignements-hors-europe'
+    title: 'Demande de renseignements concernant votre dossier d''échange de permis non-européen'
+    options: {  }
+  -
+    uri: 'https://www.demarches-simplifiees.fr/commencer/cert-pc-epe-44-changement-d-adresse'
+    title: 'Déclaration de changement d''adresse pour votre dossier en cours'
+    options: {  }
+field_taxonomie_teleformulaire:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4475ea45-d01c-4b06-b29e-00274abeec5d
+  -
+    target_type: taxonomy_term
+    target_uuid: 9f6ce6ed-af1a-4bfe-b4be-2bbb78a41670
+  -
+    target_type: taxonomy_term
+    target_uuid: 7082dcb6-e42e-4821-bc29-b7728feac5eb
+  -
+    target_type: taxonomy_term
+    target_uuid: 658c4cfe-22b2-433f-8e40-3c35d510d691
+  -
+    target_type: taxonomy_term
+    target_uuid: 53255a2e-26b4-464a-8867-a2ae5dae7d66
+  -
+    target_type: taxonomy_term
+    target_uuid: f2a307d5-7764-4335-b8cf-336f60f20d85
+field_taxonomie_zone_libre:
+  -
+    target_type: taxonomy_term
+    target_uuid: d0c06cac-6108-44fb-9f94-f5d8513037a1
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+    taxonomy_term:
+      - taxonomy_term.teleformulaires.4475ea45-d01c-4b06-b29e-00274abeec5d
+      - taxonomy_term.teleformulaires.9f6ce6ed-af1a-4bfe-b4be-2bbb78a41670
+      - taxonomy_term.teleformulaires.7082dcb6-e42e-4821-bc29-b7728feac5eb
+      - taxonomy_term.teleformulaires.658c4cfe-22b2-433f-8e40-3c35d510d691
+      - taxonomy_term.teleformulaires.53255a2e-26b4-464a-8867-a2ae5dae7d66
+      - taxonomy_term.teleformulaires.f2a307d5-7764-4335-b8cf-336f60f20d85
+      - taxonomy_term.zone_libre.d0c06cac-6108-44fb-9f94-f5d8513037a1

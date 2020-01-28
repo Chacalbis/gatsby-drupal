@@ -1,0 +1,50 @@
+uuid:
+  -
+    value: 1f247068-d8ca-4d0e-9cb0-8ee8675a6563
+langcode:
+  -
+    value: fr
+vid:
+  -
+    target_id: zone_libre
+    target_type: taxonomy_vocabulary
+    target_uuid: 97c4034d-98f6-4620-bc54-a9eed6b7429d
+revision_created:
+  -
+    value: '2020-01-24T14:51:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+status:
+  -
+    value: true
+name:
+  -
+    value: zone_a_ne_pas_manquer_bas
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2020-01-24T14:51:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /zone-a-ne-pas-manquer-bas
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

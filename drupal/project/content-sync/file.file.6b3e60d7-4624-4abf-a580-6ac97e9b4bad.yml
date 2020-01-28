@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 6b3e60d7-4624-4abf-a580-6ac97e9b4bad
+langcode:
+  -
+    value: fr
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+filename:
+  -
+    value: atolcd-min_0.png
+uri:
+  -
+    value: 'public://direct-links/atolcd-min_0.png'
+    url: /sites/default/files/direct-links/atolcd-min_0.png
+filemime:
+  -
+    value: image/png
+filesize:
+  -
+    value: 8484
+status:
+  -
+    value: true
+created:
+  -
+    value: '2020-01-24T14:44:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T14:44:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+_content_sync:
+  entity_type: file
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986

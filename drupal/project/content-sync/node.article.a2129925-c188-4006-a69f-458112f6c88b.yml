@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: a2129925-c188-4006-a69f-458112f6c88b
+langcode:
+  -
+    value: fr
+type:
+  -
+    target_id: article
+    target_type: node_type
+    target_uuid: c0d5952a-c920-4a97-b391-fd38fb394178
+revision_timestamp:
+  -
+    value: '2020-01-24T14:58:17+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+title:
+  -
+    value: 'Exemple d''article'
+created:
+  -
+    value: '2020-01-24T14:57:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T14:58:17+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: true
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /exemple-darticle
+body:
+  -
+    value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>\r\n\r\n<p>Etiam dui nisl, molestie nec sodales in, semper eget ipsum. Suspendisse id leo nec leo sagittis tempus. Donec tempus in lectus ut rhoncus. Nulla facilisi. Aenean tristique nisl nisl, at ultrices nisl laoreet convallis. Sed egestas ligula nec hendrerit semper. Quisque id tempus ante.</p>\r\n\r\n<p>Integer maximus imperdiet ligula rutrum eleifend. Duis pretium magna sit amet ante vestibulum, eget ultrices arcu ultricies. Curabitur pellentesque orci a lectus pretium, vel maximus tortor tincidunt. Etiam aliquet, sapien ac consectetur maximus, urna arcu placerat nulla, quis consectetur dui erat ultrices ipsum. Quisque viverra venenatis nulla, a placerat augue lobortis quis. Curabitur non augue sit amet justo venenatis volutpat ut congue nibh. Maecenas ut arcu eget eros ornare euismod vitae vitae eros. Nullam quam dui, pharetra quis lorem nec, condimentum gravida nibh. Donec vel congue nisl. Donec mollis placerat odio in ultrices. Cras erat nisl, bibendum tincidunt imperdiet at, ultrices ac ex. Donec eu orci quis metus porta mattis et vel libero. Fusce pellentesque mi sed hendrerit sagittis. Maecenas elementum et nulla in accumsan. Praesent semper hendrerit eros in lacinia. Donec a arcu quis leo iaculis pharetra.</p>\r\n\r\n<p>Phasellus luctus vel augue eu pulvinar. Cras vestibulum a est ac bibendum. Nulla sit amet magna ut nulla maximus commodo. Sed blandit odio id ante vehicula fringilla. Aenean ante nisi, porta sit amet orci vel, tristique auctor ipsum. Praesent euismod nisl non nibh eleifend, et malesuada leo scelerisque. Vivamus volutpat dui non ante iaculis, sed commodo lacus fringilla.</p>\r\n\r\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis felis in nunc lacinia egestas at sed ante. Maecenas tempus, libero eu vulputate euismod, nibh nulla dignissim ante, at mollis tortor ligula quis nibh. Cras maximus blandit turpis ut placerat. Pellentesque at ornare metus, a commodo odio. Ut condimentum euismod odio sit amet ullamcorper. Nullam suscipit facilisis porta.</p>\r\n"
+    format: basic_html
+    processed: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>\n\n<p>Etiam dui nisl, molestie nec sodales in, semper eget ipsum. Suspendisse id leo nec leo sagittis tempus. Donec tempus in lectus ut rhoncus. Nulla facilisi. Aenean tristique nisl nisl, at ultrices nisl laoreet convallis. Sed egestas ligula nec hendrerit semper. Quisque id tempus ante.</p>\n\n<p>Integer maximus imperdiet ligula rutrum eleifend. Duis pretium magna sit amet ante vestibulum, eget ultrices arcu ultricies. Curabitur pellentesque orci a lectus pretium, vel maximus tortor tincidunt. Etiam aliquet, sapien ac consectetur maximus, urna arcu placerat nulla, quis consectetur dui erat ultrices ipsum. Quisque viverra venenatis nulla, a placerat augue lobortis quis. Curabitur non augue sit amet justo venenatis volutpat ut congue nibh. Maecenas ut arcu eget eros ornare euismod vitae vitae eros. Nullam quam dui, pharetra quis lorem nec, condimentum gravida nibh. Donec vel congue nisl. Donec mollis placerat odio in ultrices. Cras erat nisl, bibendum tincidunt imperdiet at, ultrices ac ex. Donec eu orci quis metus porta mattis et vel libero. Fusce pellentesque mi sed hendrerit sagittis. Maecenas elementum et nulla in accumsan. Praesent semper hendrerit eros in lacinia. Donec a arcu quis leo iaculis pharetra.</p>\n\n<p>Phasellus luctus vel augue eu pulvinar. Cras vestibulum a est ac bibendum. Nulla sit amet magna ut nulla maximus commodo. Sed blandit odio id ante vehicula fringilla. Aenean ante nisi, porta sit amet orci vel, tristique auctor ipsum. Praesent euismod nisl non nibh eleifend, et malesuada leo scelerisque. Vivamus volutpat dui non ante iaculis, sed commodo lacus fringilla.</p>\n\n<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quis felis in nunc lacinia egestas at sed ante. Maecenas tempus, libero eu vulputate euismod, nibh nulla dignissim ante, at mollis tortor ligula quis nibh. Cras maximus blandit turpis ut placerat. Pellentesque at ornare metus, a commodo odio. Ut condimentum euismod odio sit amet ullamcorper. Nullam suscipit facilisis porta.</p>"
+    summary: ''
+    summary_processed: ''
+comment:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 1579877897
+    last_comment_name: null
+    last_comment_uid: 1
+    comment_count: 0
+field_tags: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986

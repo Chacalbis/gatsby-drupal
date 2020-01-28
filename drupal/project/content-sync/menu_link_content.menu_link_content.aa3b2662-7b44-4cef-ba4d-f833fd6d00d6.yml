@@ -1,0 +1,63 @@
+uuid:
+  -
+    value: aa3b2662-7b44-4cef-ba4d-f833fd6d00d6
+langcode:
+  -
+    value: fr
+bundle:
+  -
+    value: menu_link_content
+revision_created:
+  -
+    value: '2020-01-27T12:46:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_user: {  }
+revision_log_message: {  }
+enabled:
+  -
+    value: true
+title:
+  -
+    value: 'Libellé de la page'
+description: {  }
+menu_name:
+  -
+    value: main
+link:
+  -
+    uri: 'internal:/page-1'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: 0
+expanded:
+  -
+    value: false
+parent:
+  -
+    value: 'menu_link_content:1472d2ce-ec27-4767-b26f-44425e6422ed'
+  -
+    target_type: menu_link_content
+    target_uuid: 1472d2ce-ec27-4767-b26f-44425e6422ed
+changed:
+  -
+    value: '2020-01-27T12:46:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content
+  entity_dependencies:
+    menu_link_content:
+      - menu_link_content.menu_link_content.1472d2ce-ec27-4767-b26f-44425e6422ed

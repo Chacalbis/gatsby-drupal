@@ -1,0 +1,72 @@
+uuid:
+  -
+    value: 14eeabb2-9235-4171-91f5-d306c795a17d
+langcode:
+  -
+    value: fr
+type:
+  -
+    target_id: contenu_libre
+    target_type: node_type
+    target_uuid: 71b3a2a6-e0f9-4a65-83e7-2a4955dc7845
+revision_timestamp:
+  -
+    value: '2020-01-24T15:04:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+revision_log: {  }
+status:
+  -
+    value: true
+uid:
+  -
+    target_type: user
+    target_uuid: 43bf30dc-2374-4be9-ace1-90d933065986
+title:
+  -
+    value: 'Exemple de contenu libre'
+created:
+  -
+    value: '2020-01-24T15:03:04+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2020-01-24T15:04:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+path:
+  -
+    alias: /exemple-de-contenu-libre
+body:
+  -
+    value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>\r\n"
+    format: basic_html
+    processed: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, diam id gravida mattis, elit dui tempor risus, ut vestibulum eros sem a urna. Aliquam dapibus ornare molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ultrices justo condimentum, tincidunt erat maximus, imperdiet orci. Sed a justo facilisis, pretium velit in, eleifend sapien. Vestibulum cursus molestie quam, vitae faucibus purus accumsan nec. In lectus eros, volutpat eget fringilla quis, scelerisque eu neque. Donec accumsan dolor quis ante consectetur, id semper urna semper. Suspendisse vulputate turpis eu nunc luctus, sit amet facilisis enim mattis. Nulla tincidunt non velit eget fringilla. Aenean et sodales felis. Nunc et eros a lacus scelerisque mollis. Vestibulum ullamcorper ligula vitae ipsum convallis elementum. Sed euismod elit ut metus rhoncus, sit amet consequat odio tincidunt.</p>'
+    summary: ''
+    summary_processed: ''
+field_taxonomie_zone_libre:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4a748269-5626-4c02-8c1f-47a015b18689
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+      - user.user.43bf30dc-2374-4be9-ace1-90d933065986
+    taxonomy_term:
+      - taxonomy_term.zone_libre.4a748269-5626-4c02-8c1f-47a015b18689
