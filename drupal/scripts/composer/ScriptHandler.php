@@ -45,6 +45,7 @@ class ScriptHandler {
         $drupalRoot), $drupalRoot . "/content-sync");
     }
 
+
     // Copy project settings on default one
     $fs->copy($projectRoot . "/project/conf/settings.php",
       $drupalRoot . '/sites/default/default.settings.php', TRUE);
@@ -84,7 +85,11 @@ class ScriptHandler {
       $fs->mirror($projectRoot . '/project/' . $oneConfigSync,
         $drupalRoot . '/' . $oneConfigSync, NULL, ['override' => TRUE]);
     }
+    // Mirrors files-sync folder (default images used in content) to sites/default/files folder in order to be used by gatsby-source-filesystem plugin
+    $fs->mirror($projectRoot . '/project/files-sync',
+      $drupalRoot . '/sites/default/files');
   }
+
 
   /**
    * Checks if the installed version of Composer is compatible.
