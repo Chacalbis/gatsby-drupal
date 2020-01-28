@@ -36,3 +36,5 @@ You can dump your drupal database : `./pg2docker dump`
 ## Default Admin user
 User: `admin`
 Password: `bw8l$D1x989nHTcQ`
+
+To set password for any user, you can use `drupal user:password:reset` command
