@@ -3,94 +3,84 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Pagination from "../../components/pagination/pagination"
 import NonStretchedImage from "../../components/non-stretched-image"
+import ContenuLibre from "../../components/contenuLibre"
+import {
+  nePasManquerContainer,
+  nePasManquerWrapper,
+  nePasManquerItem,
+  nePasManquerItemDescription,
+  nePasManquerItemImg,
+  zoneAnePasManquerLibreBas,
+  zoneAnePasManquerLibreHaut,
+} from "../../styles/listingNePasManquer.module.scss"
 
-const PagesTemplate = ({ data, pageContext }) => {
+const NePasManquer = ({ nePasManquer }) => (
+  <Link to={nePasManquer.path.alias}>
+    <figure className={nePasManquerItem}>
+      <NonStretchedImage
+        className={nePasManquerItemImg}
+        {...nePasManquer.relationships.field_image_page_de_base.localFile
+          .childImageSharp}
+      />
+      <figcaption className={nePasManquerItemDescription}>
+        {nePasManquer.title}
+      </figcaption>
+    </figure>
+  </Link>
+)
+
+const RenderNePasManquer = ({ nePasManquerData }) => {
+  return nePasManquerData.allNodePage.edges.map(({ node }) => {
+    return <NePasManquer nePasManquer={node} />
+  })
+}
+
+const NePasManquerTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages, baseLink } = pageContext
   return (
     <Layout>
-      <div>
-        <h5>
-          Page {currentPage} sur {numPages}
-        </h5>
-      </div>
-      <div>
-        {data.allNodePage.edges.map(({ node }) => {
-          return (
-            <div>
-              <PageHeader page={node} />
-              <PageContent page={node} />
-            </div>
-          )
-        })}
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        numPages={numPages}
-        contextPage={baseLink}
-      />
+      <section className={zoneAnePasManquerLibreHaut}>
+        <ContenuLibre zoneTaxoLibre="zone_a_ne_pas_manquer_haut" />
+      </section>
+      <section className={nePasManquerWrapper}>
+        <div className={nePasManquerContainer}>
+          <RenderNePasManquer nePasManquerData={data} />
+        </div>
+        <Pagination
+          currentPage={currentPage}
+          numPages={numPages}
+          contextPage={baseLink}
+        />
+      </section>
+      <section className={zoneAnePasManquerLibreBas}>
+        <ContenuLibre zoneTaxoLibre="zone_a_ne_pas_manquer_bas" />
+      </section>
     </Layout>
   )
 }
 
-const PageHeader = ({ page }) => (
-  <h2>
-    <Link
-      to={page.path.alias}
-      dangerouslySetInnerHTML={{ __html: page.title }}
-    />
-  </h2>
-)
-
-const PageContent = ({ page }) => (
-  <div>
-    <div dangerouslySetInnerHTML={{ __html: page.body?.processed }} />
-    {page.relationships?.field_image_page_de_base?.localFile?.childImageSharp
-      ?.fluid && (
-      <NonStretchedImage
-        {...page.relationships.field_image_page_de_base.localFile
-          .childImageSharp}
-      />
-    )}
-  </div>
-)
-
-export default PagesTemplate
+export default NePasManquerTemplate
 
 export const query = graphql`
-  query pagesListQuery($skip: Int!, $limit: Int!) {
+  query NePasManquerListQuery($skip: Int!, $limit: Int!) {
     allNodePage(
-      sort: { fields: created }
+      filter: { field_mise_en_avant: { eq: true } }
+      sort: { fields: field_ordre, order: DESC }
       limit: $limit
       skip: $skip
-      filter: { field_mise_en_avant: { eq: true } }
     ) {
       edges {
         node {
           title
-          body {
-            processed
-            summary
-          }
           path {
             alias
-          }
-          field_mise_en_avant
-          field_ordre
-          field_infos_complementaires {
-            processed
-          }
-          field_image_page_de_base {
-            alt
           }
           relationships {
             field_image_page_de_base {
               localFile {
                 childImageSharp {
-                  fluid(quality: 100) {
-                    src
-                    presentationWidth
-                    presentationHeight
-                    aspectRatio
+                  fluid {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
