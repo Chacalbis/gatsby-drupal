@@ -3,39 +3,23 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import Pagination from "../../components/pagination/pagination"
 import NonStretchedImage from "../../components/non-stretched-image"
+import ContenuLibre from "../../components/contenuLibre"
+import SummaryTransformer from "../../components/summary-transformer"
 import {
+  zoneActualitesLibreBas,
+  zoneActualitesLibreHaut,
+  listActualitesContainer,
+  actualiteDate,
+  actuItem,
   actualiteInfos,
   actualiteImg,
   actualiteCategorie,
   actualiteTitle,
   actualiteResume,
-} from "../../styles/listActualites.module.scss"
-
-const ActualitesTemplate = ({ data, pageContext }) => {
-  const { currentPage, numPages, baseLink } = pageContext
-  return (
-    <Layout>
-      <div>
-        <h5>
-          Page {currentPage} sur {numPages}
-        </h5>
-      </div>
-      <div>
-        {data.allNodeActualites.edges.map(({ node }) => {
-          return <Actu actu={node} />
-        })}
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        numPages={numPages}
-        contextPage={baseLink}
-      />
-    </Layout>
-  )
-}
+} from "../../styles/listActus.module.scss"
 
 const Actu = ({ actu }) => (
-  <div>
+  <>
     {actu.relationships.field_image_actus?.localFile?.childImageSharp
       ?.fluid && (
       <Link to={actu.path.alias}>
@@ -46,16 +30,61 @@ const Actu = ({ actu }) => (
       </Link>
     )}
     <div className={actualiteInfos}>
-      <span className={actualiteCategorie}>
-        <p>{actu.relationships.field_taxonomie_thematique[0]?.name}</p>
-      </span>
-      <h3 className={actualiteTitle}>
+      {actu.relationships.field_taxonomie_thematique && (
+        <div className={actualiteCategorie}>
+          {actu.relationships.field_taxonomie_thematique[0].name}
+        </div>
+      )}
+      <div className={actualiteDate}>posté le {actu.created}</div>
+      <div className={actualiteTitle}>
         <Link to={actu.path.alias}>{actu.title}</Link>
-      </h3>
-      <p className={actualiteResume}>{actu.body?.summary}</p>
+      </div>
+      {actu.body && (
+        <div
+          className={actualiteResume}
+          dangerouslySetInnerHTML={{
+            __html: SummaryTransformer(actu.body, 200),
+          }}
+        />
+      )}
     </div>
-  </div>
+  </>
 )
+
+const RenderActualites = ({ actualiteData }) => {
+  const actus = actualiteData.allNodeActualites.edges
+  return (
+    <>
+      {actus.map(({ node }) => (
+        <div className={actuItem}>
+          <Actu actu={node} />
+        </div>
+      ))}
+    </>
+  )
+}
+
+const ActualitesTemplate = ({ data, pageContext }) => {
+  const { currentPage, numPages, baseLink } = pageContext
+  return (
+    <Layout>
+      <section className={zoneActualitesLibreHaut}>
+        <ContenuLibre zoneTaxoLibre="zone_actualites_haut" />
+      </section>
+      <section className={listActualitesContainer}>
+        <RenderActualites actualiteData={data} />
+        <Pagination
+          currentPage={currentPage}
+          numPages={numPages}
+          contextPage={baseLink}
+        />
+      </section>
+      <section className={zoneActualitesLibreBas}>
+        <ContenuLibre zoneTaxoLibre="zone_actualites_bas" />
+      </section>
+    </Layout>
+  )
+}
 
 export default ActualitesTemplate
 
@@ -65,6 +94,7 @@ export const query = graphql`
       edges {
         node {
           title
+          created(formatString: "DD/MM/YYYY", locale: "fr")
           body {
             summary
             processed
