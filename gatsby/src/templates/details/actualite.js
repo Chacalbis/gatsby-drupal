@@ -4,6 +4,63 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import NonStretchedImage from "../../components/non-stretched-image"
 import AdditionalInformation from "../../components/additional-information"
+import {
+  pageActu,
+  pageActuAdditionalInfos,
+  actualite,
+  actualiteImg,
+  actualiteTags,
+  actualiteTaxo,
+  actualiteTitle,
+  actualiteContentFooter,
+  actualiteContentFooterBack,
+  actualiteContentFooterDate,
+} from "../../styles/detailsActu.module.scss"
+import ContentTransformer from "../../components/content-transformer"
+
+const ActualiteContent = ({ actu }) => (
+  <article className={actualite}>
+    <div className={actualiteImg}>
+      {actu.relationships?.field_image_actus?.localFile?.childImageSharp
+        ?.fluid && (
+        <NonStretchedImage
+          alt={actu.field_image_actus.alt}
+          {...actu.relationships.field_image_actus.localFile.childImageSharp}
+        />
+      )}
+      {actu.relationships.field_taxonomie_thematique && (
+        <div className={actualiteTags}>
+          {actu.relationships.field_taxonomie_thematique.map(taxo => (
+            <span className={actualiteTaxo}>
+              <Link to={taxo.path.alias}>{taxo.name}</Link>
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+    <h1 className={actualiteTitle}>{actu.title}</h1>
+    <ContentTransformer content={actu.body.processed} />
+  </article>
+)
+
+const ActualiteContentFooter = ({ actu }) => (
+  <div className={actualiteContentFooter}>
+    <div className={actualiteContentFooterBack}>
+      <Link to="../actu">Retour à la liste des actualités</Link>
+    </div>
+    <div className={actualiteContentFooterDate}>posté le {actu.created}</div>
+  </div>
+)
+
+const ActualiteInfos = ({ actu }) => (
+  <>
+    {actu.field_infos_complementaires && (
+      <section className={pageActuAdditionalInfos}>
+        <AdditionalInformation node={actu} />
+      </section>
+    )}
+  </>
+)
 
 const ActualiteTemplate = ({ data }) => {
   const actualite = data.nodeActualites
@@ -11,35 +68,14 @@ const ActualiteTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={actualite.title} description={actualite.body?.summary} />
-      <div key={actualite.path.alias}>
-        <ActualiteHeader actu={actualite} />
+      <section className={pageActu}>
         <ActualiteContent actu={actualite} />
-      </div>
+        <ActualiteContentFooter actu={actualite} />
+      </section>
+      <ActualiteInfos actu={actualite} />
     </Layout>
   )
 }
-
-const ActualiteHeader = ({ actu }) => (
-  <h2>
-    <Link
-      to={actu.path.alias}
-      dangerouslySetInnerHTML={{ __html: actu.title }}
-    />
-  </h2>
-)
-
-const ActualiteContent = ({ actu }) => (
-  <div>
-    <div dangerouslySetInnerHTML={{ __html: actu.body?.processed }} />
-    {actu.relationships?.field_image_actus?.localFile?.childImageSharp
-      ?.fluid && (
-      <NonStretchedImage
-        {...actu.relationships.field_image_actus.localFile.childImageSharp}
-      />
-    )}
-    <AdditionalInformation node={actu} />
-  </div>
-)
 
 export default ActualiteTemplate
 
@@ -47,8 +83,8 @@ export const query = graphql`
   query($slug: String!) {
     nodeActualites(path: { alias: { eq: $slug } }) {
       title
+      created(formatString: "DD/MM/YYYY", locale: "fr")
       body {
-        summary
         processed
       }
       path {
@@ -61,14 +97,17 @@ export const query = graphql`
         processed
       }
       relationships {
+        field_taxonomie_thematique {
+          name
+          path {
+            alias
+          }
+        }
         field_image_actus {
           localFile {
             childImageSharp {
               fluid(quality: 100) {
-                src
-                presentationWidth
-                presentationHeight
-                aspectRatio
+                ...GatsbyImageSharpFluid
               }
             }
           }
