@@ -1,46 +1,69 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import NonStretchedImage from "../../components/non-stretched-image"
 import AdditionalInformation from "../../components/additional-information"
 import ContentTransformer from "../../components/content-transformer"
+import SummaryTransformer from "../../components/summary-transformer"
+import {
+  pageIntro,
+  pageBody,
+  pageIntroContainer,
+  pageIntroTitle,
+  pageIntroImg,
+  pageAdditionalInfos,
+} from "../../styles/detailsPage.module.scss"
 
 const PageTemplate = ({ data }) => {
   const page = data.nodePage
 
   return (
     <Layout>
-      <SEO title={page.title} description={page.body.summary} />
-      <div key={page.path.alias}>
-        <PageHeader page={page} />
-        <PageContent page={page} />
-      </div>
+      <SEO title={page.title} description={page.body?.summary} />
+      <section className={pageIntro}>
+        <PageIntro page={page} />
+      </section>
+      <section className={pageBody}>
+        <ContentTransformer content={page.body.processed} />
+      </section>
+      <PageInfos page={page} />
     </Layout>
   )
 }
 
-const PageHeader = ({ page }) => (
-  <h2>
-    <Link
-      to={page.path.alias}
-      dangerouslySetInnerHTML={{ __html: page.title }}
-    />
-  </h2>
+const PageIntro = ({ page }) => (
+  <>
+    <div className={pageIntroContainer}>
+      <h1 className={pageIntroTitle}>{page.title}</h1>
+      {page.body && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: SummaryTransformer(page.body, 200),
+          }}
+        />
+      )}
+    </div>
+    <div className={pageIntroImg}>
+      {page.relationships?.field_image_page_de_base?.localFile?.childImageSharp
+        ?.fluid && (
+        <NonStretchedImage
+          {...page.relationships.field_image_page_de_base.localFile
+            .childImageSharp}
+        />
+      )}
+    </div>
+  </>
 )
 
-const PageContent = ({ page }) => (
-  <div>
-    <ContentTransformer content={page.body.processed} />
-    {page.relationships?.field_image_page_de_base?.localFile?.childImageSharp
-      ?.fluid && (
-      <NonStretchedImage
-        {...page.relationships.field_image_page_de_base.localFile
-          .childImageSharp}
-      />
+const PageInfos = ({ page }) => (
+  <>
+    {page.field_infos_complementaires && (
+      <section className={pageAdditionalInfos}>
+        <AdditionalInformation node={page} />
+      </section>
     )}
-    <AdditionalInformation node={page} />
-  </div>
+  </>
 )
 
 export default PageTemplate
@@ -56,8 +79,6 @@ export const query = graphql`
       path {
         alias
       }
-      field_mise_en_avant
-      field_ordre
       field_infos_complementaires {
         processed
       }
@@ -69,10 +90,7 @@ export const query = graphql`
           localFile {
             childImageSharp {
               fluid(quality: 100) {
-                src
-                presentationWidth
-                presentationHeight
-                aspectRatio
+                ...GatsbyImageSharpFluid
               }
             }
           }
