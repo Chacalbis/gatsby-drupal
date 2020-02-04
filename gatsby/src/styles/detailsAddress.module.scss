@@ -1,0 +1,121 @@
+@import "./variables.scss";
+
+.page-address-additional-infos {
+  padding: 2rem 15% 1rem;
+  background-color: $a3;
+}
+
+.page-address {
+  padding: 1rem 15% 2rem;
+  display: grid;
+  grid-template-areas:
+    "content img"
+    "back back";
+  grid-template-columns: 1fr 1fr;
+
+  .address-content {
+    grid-area: content;
+
+    .address-content-container {
+      .address-title {
+        display: inline-block;
+        color: $a1;
+        font-weight: 600;
+        margin: 0.5rem 0;
+        font-size: 1.5rem;
+      }
+      .address-address {
+        font-size: 1em;
+      }
+      .address-contact {
+        font-size: 1em;
+        margin-top: 0.5rem;
+
+        & > p {
+          margin: 0;
+
+          & > a {
+            color: inherit;
+            text-decoration: none;
+          }
+          & > a:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .separator {
+      border: 0;
+      margin: 2rem 0;
+      font-size: 1.3rem;
+      height: 4px;
+      background-color: transparent;
+    }
+    .separator::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 4px;
+      border-radius: 15px;
+      background-color: $a1;
+    }
+    .address-body h2 {
+      font-size: 1.2em;
+      margin: 0.5rem 0;
+    }
+    .address-body h3 {
+      font-size: 1.1em;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .address-footer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 1rem;
+    color: $a2;
+
+    .address-footer-back {
+      position: relative;
+      margin-left: 1.5rem;
+      transition: 0.3s ease;
+      cursor: pointer;
+
+      & > a {
+        text-decoration: none;
+        color: inherit;
+      }
+      & > a::before {
+        content: " ";
+        height: 17px;
+        position: absolute;
+        left: -1.5rem;
+        top: 0.25rem;
+        width: 20px;
+        background-repeat: no-repeat;
+        background: url("../images/full-arrow.svg");
+      }
+    }
+
+    .address-footer-back:hover {
+      transition: 0.3s ease;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .page-address {
+    padding: 1rem 5% 2rem;
+    grid-template-areas:
+      "content"
+      "img"
+      "back";
+    grid-template-columns: 1fr;
+  }
+  .page-address > .address-content > .separator {
+    margin: 1rem 0;
+  }
+}

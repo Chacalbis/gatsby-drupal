@@ -1,0 +1,29 @@
+.address-carousel {
+  width: 35vw;
+  .address-carousel-item {
+    width: 100%;
+  }
+}
+.address-img img {
+  width: 30vw;
+}
+.address-img-solo {
+  width: 30vw;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .address-carousel {
+    width: 90vw;
+    .address-carousel-item {
+      width: 100%;
+    }
+  }
+  .address-img img {
+    width: 90vw;
+  }
+  .address-img-solo {
+    margin-left: 0;
+    width: 90vw;
+  }
+}
