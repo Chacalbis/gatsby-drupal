@@ -135,8 +135,8 @@
     width: 100%;
     text-align: right;
 
-    & > a {
-      width: 100%;
+    &>a{
+      text-decoration: none;
     }
   }
 }
