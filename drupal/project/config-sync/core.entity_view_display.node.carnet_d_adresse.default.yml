@@ -17,9 +17,10 @@ dependencies:
     - field.field.node.carnet_d_adresse.field_voie
     - node.type.carnet_d_adresse
   module:
-    - image
+    - svg_image
     - text
     - user
+    - weight
 id: node.carnet_d_adresse.default
 targetEntityType: node
 bundle: carnet_d_adresse
@@ -27,9 +28,10 @@ mode: default
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_summary_or_trimmed
     weight: 0
-    settings: {  }
+    settings:
+      trim_length: 200
     third_party_settings: {  }
     region: content
   field_code_postal:
@@ -54,6 +56,10 @@ content:
     settings:
       image_style: ''
       image_link: ''
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
     third_party_settings: {  }
     type: image
     region: content
@@ -83,11 +89,9 @@ content:
   field_ordre_carnet_d_adresse:
     weight: 12
     label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
+    settings: {  }
     third_party_settings: {  }
-    type: number_integer
+    type: default_weight
     region: content
   field_taxonomie_thematique:
     weight: 14

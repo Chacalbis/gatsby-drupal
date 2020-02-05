@@ -16,9 +16,10 @@ mode: default
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_summary_or_trimmed
     weight: 101
-    settings: {  }
+    settings:
+      trim_length: 200
     third_party_settings: {  }
     region: content
   field_taxonomie_zone_libre:
@@ -31,8 +32,8 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true

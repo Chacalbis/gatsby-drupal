@@ -19,9 +19,10 @@ mode: default
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_summary_or_trimmed
     weight: 0
-    settings: {  }
+    settings:
+      trim_length: 200
     third_party_settings: {  }
     region: content
   field_lien_demarches_simplifiees:
