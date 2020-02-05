@@ -1,18 +1,15 @@
-import React from "react"
-
 const SummaryTransformer = (content, length) => {
+  let transformedContent = ""
+  let summaryContent = content.summary
   let fullContent = content.processed
-  let searchKey = "^(.{" + length + "}[^\\s]*).*"
-  let regex = new RegExp(searchKey, "ig")
-  let trimmedString = fullContent.replace(regex, "$1") + " ..."
-
-  let contentDisplayed = ""
-  if (content.summary) {
-    contentDisplayed = content.summary
+  if (summaryContent) {
+    transformedContent = summaryContent
   } else if (fullContent) {
-    contentDisplayed = trimmedString
+    let searchKey = "^(.{" + length + "}[^\\s]*).*"
+    let regex = new RegExp(searchKey, "ig")
+    transformedContent = fullContent.replace(regex, "$1") + " ..."
   }
-  return contentDisplayed
+  return transformedContent
 }
 
 export default SummaryTransformer
