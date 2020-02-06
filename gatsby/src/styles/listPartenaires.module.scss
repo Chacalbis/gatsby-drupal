@@ -20,13 +20,19 @@
     width: 100%;
 
     & > a {
-      width: calc(20% - 1rem);
+      width: calc(15% - 1rem);
       margin: 1rem;
     }
 
     & .partenaire-item-img {
       display: block;
       max-width: 100%;
+      transition: 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+        transition: 0.3s ease;
+      }
     }
   }
 }

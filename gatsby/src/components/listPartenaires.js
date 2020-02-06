@@ -1,4 +1,4 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import NonStretchedImage from "./non-stretched-image"
 import {
@@ -8,14 +8,37 @@ import {
   partenaireItemImg,
 } from "../styles/listPartenaires.module.scss"
 
-const Partenaire = ({ partenaire }) => (
-  <Link to={partenaire.url}>
-    <NonStretchedImage
-      className={partenaireItemImg}
-      {...partenaire.relationships.image_direct_link.localFile.childImageSharp}
-    />
-  </Link>
-)
+const Partenaire = ({ partenaire }) => {
+  let image = ""
+  if (
+    partenaire.relationships.image_direct_link.localFile.extension === "svg"
+  ) {
+    image = (
+      <img
+        className={partenaireItemImg}
+        src={partenaire.relationships.image_direct_link.localFile.publicURL}
+        alt={partenaire.image_direct_link.alt || ""}
+      />
+    )
+  } else if (
+    partenaire.relationships?.image_direct_link?.localFile?.childImageSharp
+      .fluid
+  ) {
+    image = (
+      <NonStretchedImage
+        alt={partenaire.image_direct_link.alt}
+        className={partenaireItemImg}
+        {...partenaire.relationships.image_direct_link.localFile
+          .childImageSharp}
+      />
+    )
+  }
+  return (
+    <a target="_blank" rel="noopener noreferrer" href={partenaire.url}>
+      {image}
+    </a>
+  )
+}
 
 const RenderPartenaires = ({ partenairesData }) => {
   return partenairesData.allDirectLinkEntityDirectLinkEntity.edges.map(
@@ -37,9 +60,14 @@ const ListPartenaires = () => {
         edges {
           node {
             url
+            image_direct_link {
+              alt
+            }
             relationships {
               image_direct_link {
                 localFile {
+                  extension
+                  publicURL
                   childImageSharp {
                     fluid {
                       ...GatsbyImageSharpFluid
