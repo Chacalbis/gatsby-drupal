@@ -30,7 +30,7 @@ const Actu = ({ actu }) => (
       </Link>
     )}
     <div className={actualiteInfos}>
-      {actu.relationships.field_taxonomie_thematique && (
+      {actu.relationships.field_taxonomie_thematique?.length > 0 && (
         <div className={actualiteCategorie}>
           {actu.relationships.field_taxonomie_thematique[0].name}
         </div>

@@ -39,7 +39,7 @@ const ActualiteContent = ({ actu }) => (
       )}
     </div>
     <h1 className={actualiteTitle}>{actu.title}</h1>
-    <ContentTransformer content={actu.body.processed} />
+    {actu.body && <ContentTransformer content={actu.body.processed} />}
   </article>
 )
 

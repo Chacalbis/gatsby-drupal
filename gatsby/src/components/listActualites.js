@@ -15,6 +15,7 @@ import {
   linkActu,
 } from "../styles/listActualites.module.scss"
 import NonStretchedImage from "./non-stretched-image"
+import SummaryTransformer from "./summary-transformer"
 
 const RenderActualites = ({ actualiteData }) => {
   const actus = actualiteData.allNodeActualites.edges
@@ -30,7 +31,7 @@ const RenderActualites = ({ actualiteData }) => {
           return <Actu myClassName={actualiteContainer} actu={node} />
         })}
         <div>
-          <Link className="btn" to="">
+          <Link className="btn" to="/actu">
             Toutes nos actualités
           </Link>
         </div>
@@ -51,7 +52,7 @@ const Actu = ({ actu, myClassName }) => (
       </Link>
     )}
     <div className={actualiteInfos}>
-      {actu.relationships.field_taxonomie_thematique && (
+      {actu.relationships.field_taxonomie_thematique?.length > 0 && (
         <div className={actualiteCategorie}>
           <p>{actu.relationships.field_taxonomie_thematique[0].name}</p>
         </div>
@@ -59,7 +60,14 @@ const Actu = ({ actu, myClassName }) => (
       <h3 className={actualiteTitle}>
         <Link to={actu.path.alias}>{actu.title}</Link>
       </h3>
-      <p className={actualiteResume}>{actu.body.summary}</p>
+      {actu.body && (
+        <p
+          className={actualiteResume}
+          dangerouslySetInnerHTML={{
+            __html: SummaryTransformer(actu.body, 200),
+          }}
+        />
+      )}
     </div>
   </div>
 )
@@ -94,6 +102,7 @@ const ListActualites = () => {
             }
             body {
               summary
+              processed
             }
           }
         }

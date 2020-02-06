@@ -72,6 +72,9 @@
             color: $b1;
             margin: 0;
           }
+          p::first-letter {
+            text-transform: uppercase;
+          }
         }
 
         .actualite-resume {
@@ -121,6 +124,9 @@
             p {
               color: $b1;
               margin: 0;
+            }
+            p::first-letter {
+              text-transform: uppercase;
             }
           }
 
