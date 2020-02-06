@@ -12,6 +12,7 @@ import BackgroundImage from "../components/backgroundImage"
 import {
   sectionFirst,
   sectionSecond,
+  sectionThird,
   sectionNePasManquer,
   sectionPartenaires,
   sectionAccesDirect,
@@ -38,6 +39,10 @@ const IndexPage = () => {
       </div>
       <div className={sectionNePasManquer}>
         <ListNePasManquer />
+      </div>
+      <div className={sectionThird}>
+        <ContenuLibre zoneTaxoLibre="zone_accueil_2" />
+        <ContenuLibre zoneTaxoLibre="zone_accueil_3" />
       </div>
       <div className={sectionPartenaires}>
         <ListPartenaires />

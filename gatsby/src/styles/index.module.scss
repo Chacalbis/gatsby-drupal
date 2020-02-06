@@ -1,7 +1,8 @@
 @import "./variables.scss";
 
 .section-first,
-.section-second {
+.section-second,
+.section-third {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -24,10 +25,14 @@
   flex-direction: column;
   background-color: $a1;
 }
+.section-third > div:first-of-type {
+  background-color: rgba(235, 237, 239, 0.7);
+}
 
 @media (max-width: 900px) {
   .section-first,
-  .section-second {
+  .section-second,
+  .section-third {
     flex-direction: column;
   }
 }
