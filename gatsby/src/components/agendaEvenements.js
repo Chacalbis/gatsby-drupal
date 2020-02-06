@@ -26,9 +26,11 @@ const EvenementInfos = ({ evenement }) => (
         au {evenement.field_date_de_fin}
       </span>
     </div>
-    <div className={eventsItemTaxo}>
-      {evenement.relationships.field_taxonomie_evenement?.name}
-    </div>
+    {evenement.relationships.field_taxonomie_thematique?.length > 0 && (
+      <div className={eventsItemTaxo}>
+        {evenement.relationships.field_taxonomie_thematique[0].name}
+      </div>
+    )}
     <div className={eventsItemTitle}>
       <Link to={evenement.path.alias}>{evenement.title}</Link>
     </div>
