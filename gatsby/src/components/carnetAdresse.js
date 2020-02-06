@@ -45,12 +45,12 @@ const AdresseContact = ({ adress }) => {
         <div className={adressItemContacts}>
           {adress.field_mail && (
             <p className={adressItemMail}>
-              <Link to={mail}>{adress.field_mail}</Link>
+              <a href={mail}>{adress.field_mail}</a>
             </p>
           )}
           {adress.field_telephone && (
             <p className={adressItemTel}>
-              <Link to={tel}>{adress.field_telephone}</Link>
+              <a href={tel}>{adress.field_telephone}</a>
             </p>
           )}
         </div>

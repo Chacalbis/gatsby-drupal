@@ -1,4 +1,4 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import NonStretchedImage from "./non-stretched-image"
 import {
@@ -34,10 +34,10 @@ const AccesDirect = ({ accesDirect }) => {
     )
   }
   return (
-    <Link to={accesDirect.url}>
+    <a href={accesDirect.url} target="_blank" rel="noopener noreferrer">
       {image}
       <div className={accesDirectItemDescription}>{accesDirect.name}</div>
-    </Link>
+    </a>
   )
 }
 
