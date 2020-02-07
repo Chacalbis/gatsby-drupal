@@ -71,7 +71,7 @@ const ListNePasManquer = () => {
         <RenderNePasManquer nePasManquerData={data} />
       </div>
       <div className={allNePasManquer}>
-        <Link className="btn" to="/page">
+        <Link className="btn" to="/pages">
           Voir plus
         </Link>
       </div>

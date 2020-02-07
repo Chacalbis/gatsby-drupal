@@ -46,7 +46,7 @@ const ActualiteContent = ({ actu }) => (
 const ActualiteContentFooter = ({ actu }) => (
   <div className={actualiteContentFooter}>
     <div className={actualiteContentFooterBack}>
-      <Link to="../actu">Retour à la liste des actualités</Link>
+      <Link to="../actualites">Retour à la liste des actualités</Link>
     </div>
     <div className={actualiteContentFooterDate}>posté le {actu.created}</div>
   </div>

@@ -74,7 +74,7 @@ const EvenementContent = ({ event }) => (
 const EvenementFooter = () => (
   <div className={eventFooter}>
     <div className={eventFooterBack}>
-      <Link to="../event">Retour à la liste des évènements</Link>
+      <Link to="../evenements">Retour à la liste des évènements</Link>
     </div>
   </div>
 )

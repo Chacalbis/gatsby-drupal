@@ -58,6 +58,42 @@
     }
   }
 }
+.page-body {
+  .page-footer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 1rem;
+    color: $a2;
+
+    .page-footer-back {
+      position: relative;
+      margin-left: 1.5rem;
+      transition: 0.3s ease;
+      cursor: pointer;
+
+      & > a {
+        text-decoration: none;
+        color: inherit;
+      }
+      & > a::before {
+        content: " ";
+        height: 17px;
+        position: absolute;
+        left: -1.5rem;
+        top: 0.25rem;
+        width: 20px;
+        background-repeat: no-repeat;
+        background: url("../images/full-arrow.svg");
+      }
+    }
+
+    .page-footer-back:hover {
+      transition: 0.3s ease;
+      margin-left: 0;
+    }
+  }
+}
 
 @media (max-width: 1400px) {
   .page-intro > .page-intro-container {

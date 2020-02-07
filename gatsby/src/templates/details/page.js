@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import NonStretchedImage from "../../components/non-stretched-image"
@@ -13,6 +13,8 @@ import {
   pageIntroTitle,
   pageIntroImg,
   pageAdditionalInfos,
+  pageFooter,
+  pageFooterBack,
 } from "../../styles/detailsPage.module.scss"
 
 const PageTemplate = ({ data }) => {
@@ -26,6 +28,7 @@ const PageTemplate = ({ data }) => {
       </section>
       <section className={pageBody}>
         <ContentTransformer content={page.body.processed} />
+        <PageFooter />
       </section>
       <PageInfos page={page} />
     </Layout>
@@ -54,6 +57,14 @@ const PageIntro = ({ page }) => (
       )}
     </div>
   </>
+)
+
+const PageFooter = () => (
+  <div className={pageFooter}>
+    <div className={pageFooterBack}>
+      <Link to="../pages">Retour à la liste des pages</Link>
+    </div>
+  </div>
 )
 
 const PageInfos = ({ page }) => (

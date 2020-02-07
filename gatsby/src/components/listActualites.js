@@ -31,7 +31,7 @@ const RenderActualites = ({ actualiteData }) => {
           return <Actu myClassName={actualiteContainer} actu={node} />
         })}
         <div>
-          <Link className="btn" to="/actu">
+          <Link className="btn" to="/actualites">
             Toutes nos actualités
           </Link>
         </div>

@@ -106,7 +106,7 @@ const AgendaEvenements = () => {
         <RenderEvenements eventsData={data} />
       </div>
       <div className={allEvents}>
-        <Link className="btn" to="/event">
+        <Link className="btn" to="/evenements">
           Tous les événements
         </Link>
       </div>
