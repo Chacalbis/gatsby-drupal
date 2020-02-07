@@ -7,25 +7,25 @@ allTypeToCreate["allNodeActualites"] = {
   detailTemplate: path.resolve(`./src/templates/details/actualite.js`),
   listTemplate: path.resolve(`./src/templates/list/actualites.js`),
   nodesPerPage: 5,
-  baseLink: "actu",
+  baseLink: "actualites",
 }
 allTypeToCreate["allNodeCarnetDAdresse"] = {
   detailTemplate: path.resolve(`./src/templates/details/adresse.js`),
   listTemplate: path.resolve(`./src/templates/list/adresses.js`),
   nodesPerPage: 8,
-  baseLink: "address",
+  baseLink: "adresses",
 }
 allTypeToCreate["allNodeEvenements"] = {
   detailTemplate: path.resolve(`./src/templates/details/evenement.js`),
   listTemplate: path.resolve(`./src/templates/list/evenements.js`),
   nodesPerPage: 6,
-  baseLink: "event",
+  baseLink: "evenements",
 }
 allTypeToCreate["allNodePage"] = {
   detailTemplate: path.resolve(`./src/templates/details/page.js`),
   listTemplate: path.resolve(`./src/templates/list/pages.js`),
   nodesPerPage: 10,
-  baseLink: "page",
+  baseLink: "pages",
 }
 allTypeToCreate["allNodeTeleformulaires"] = {
   detailTemplate: path.resolve(`./src/templates/details/teleform.js`),
@@ -34,7 +34,6 @@ allTypeToCreate["allNodeTeleformulaires"] = {
 allTaxoToCreate["allTaxonomyTermThematiques"] = {
   listTemplate: path.resolve(`./src/templates/list/taxo-thematiques.js`),
   nodesPerPage: 5,
-  baseLink: "taxonomy/term",
 }
 allTaxoToCreate["allTaxonomyTermTeleformulaires"] = {
   listTemplate: path.resolve(`./src/templates/list/taxo-teleformulaires.js`),
@@ -62,6 +61,9 @@ const taxoRequestBuilder = name => {
         node {
           name
           drupal_internal__tid
+          path {
+            alias
+          }
         }
       }
     }
@@ -105,8 +107,6 @@ const teleformRequestBuilder = term => {
 }
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
-  // const allEntitiesToCreate = {...allTypeToCreate, ...allTaxoToCreate}
-  // let promises = Object.entries(allEntitiesToCreate).map(entity => {
   let typePromises = Object.entries(allTypeToCreate).map(entity => {
     let entityName = entity[0]
     let entityConf = entity[1]
@@ -186,7 +186,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               const perPage = entityConf.nodesPerPage
               const allNodes = [...Object.entries(result.data)]
               const numPages = Math.ceil(allNodes.length / perPage)
-              const baseLink = `taxonomy/term/${node.drupal_internal__tid}`
+              const baseLink = node.path.alias || `taxonomy/term/${node.drupal_internal__tid}`
               // Creating taxo list with pagination
               Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
