@@ -1,5 +1,30 @@
 const path = require(`path`)
 
+// Add formatted date fields respecting GMT+1 timezone
+const moment = require("moment-timezone")
+async function onCreateNode({ node, actions: { createNodeField } }) {
+  if (node.internal.type === `node__evenements`) {
+    if (node.field_date_de_debut) {
+      const startMoment = moment(node.field_date_de_debut).tz("Europe/Paris")
+      createNodeField({
+        node,
+        name: `formatted_field_date_de_debut`,
+        value: startMoment.locale("fr-FR").format("DD/MM/YY à HH:mm"),
+      })
+    }
+    if (node.field_date_de_fin) {
+      const endMoment = moment(node.field_date_de_fin).tz("Europe/Paris")
+      createNodeField({
+        node,
+        name: `formatted_field_date_de_fin`,
+        value: endMoment.locale("fr-FR").format("DD/MM/YY à HH:mm"),
+      })
+    }
+  }
+  return
+}
+exports.onCreateNode = onCreateNode
+
 let allTypeToCreate = {}
 let allTaxoToCreate = {}
 

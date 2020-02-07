@@ -36,8 +36,17 @@ const EvenementContent = ({ event }) => (
       )}
     </div>
     <div className={eventDate}>
-      <span className={eventDateFrom}>Du {event.field_date_de_debut}</span>
-      <span className={eventDateTo}> au {event.field_date_de_fin}</span>
+      {event.fields?.formatted_field_date_de_debut && (
+        <span className={eventDateFrom}>
+          Du {event.fields.formatted_field_date_de_debut}
+        </span>
+      )}
+      {event.fields?.formatted_field_date_de_fin && (
+        <span className={eventDateTo}>
+          {" "}
+          au {event.fields.formatted_field_date_de_fin}
+        </span>
+      )}
     </div>
     <div className={eventTaxo}>
       {event.relationships.field_taxonomie_thematique && (
@@ -115,8 +124,10 @@ export const query = graphql`
       path {
         alias
       }
-      field_date_de_debut(locale: "fr", formatString: "DD/MM/YY à hh:mm")
-      field_date_de_fin(locale: "fr", formatString: "DD/MM/YY à hh:mm")
+      fields {
+        formatted_field_date_de_debut
+        formatted_field_date_de_fin
+      }
       field_image_event {
         alt
       }
