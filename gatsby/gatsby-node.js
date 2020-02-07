@@ -1,20 +1,5 @@
 const path = require(`path`)
 
-// Add a fomatted date field respecting GMT+1 timezone
-const moment = require("moment-timezone")
-async function onCreateNode({ node, actions: { createNodeField } }) {
-  if (node.internal.type === `node__article` && node.created) {
-    const createdMoment = moment(node.created).tz("Europe/Paris")
-    createNodeField({
-      node,
-      name: "slug_date",
-      value: createdMoment.locale("fr-FR").format("dddd DD/MM/YYYY - HH:mm"),
-    })
-  }
-  return
-}
-exports.onCreateNode = onCreateNode
-
 let allTypeToCreate = {}
 let allTaxoToCreate = {}
 
@@ -23,9 +8,6 @@ allTypeToCreate["allNodeActualites"] = {
   listTemplate: path.resolve(`./src/templates/list/actualites.js`),
   nodesPerPage: 5,
   baseLink: "actu",
-}
-allTypeToCreate["allNodeArticle"] = {
-  detailTemplate: path.resolve(`./src/templates/details/article.js`),
 }
 allTypeToCreate["allNodeCarnetDAdresse"] = {
   detailTemplate: path.resolve(`./src/templates/details/adresse.js`),
