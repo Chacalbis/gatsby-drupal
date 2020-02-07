@@ -32,11 +32,11 @@ const EvenementInfos = ({ evenement }) => (
       </span>
     </div>
     <div className={eventsItemTaxo}>
-      {evenement.relationships.field_taxonomie_thematique && (
+      {evenement.relationships.field_taxonomie_thematique?.length > 0 && (
         <Link
           to={evenement.relationships.field_taxonomie_thematique[0].path.alias}
         >
-          {evenement.relationships.field_taxonomie_thematique[0].name}
+          {evenement.relationships.field_taxonomie_thematique[0]?.name}
         </Link>
       )}
     </div>

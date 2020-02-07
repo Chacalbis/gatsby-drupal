@@ -18,7 +18,11 @@ import {
   eventContent,
   eventFooter,
   eventFooterBack,
+  eventPlace,
+  eventPlaceIcon,
+  eventPlaceTitle,
 } from "../../styles/detailsEvent.module.scss"
+import Icon from "../../components/icon/icon"
 
 const EvenementContent = ({ event }) => (
   <article className={evenement}>
@@ -48,10 +52,22 @@ const EvenementContent = ({ event }) => (
     </div>
     <h2 className={eventTitle}>{event.title}</h2>
     <div className={eventContent}>
-      {event.body.processed && (
+      {event.body?.processed && (
         <ContentTransformer content={event.body.processed} />
       )}
     </div>
+    {event.field_url_lieu && (
+      <div className={eventPlace}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={event.field_url_lieu.uri}
+        >
+          <Icon className={eventPlaceIcon} size={30} icon="location2"></Icon>
+          <p className={eventPlaceTitle}>{event.field_url_lieu.title}</p>
+        </a>
+      </div>
+    )}
   </article>
 )
 
@@ -77,7 +93,7 @@ const EvenementTemplate = ({ data }) => {
   const evenement = data.nodeEvenements
   return (
     <Layout>
-      <SEO title={evenement.title} description={evenement.body.summary} />
+      <SEO title={evenement.title} description={evenement.body?.summary} />
       <section className={pageEvent}>
         <EvenementContent event={evenement} />
         <EvenementFooter />

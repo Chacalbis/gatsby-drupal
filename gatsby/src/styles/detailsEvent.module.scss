@@ -108,6 +108,28 @@
       grid-area: resume;
       margin-top: 2rem;
     }
+
+    .event-place > a {
+      display: flex;
+      flex-flow: row nowrap;
+      text-decoration: none;
+      align-items: center;
+
+      .event-place-icon {
+        color: black;
+      }
+      .event-place-title {
+        color: black;
+        margin: 0 0 0 0.25rem;
+        font-weight: bold;
+      }
+      &:hover {
+        p,
+        .event-place-icon {
+          opacity: 0.8;
+        }
+      }
+    }
   }
 
   .event-footer {
