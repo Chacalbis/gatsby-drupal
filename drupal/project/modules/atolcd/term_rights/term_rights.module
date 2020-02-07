@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains term_rights.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function term_rights_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the term_rights module.
+    case 'help.page.term_rights':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adjust rights of term fields for specific roles') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * implements hook_form_alter().
+ */
+function term_rights_form_alter(
+  &$form,
+  FormStateInterface $form_state,
+  $form_id
+) {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+  if (in_array('webmaster', $roles)) {
+    $matching_terms = [];
+    $vocabularies = ['type_de_lien_direct', 'zone_definie'];
+    foreach ($vocabularies as $vocabulary_name) {
+      $terms = \Drupal::entityTypeManager()
+                      ->getStorage('taxonomy_term')
+                      ->loadTree($vocabulary_name);
+      foreach ($terms as $term) {
+        $matching_terms[] = 'taxonomy_term_' . $term->vid . '_form';
+      }
+    }
+    if (in_array($form_id, $matching_terms)) {
+      $form['name']['#access'] = FALSE;
+    }
+  }
+}
