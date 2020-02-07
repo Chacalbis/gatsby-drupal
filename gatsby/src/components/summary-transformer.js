@@ -5,9 +5,10 @@ const SummaryTransformer = (content, length) => {
   if (summaryContent) {
     transformedContent = summaryContent
   } else if (fullContent) {
+    transformedContent = fullContent.replace(/(<([^>]+)>)/gi, "")
     let searchKey = "^(.{" + length + "}[^\\s]*).*"
-    let regex = new RegExp(searchKey, "ig")
-    transformedContent = fullContent.replace(regex, "$1") + " ..."
+    let regex = new RegExp(searchKey, "s")
+    transformedContent = transformedContent.replace(regex, "$1") + " ..."
   }
   return transformedContent
 }
