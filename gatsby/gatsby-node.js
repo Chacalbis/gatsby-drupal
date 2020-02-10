@@ -184,9 +184,22 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             graphql(request).then(result => {
               if (result.errors) throw result.errors
               const perPage = entityConf.nodesPerPage
-              const allNodes = [...Object.entries(result.data)]
+              let allNodes = []
+              switch (entityName) {
+                case "allTaxonomyTermThematiques":
+                  allNodes = [
+                    ...result.data.allNodeCarnetDAdresse.edges,
+                    ...result.data.allNodeActualites.edges,
+                    ...result.data.allNodeEvenements.edges,
+                  ]
+                  break
+                case "allTaxonomyTermTeleformulaires":
+                  allNodes = [...result.data.allNodeTeleformulaires.edges]
+                  break
+              }
               const numPages = Math.ceil(allNodes.length / perPage)
-              const baseLink = node.path.alias || `taxonomy/term/${node.drupal_internal__tid}`
+              const baseLink =
+                node.path.alias || `taxonomy/term/${node.drupal_internal__tid}`
               // Creating taxo list with pagination
               Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
