@@ -38,7 +38,7 @@ const RenderNePasManquer = ({ nePasManquerData }) => {
 const NePasManquerTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages, baseLink } = pageContext
   return (
-    <Layout>
+    <Layout message="Liste des pages à ne pas manquer">
       <section className={zoneAnePasManquerLibreHaut}>
         <ContenuLibre zoneTaxoLibre="zone_a_ne_pas_manquer_haut" />
       </section>

@@ -67,7 +67,7 @@ const RenderActualites = ({ actualiteData }) => {
 const ActualitesTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages, baseLink } = pageContext
   return (
-    <Layout>
+    <Layout message="Liste des actualités">
       <section className={zoneActualitesLibreHaut}>
         <ContenuLibre zoneTaxoLibre="zone_actualites_haut" />
       </section>

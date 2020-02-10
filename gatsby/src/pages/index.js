@@ -8,7 +8,6 @@ import AgendaEvenements from "../components/agendaEvenements"
 import ListNePasManquer from "../components/listNePasManquer"
 import ListPartenaires from "../components/listPartenaires"
 import AccesDirects from "../components/accesDirects"
-import BackgroundImage from "../components/backgroundImage"
 import {
   sectionFirst,
   sectionSecond,
@@ -20,12 +19,13 @@ import {
 import "../styles/mixins.scss"
 import "../styles/animations.scss"
 import "../styles/buttons.scss"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const IndexPage = () => {
+  const metadata = useSiteMetadata()
   return (
-    <Layout>
+    <Layout isIndex={true} message={metadata.config.slogan}>
       <SEO title="Home" />
-      <BackgroundImage />
       <div className={sectionFirst}>
         <ContenuLibre zoneTaxoLibre="zone_accueil_1" />
         <ListActualites />

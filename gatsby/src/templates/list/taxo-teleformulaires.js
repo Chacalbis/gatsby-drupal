@@ -6,7 +6,7 @@ import ResultsTaxo from "../../components/resultsTaxo/resultsTaxo"
 const TaxoTeleformulairesTemplate = ({ data, pageContext }) => {
   const teleformResults = data.allNodeTeleformulaires.edges
   return (
-    <Layout>
+    <Layout message="Résultats">
       <ResultsTaxo pageContext={pageContext} resultats={teleformResults} />
     </Layout>
   )

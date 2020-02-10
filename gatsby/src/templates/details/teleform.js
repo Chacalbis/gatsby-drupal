@@ -20,7 +20,6 @@ import {
 
 const TeleformTemplate = ({ data }) => {
   const teleformulaire = data.nodeTeleformulaires
-
   return (
     <Layout>
       <SEO

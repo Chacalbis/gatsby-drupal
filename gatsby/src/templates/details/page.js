@@ -19,7 +19,6 @@ import {
 
 const PageTemplate = ({ data }) => {
   const page = data.nodePage
-
   return (
     <Layout>
       <SEO title={page.title} description={page.body?.summary} />

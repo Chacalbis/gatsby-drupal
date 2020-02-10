@@ -64,7 +64,6 @@ const ActualiteInfos = ({ actu }) => (
 
 const ActualiteTemplate = ({ data }) => {
   const actualite = data.nodeActualites
-
   return (
     <Layout>
       <SEO title={actualite.title} description={actualite.body?.summary} />

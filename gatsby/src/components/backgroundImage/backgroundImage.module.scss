@@ -1,9 +1,9 @@
-.background-container {
+.background-container,
+.background-container-bis {
   display: flex;
   position: relative;
   justify-content: flex-end;
   overflow: hidden;
-  min-height: 40vh;
 
   .background-wrapper {
     position: absolute;
@@ -41,4 +41,10 @@
       margin-right: 10px;
     }
   }
+}
+.background-container {
+  min-height: 40vh;
+}
+.background-container-bis {
+  min-height: 18vh;
 }

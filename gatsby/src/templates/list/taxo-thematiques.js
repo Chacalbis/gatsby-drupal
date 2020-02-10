@@ -10,7 +10,7 @@ const TaxoThematiquesTemplate = ({ data, pageContext }) => {
     ...data.allNodeEvenements.edges,
   ]
   return (
-    <Layout>
+    <Layout message="Résultats">
       <ResultsTaxo pageContext={pageContext} resultats={mergedNodes} />
     </Layout>
   )

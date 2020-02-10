@@ -82,7 +82,7 @@ const RenderAdresses = ({ adressesData }) => {
 const AdressesTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages, baseLink } = pageContext
   return (
-    <Layout>
+    <Layout message="Liste des carnets d'adresses">
       <section className={zoneAdressesLibreHaut}>
         <ContenuLibre zoneTaxoLibre="zone_carnet_d_adresse_haut" />
       </section>

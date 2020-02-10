@@ -85,7 +85,7 @@ const RenderEvenements = ({ eventsData }) => {
 const EvenementsTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages, baseLink } = pageContext
   return (
-    <Layout>
+    <Layout message="Liste des évènements">
       <section className={zoneEventsLibreHaut}>
         <ContenuLibre zoneTaxoLibre="zone_evenements_haut" />
       </section>
