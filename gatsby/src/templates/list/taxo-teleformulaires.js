@@ -1,49 +1,15 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout"
-import Pagination from "../../components/pagination/pagination"
+import ResultsTaxo from "../../components/resultsTaxo/resultsTaxo"
 
 const TaxoTeleformulairesTemplate = ({ data, pageContext }) => {
-  const { currentPage, numPages, baseLink, slugTerm } = pageContext
+  const teleformResults = data.allNodeTeleformulaires.edges
   return (
     <Layout>
-      <div>
-        <h4>{slugTerm}</h4>
-        <h5>
-          Page {currentPage} sur {numPages}
-        </h5>
-      </div>
-      <div>
-        {data.allNodeTeleformulaires.edges.map(({ node }) => {
-          return <TaxoTeleform node={node} />
-        })}
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        numPages={numPages}
-        contextPage={baseLink}
-      />
+      <ResultsTaxo pageContext={pageContext} resultats={teleformResults} />
     </Layout>
   )
-}
-
-const TaxoTeleform = ({ node }) => (
-  <div>
-    <Link to={node.path.alias}>
-      <h5>{node.title}</h5>
-    </Link>
-    <Links teleform={node} />
-  </div>
-)
-
-const Links = ({ teleform }) => {
-  return teleform.field_lien_demarches_simplifiees.map(link => {
-    return (
-      <div>
-        <Link to={link.uri}>{link.title}</Link>
-      </div>
-    )
-  })
 }
 
 export default TaxoTeleformulairesTemplate
@@ -72,6 +38,14 @@ export const query = graphql`
           field_lien_demarches_simplifiees {
             title
             uri
+          }
+          relationships {
+            node_type {
+              name
+            }
+          }
+          internal {
+            type
           }
         }
       }

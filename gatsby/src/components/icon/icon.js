@@ -8,7 +8,15 @@ import iconSet from "./selection.json"
  *    - la rajouter dans selection.json (fichier qui a été généré sur https://icomoon.io/)
  *    - l'ajouter dans la liste ci-dessous
  */
-export const ICONS = ["location2"]
+export const ICONS = [
+  "location2",
+  "circle-right",
+  "newspaper",
+  "address-book",
+  "calendar",
+  "file-empty",
+  "profile",
+]
 
 const Icon = ({ size = 20, icon, className }) => {
   return (

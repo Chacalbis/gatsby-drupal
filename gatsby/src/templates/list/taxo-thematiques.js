@@ -1,10 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout"
-import Pagination from "../../components/pagination/pagination"
+import ResultsTaxo from "../../components/resultsTaxo/resultsTaxo"
 
 const TaxoThematiquesTemplate = ({ data, pageContext }) => {
-  const { currentPage, numPages, baseLink, slugTerm } = pageContext
   const mergedNodes = [
     ...data.allNodeCarnetDAdresse.edges,
     ...data.allNodeActualites.edges,
@@ -12,37 +11,10 @@ const TaxoThematiquesTemplate = ({ data, pageContext }) => {
   ]
   return (
     <Layout>
-      <div>
-        <h4>{slugTerm}</h4>
-        <h5>
-          Page {currentPage} sur {numPages}
-        </h5>
-      </div>
-      <div>
-        {mergedNodes.map(({ node }) => {
-          return <TaxoThematique node={node} />
-        })}
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        numPages={numPages}
-        contextPage={baseLink}
-      />
+      <ResultsTaxo pageContext={pageContext} resultats={mergedNodes} />
     </Layout>
   )
 }
-
-const TaxoThematique = ({ node }) => (
-  <div>
-    <div>
-      <h5>{node.relationships.node_type.name}</h5>
-    </div>
-    <Link to={node.path.alias}>
-      <h5>{node.title}</h5>
-      <p>{node.body?.summary}</p>
-    </Link>
-  </div>
-)
 
 export default TaxoThematiquesTemplate
 
@@ -72,6 +44,9 @@ export const query = graphql`
           field_ville
           field_mail
           field_telephone
+          internal {
+            type
+          }
           relationships {
             node_type {
               name
@@ -93,9 +68,13 @@ export const query = graphql`
           title
           body {
             summary
+            processed
           }
           path {
             alias
+          }
+          internal {
+            type
           }
           relationships {
             node_type {
@@ -118,6 +97,7 @@ export const query = graphql`
           title
           body {
             summary
+            processed
           }
           path {
             alias
@@ -130,6 +110,9 @@ export const query = graphql`
           field_url_lieu {
             title
             uri
+          }
+          internal {
+            type
           }
           relationships {
             node_type {

@@ -1,0 +1,84 @@
+@import "../../styles/variables.scss";
+
+.results {
+  padding: 1rem 15% 2rem;
+
+  .results-top {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    & > h3 {
+      color: $a1;
+      margin: 0;
+    }
+
+    .pagination-wrapper {
+      flex: 1 0 auto;
+    }
+  }
+
+  .results-container {
+    .result-item {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $a3;
+
+      & > a {
+        display: flex;
+        flex-flow: row nowrap;
+        text-decoration: none;
+        color: inherit;
+
+        .result-content {
+          margin-right: 1rem;
+
+          .result-type {
+            margin: 0 0 0.5rem 0;
+            color: $b1;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            .result-type-icon {
+              margin-right: 0.5rem;
+            }
+            .result-type-type {
+              font-size: 1.1rem;
+              margin: 0;
+            }
+          }
+          .result-title {
+            margin: 0;
+            display: inline-block;
+            font-size: 1rem;
+          }
+          .result-resume {
+            margin: 0.25rem 0;
+          }
+        }
+
+        &:hover .result-more {
+          transform: translateX(10px);
+          transition: 0.3s ease;
+        }
+
+        .result-more {
+          align-self: center;
+          transition: 0.3s ease;
+
+          .result-arrow {
+            color: $a1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .results {
+    padding: 1rem 5% 2rem;
+  }
+}
