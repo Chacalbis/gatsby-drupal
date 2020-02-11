@@ -28,6 +28,17 @@ module.exports = {
         apiBase: `jsonapi`, // endpoint of Drupal server
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "graphqlData",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "graphqlData",
+        // Url to query from
+        url: "http://ternum_bfc_generateur.docker.localhost:8080/graphql/",
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
