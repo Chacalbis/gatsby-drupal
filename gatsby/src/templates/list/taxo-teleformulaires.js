@@ -15,8 +15,10 @@ const TaxoTeleformulairesTemplate = ({ data, pageContext }) => {
 export default TaxoTeleformulairesTemplate
 
 export const query = graphql`
-  query filteredTeleformQuery($slugTerm: String!) {
+  query filteredTeleformQuery($slugTerm: String!, $limit: Int!, $skip: Int!) {
     allNodeTeleformulaires(
+      limit: $limit
+      skip: $skip
       filter: {
         relationships: {
           field_taxonomie_teleformulaire: {

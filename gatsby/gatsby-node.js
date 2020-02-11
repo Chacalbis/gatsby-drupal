@@ -199,11 +199,11 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               }
               const numPages = Math.ceil(allNodes.length / perPage)
               const baseLink =
-                node.path.alias || `taxonomy/term/${node.drupal_internal__tid}`
+                node.path.alias || `/taxonomy/term/${node.drupal_internal__tid}`
               // Creating taxo list with pagination
               Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
-                  path: i === 0 ? baseLink : `/${baseLink}/page/${i + 1}`,
+                  path: i === 0 ? baseLink : `${baseLink}/page/${i + 1}`,
                   component: entityConf.listTemplate,
                   context: {
                     limit: perPage,
@@ -212,6 +212,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
                     numPages,
                     baseLink: baseLink,
                     slugTerm: slugTerm,
+                    nodesLength: allNodes.length,
                   },
                 })
               })

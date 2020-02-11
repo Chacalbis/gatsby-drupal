@@ -19,12 +19,12 @@ import SummaryTransformer from "../summary-transformer"
 import Icon from "../icon/icon"
 
 const ResultsTaxo = ({ resultats, pageContext }) => {
-  const { currentPage, numPages, baseLink, slugTerm } = pageContext
+  const { currentPage, numPages, baseLink, slugTerm, nodesLength } = pageContext
   return (
     <section className={results}>
       <div className={resultsTop}>
         <h3>
-          {resultats.length} résultat(s) pour le terme "{slugTerm}"
+          {nodesLength} résultat(s) pour le terme "{slugTerm}"
         </h3>
         <Pagination
           currentPage={currentPage}

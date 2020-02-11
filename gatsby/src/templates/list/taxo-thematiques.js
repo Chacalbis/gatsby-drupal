@@ -4,14 +4,16 @@ import Layout from "../../components/layout"
 import ResultsTaxo from "../../components/resultsTaxo/resultsTaxo"
 
 const TaxoThematiquesTemplate = ({ data, pageContext }) => {
+  const { skip, limit } = pageContext
   const mergedNodes = [
     ...data.allNodeCarnetDAdresse.edges,
     ...data.allNodeActualites.edges,
     ...data.allNodeEvenements.edges,
   ]
+  const filteredNodes = mergedNodes.slice(skip, skip + limit)
   return (
     <Layout message="Résultats">
-      <ResultsTaxo pageContext={pageContext} resultats={mergedNodes} />
+      <ResultsTaxo pageContext={pageContext} resultats={filteredNodes} />
     </Layout>
   )
 }
