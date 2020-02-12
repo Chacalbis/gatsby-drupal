@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import BackgroundImage from "./backgroundImage/backgroundImage"
+import Footer from "./footer"
 
 const Layout = ({ children, isIndex, message }) => {
   const data = useStaticQuery(graphql`
@@ -22,8 +23,8 @@ const Layout = ({ children, isIndex, message }) => {
       <BackgroundImage isIndex={isIndex} message={message} />
       <div>
         <main>{children}</main>
-        <footer />
       </div>
+      <Footer></Footer>
     </>
   )
 }

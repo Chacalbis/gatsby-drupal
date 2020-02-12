@@ -16,6 +16,7 @@ export const ICONS = [
   "calendar",
   "file-empty",
   "profile",
+  "circle-up",
 ]
 
 const Icon = ({ size = 20, icon, className }) => {

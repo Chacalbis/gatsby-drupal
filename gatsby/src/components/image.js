@@ -9,6 +9,8 @@ const Image = props => (
         images: allFile {
           edges {
             node {
+              extension
+              publicURL
               relativePath
               name
               childImageSharp {
@@ -28,14 +30,23 @@ const Image = props => (
       if (!image) {
         return null
       }
-
-      return (
-        <Img
-          className={props.className}
-          alt={props.alt}
-          fluid={image.node.childImageSharp.fluid}
-        />
-      )
+      if (image.node.extension === "svg") {
+        return (
+          <img
+            className={props.className}
+            alt={props.alt}
+            src={image.node.publicURL}
+          />
+        )
+      } else {
+        return (
+          <Img
+            className={props.className}
+            alt={props.alt}
+            fluid={image.node.childImageSharp.fluid}
+          />
+        )
+      }
     }}
   />
 )

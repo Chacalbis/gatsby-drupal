@@ -118,9 +118,9 @@ const Header = () => {
       <div className={logoSite}>
         <Link to="">
           <Image
-            alt={metaData.config.logoAlt}
+            alt={metaData.config.logoHeaderAlt}
             className={logoSiteImg}
-            filename={metaData.config.logoPath}
+            filename={metaData.config.logoHeaderPath}
           />
         </Link>
       </div>
