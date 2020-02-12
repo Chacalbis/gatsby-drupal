@@ -36,9 +36,9 @@ const Actu = ({ actu }) => (
         </div>
       )}
       <div className={actualiteDate}>posté le {actu.created}</div>
-      <div className={actualiteTitle}>
+      <h2 className={actualiteTitle}>
         <Link to={actu.path.alias}>{actu.title}</Link>
-      </div>
+      </h2>
       {actu.body && (
         <div
           className={actualiteResume}
@@ -90,7 +90,11 @@ export default ActualitesTemplate
 
 export const query = graphql`
   query actualitesListQuery($skip: Int!, $limit: Int!) {
-    allNodeActualites(sort: { fields: created }, limit: $limit, skip: $skip) {
+    allNodeActualites(
+      sort: { fields: created, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           title
