@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Événements
 type: evenements
-description: ''
+description: 'Le contenu Événements, vous permettra la création d''un agenda des événements qui animeront votre collectivité.'
 help: ''
 new_revision: true
 preview_mode: 1
