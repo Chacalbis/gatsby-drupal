@@ -20,7 +20,7 @@ import {
 const PageTemplate = ({ data }) => {
   const page = data.nodePage
   return (
-    <Layout>
+    <Layout isDetail={true}>
       <SEO title={page.title} description={page.body?.summary} />
       <section className={pageIntro}>
         <PageIntro page={page} />

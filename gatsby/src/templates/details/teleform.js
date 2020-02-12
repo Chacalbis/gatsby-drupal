@@ -7,7 +7,7 @@ import Teleformulaire from "../../components/teleformulaire/teleformulaire"
 const TeleformTemplate = ({ data }) => {
   const teleformulaire = data.nodeTeleformulaires
   return (
-    <Layout>
+    <Layout isDetail={true}>
       <SEO
         title={teleformulaire.title}
         description={teleformulaire.body?.summary}

@@ -100,7 +100,7 @@ const AddressInfos = ({ address }) => (
 const AdresseTemplate = ({ data }) => {
   const addressBook = data.nodeCarnetDAdresse
   return (
-    <Layout>
+    <Layout isDetail={true}>
       <SEO title={addressBook.title} description={addressBook.body?.summary} />
       <section className={pageAddress}>
         <AddressContent address={addressBook} />

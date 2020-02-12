@@ -101,7 +101,7 @@ const EvenementInfos = ({ event }) => (
 const EvenementTemplate = ({ data }) => {
   const evenement = data.nodeEvenements
   return (
-    <Layout>
+    <Layout isDetail={true}>
       <SEO title={evenement.title} description={evenement.body?.summary} />
       <section className={pageEvent}>
         <EvenementContent event={evenement} />
