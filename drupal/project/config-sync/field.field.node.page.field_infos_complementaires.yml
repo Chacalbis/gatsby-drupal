@@ -12,7 +12,7 @@ field_name: field_infos_complementaires
 entity_type: node
 bundle: page
 label: 'Informations complémentaires'
-description: ''
+description: '<strong>Les informations complémentaires se situeront en bas de page dans un bloc coloré.<strong>'
 required: false
 translatable: true
 default_value: {  }

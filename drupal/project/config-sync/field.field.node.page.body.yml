@@ -13,15 +13,11 @@ id: node.page.body
 field_name: body
 entity_type: node
 bundle: page
-label: Corps
+label: Contenu
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    summary: ''
-    value: "<p>test</p>\r\n"
-    format: basic_html
+default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: true

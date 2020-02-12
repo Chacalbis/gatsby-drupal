@@ -10,7 +10,7 @@ field_name: field_mise_en_avant
 entity_type: node
 bundle: page
 label: 'Mise en avant'
-description: ''
+description: '<strong>Si cette case est cochée votre page apparaîtra dans le bloc des pages à ne pas manquer.</strong>'
 required: false
 translatable: false
 default_value:
