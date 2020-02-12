@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Actualités
 type: actualites
-description: ''
+description: 'Le contenu Actualités vous permettra de partager des informations récentes de votre collectivité.'
 help: ''
 new_revision: true
 preview_mode: 1
