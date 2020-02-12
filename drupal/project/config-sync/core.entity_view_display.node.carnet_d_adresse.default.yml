@@ -13,10 +13,12 @@ dependencies:
     - field.field.node.carnet_d_adresse.field_ordre_carnet_d_adresse
     - field.field.node.carnet_d_adresse.field_taxonomie_thematique
     - field.field.node.carnet_d_adresse.field_telephone
+    - field.field.node.carnet_d_adresse.field_url_lieu
     - field.field.node.carnet_d_adresse.field_ville
     - field.field.node.carnet_d_adresse.field_voie
     - node.type.carnet_d_adresse
   module:
+    - link
     - svg_image
     - text
     - user
@@ -108,6 +110,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_url_lieu:
+    weight: 15
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_ville:
     weight: 5

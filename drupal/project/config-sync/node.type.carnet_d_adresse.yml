@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: 'Carnet d''adresse'
 type: carnet_d_adresse
-description: 'Le contenu "carnet d''adresse" est un contenu qui vous permet de créer des pages concernant certains des établissements de votre collectivité.'
+description: 'Le contenu Carnet d''adresse vous permettra de créer des pages dédiées aux établissements qui composent votre collectivité (écoles, commerces, lieu sportif...).'
 help: ''
 new_revision: true
 preview_mode: 1

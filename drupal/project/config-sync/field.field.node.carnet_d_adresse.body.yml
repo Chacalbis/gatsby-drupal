@@ -11,7 +11,7 @@ id: node.carnet_d_adresse.body
 field_name: body
 entity_type: node
 bundle: carnet_d_adresse
-label: Body
+label: Contenu
 description: ''
 required: false
 translatable: true

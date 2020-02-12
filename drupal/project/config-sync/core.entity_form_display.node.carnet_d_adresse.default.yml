@@ -13,11 +13,14 @@ dependencies:
     - field.field.node.carnet_d_adresse.field_ordre_carnet_d_adresse
     - field.field.node.carnet_d_adresse.field_taxonomie_thematique
     - field.field.node.carnet_d_adresse.field_telephone
+    - field.field.node.carnet_d_adresse.field_url_lieu
     - field.field.node.carnet_d_adresse.field_ville
     - field.field.node.carnet_d_adresse.field_voie
     - image.style.thumbnail
     - node.type.carnet_d_adresse
   module:
+    - link
+    - path
     - svg_image
     - text
     - weight
@@ -36,14 +39,14 @@ content:
     third_party_settings: {  }
     region: content
   field_code_postal:
-    weight: 5
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_complement_d_adresse:
-    weight: 4
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -51,7 +54,7 @@ content:
     type: string_textarea
     region: content
   field_image_adresse:
-    weight: 9
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -59,7 +62,7 @@ content:
     type: image_image
     region: content
   field_infos_complementaires:
-    weight: 12
+    weight: 13
     settings:
       rows: 5
       placeholder: ''
@@ -67,7 +70,7 @@ content:
     type: text_textarea
     region: content
   field_mail:
-    weight: 7
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -75,34 +78,42 @@ content:
     type: email_default
     region: content
   field_numero:
-    weight: 2
+    weight: 3
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_ordre_carnet_d_adresse:
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: weight_selector
     region: content
   field_taxonomie_thematique:
-    weight: 11
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_telephone:
-    weight: 8
+    weight: 9
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_url_lieu:
+    weight: 10
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_ville:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -110,13 +121,19 @@ content:
     type: string_textfield
     region: content
   field_voie:
-    weight: 3
+    weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  path:
+    type: path
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -128,7 +145,6 @@ content:
 hidden:
   created: true
   langcode: true
-  path: true
   promote: true
   status: true
   sticky: true

@@ -12,7 +12,7 @@ field_name: field_image_adresse
 entity_type: node
 bundle: carnet_d_adresse
 label: 'Image adresse'
-description: ''
+description: '<strong>L''ajout de plusieurs images créera automatiquement un carrousel. Nous conseillons d''utiliser des images qui seront dans le même format (portrait ou paysage).</strong>'
 required: true
 translatable: false
 default_value: {  }

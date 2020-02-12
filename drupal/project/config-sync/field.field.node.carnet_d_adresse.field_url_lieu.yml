@@ -1,0 +1,23 @@
+uuid: 8b1f692c-d6e9-4d2b-b13f-8e8cdbcea0e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_lieu
+    - node.type.carnet_d_adresse
+  module:
+    - link
+id: node.carnet_d_adresse.field_url_lieu
+field_name: field_url_lieu
+entity_type: node
+bundle: carnet_d_adresse
+label: 'Url lieu'
+description: '<strong>Vous pouvez ici copier/coller un lien de localisation pour diriger vos visiteurs vers un site dédié.</strong>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
