@@ -39,31 +39,21 @@ const AdresseInfos = ({ adress }) => (
   </Link>
 )
 
-const AdresseContact = ({ adress }) => {
-  const mail = `mailto:${adress.field_mail}`
-  const tel = `tel:${adress.field_telephone}`
-  return (
-    <>
-      {adress.field_mail && adress.field_telephone && (
-        <div className={adressItemContacts}>
-          {adress.field_mail && (
-            <p className={adressItemMail}>
-              <Link to={mail}>{adress.field_mail}</Link>
-            </p>
-          )}
-          {adress.field_telephone && (
-            <p className={adressItemTel}>
-              <Link to={tel}>{adress.field_telephone}</Link>
-            </p>
-          )}
-        </div>
+const AdresseContact = ({ adress }) => (
+  <>
+    <div className={adressItemContacts}>
+      {adress.field_mail && (
+        <p className={adressItemMail}>{adress.field_mail}</p>
       )}
-      <Link className={adressMore} to={adress.path.alias}>
-        Plus d'infos
-      </Link>
-    </>
-  )
-}
+      {adress.field_telephone && (
+        <p className={adressItemTel}>{adress.field_telephone}</p>
+      )}
+    </div>
+    <Link className={adressMore} to={adress.path.alias}>
+      Plus d'infos
+    </Link>
+  </>
+)
 
 const RenderAdresses = ({ adressesData }) => {
   const adresses = adressesData.allNodeCarnetDAdresse.edges

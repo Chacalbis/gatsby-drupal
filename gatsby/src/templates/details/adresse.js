@@ -21,8 +21,12 @@ import {
   addressTel,
   addressFooter,
   addressFooterBack,
+  addressPlace,
+  addressPlaceIcon,
+  addressPlaceTitle,
 } from "../../styles/detailsAddress.module.scss"
 import Carousel from "../../components/carousel/carousel"
+import Icon from "../../components/icon/icon"
 
 const AddressContent = ({ address }) => (
   <div className={addressContent}>
@@ -47,31 +51,33 @@ const AddressContent = ({ address }) => (
     <div className={addressBody}>
       <ContentTransformer content={address.body?.processed} />
     </div>
+    {address.field_url_lieu && (
+      <div className={addressPlace}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={address.field_url_lieu.uri}
+        >
+          <Icon className={addressPlaceIcon} size={30} icon="location2"></Icon>
+          <p className={addressPlaceTitle}>{address.field_url_lieu.title}</p>
+        </a>
+      </div>
+    )}
   </div>
 )
 
-const AddressContact = ({ address }) => {
-  const mail = `mailto:${address.field_mail}`
-  const tel = `tel:${address.field_telephone}`
-  return (
-    <>
-      {address.field_mail && address.field_telephone && (
-        <div className={addressContact}>
-          {address.field_mail && (
-            <p className={addressMail}>
-              <Link to={mail}>{address.field_mail}</Link>
-            </p>
-          )}
-          {address.field_telephone && (
-            <p className={addressTel}>
-              <Link to={tel}>{address.field_telephone}</Link>
-            </p>
-          )}
-        </div>
+const AddressContact = ({ address }) => (
+  <>
+    <div className={addressContact}>
+      {address.field_mail && (
+        <p className={addressMail}>{address.field_mail}</p>
       )}
-    </>
-  )
-}
+      {address.field_telephone && (
+        <p className={addressTel}>{address.field_telephone}</p>
+      )}
+    </div>
+  </>
+)
 
 const AddressFooter = () => (
   <div className={addressFooter}>
@@ -130,6 +136,10 @@ export const query = graphql`
       }
       field_infos_complementaires {
         processed
+      }
+      field_url_lieu {
+        title
+        uri
       }
       relationships {
         field_image_adresse {

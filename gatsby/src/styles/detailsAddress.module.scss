@@ -68,6 +68,27 @@
       font-size: 1.1em;
       margin: 0.5rem 0;
     }
+    .address-place > a {
+      display: flex;
+      flex-flow: row nowrap;
+      text-decoration: none;
+      align-items: center;
+
+      .address-place-icon {
+        color: $a1;
+      }
+      .address-place-title {
+        color: $a1;
+        margin: 0 0 0 0.25rem;
+        font-weight: bold;
+      }
+      &:hover {
+        p,
+        .address-place-icon {
+          opacity: 0.8;
+        }
+      }
+    }
   }
 
   .address-footer {
