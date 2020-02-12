@@ -11,7 +11,7 @@ id: node.teleformulaires.field_lien_demarches_simplifiees
 field_name: field_lien_demarches_simplifiees
 entity_type: node
 bundle: teleformulaires
-label: 'Lien démarches simplifiées'
+label: 'Lien formulaires'
 description: ''
 required: false
 translatable: false

@@ -11,7 +11,7 @@ id: node.teleformulaires.body
 field_name: body
 entity_type: node
 bundle: teleformulaires
-label: Body
+label: Contenu
 description: ''
 required: false
 translatable: true
