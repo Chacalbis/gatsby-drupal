@@ -11,7 +11,7 @@ id: node.contenu_libre.body
 field_name: body
 entity_type: node
 bundle: contenu_libre
-label: Body
+label: Contenu
 description: ''
 required: false
 translatable: true
