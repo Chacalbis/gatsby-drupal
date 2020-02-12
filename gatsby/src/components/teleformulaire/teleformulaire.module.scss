@@ -1,8 +1,7 @@
-@import "./variables.scss";
+@import "../../styles/variables.scss";
 
-.teleform-container {
-  padding: 1rem 15% 2rem;
-
+.teleform-container,
+.teleform-libre {
   .teleformulaire {
     .teleform-title {
       color: $a1;
@@ -112,4 +111,7 @@
     justify-content: flex-end;
     color: $a2;
   }
+}
+.teleform-container {
+  padding: 1rem 15% 2rem;
 }
