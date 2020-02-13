@@ -15,6 +15,57 @@
   background-color: $a3;
 }
 
+.events-filters {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  background-color: $a3;
+  padding: 1rem 15% 2rem;
+
+  .events-filter-by-taxo {
+    margin-top: 1rem;
+
+    & > h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .events-filters-taxo-active,
+    .events-filters-taxo {
+      display: inline-block;
+      margin: 0.15rem;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      border: 1px solid $b1;
+      transition: 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .events-filters-taxo-active {
+      color: white;
+      background-color: $b1;
+
+      &::after {
+        content: " x";
+        margin-left: 5px;
+        line-height: 1;
+      }
+    }
+    .events-filters-taxo {
+      background-color: white;
+      color: $b1;
+
+      &:hover {
+        background-color: $b1;
+        color: white;
+      }
+    }
+  }
+}
+
 .list-events-container {
   padding: 2rem 15% 2rem;
 
