@@ -3,15 +3,17 @@ import Img from "gatsby-image"
 
 const NonStretchedImage = props => {
   let normalizedProps = props
-  props.fluid.presentationWidth &&
-    (normalizedProps = {
+  if (props.fluid && props.fluid.presentationWidth) {
+    normalizedProps = {
       ...props,
       style: {
-        ...(props.style || {}),
         maxWidth: props.fluid.presentationWidth,
-        margin: "0 auto", // Used to center the image
+        height: props.fluid.presentationHeight,
+        margin: "0 auto", // Center image by default
+        ...(props.style || {}),
       },
-    })
+    }
+  }
   return <Img {...normalizedProps} />
 }
 
