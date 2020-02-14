@@ -1,0 +1,16 @@
+.footer-social-links {
+  .footer-social-item {
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+
+    & > a {
+      border: 1px solid white;
+      display: flex;
+      padding: 0.5rem;
+      border-radius: 50px;
+    }
+  }
+}

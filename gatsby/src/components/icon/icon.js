@@ -17,6 +17,11 @@ export const ICONS = [
   "file-empty",
   "profile",
   "circle-up",
+  "facebook",
+  "instagram",
+  "twitter",
+  "youtube",
+  "linkedin2",
 ]
 
 const Icon = ({ size = 20, icon, className }) => {

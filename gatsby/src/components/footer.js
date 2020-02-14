@@ -12,13 +12,13 @@ import {
   footerNewsletterInput,
   footerRssTitle,
   footerRssLinks,
-  footerSocialLinks,
   footerLogo,
   footerLogoImg,
 } from "../styles/footer.module.scss"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Image from "./image"
 import Icon from "./icon/icon"
+import SocialMedias from "./socialMedias/socialMedias"
 
 const Footer = () => {
   const metaData = useSiteMetadata()
@@ -65,27 +65,21 @@ const Footer = () => {
         <h2 className={footerRssTitle}>Flux RSS</h2>
         <ul className={footerRssLinks}>
           <li>
-            <a href="">Actu test</a>
+            <a href="/">Actu test</a>
           </li>
           <li>
-            <a href="">Actu test</a>
+            <a href="/">Actu test</a>
           </li>
           <li>
-            <a href="">Actu test</a>
+            <a href="/">Actu test</a>
           </li>
           <li>
-            <a href="">Actu test</a>
+            <a href="/">Actu test</a>
           </li>
         </ul>
       </div>
       <div className={footerSocial}>
-        <ul className={footerSocialLinks}>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-        </ul>
+        <SocialMedias />
         <div className={footerLogo}>
           <Image
             alt={metaData.config.logoFooterAlt}
