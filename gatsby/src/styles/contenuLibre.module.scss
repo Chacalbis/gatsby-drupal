@@ -1,11 +1,18 @@
 @import "../styles/variables.scss";
 
-.zoneLibre {
+.zone-libre-index {
   padding: 2rem;
+}
+.zone-libre {
+  padding: 2rem 15% 1rem;
+}
+
+.zone-libre,
+.zone-libre-index {
   width: 100%;
   background-color: $a3;
 
-  .zoneLibreTitle {
+  .zone-libreTitle {
     margin-bottom: 1rem;
     font-size: 20px;
 
@@ -22,7 +29,7 @@
 }
 
 @media (max-width: 900px) {
-  .zoneLibre {
+  .zone-libre {
     width: 100%;
   }
 }

@@ -27,7 +27,7 @@ const IndexPage = () => {
     <Layout isIndex={true} message={metadata.config.slogan}>
       <SEO title="Home" />
       <div className={sectionFirst}>
-        <ContenuLibre zoneTaxoLibre="zone_accueil_1" />
+        <ContenuLibre isIndex={true} zoneTaxoLibre="zone_accueil_1" />
         <ListActualites />
       </div>
       <div className={sectionAccesDirect}>
@@ -41,8 +41,8 @@ const IndexPage = () => {
         <ListNePasManquer />
       </div>
       <div className={sectionThird}>
-        <ContenuLibre zoneTaxoLibre="zone_accueil_2" />
-        <ContenuLibre zoneTaxoLibre="zone_accueil_3" />
+        <ContenuLibre isIndex={true} zoneTaxoLibre="zone_accueil_2" />
+        <ContenuLibre isIndex={true} zoneTaxoLibre="zone_accueil_3" />
       </div>
       <div className={sectionPartenaires}>
         <ListPartenaires />

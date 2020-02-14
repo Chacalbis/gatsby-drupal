@@ -1,19 +1,10 @@
 @import "./variables.scss";
 
-.zone-adresses-libre-haut {
-  padding: 1rem 15% 0;
-  & > div {
-    width: 100%;
-    padding: 0.5rem 0;
-    background-color: white;
-  }
-}
-
+.zone-adresses-libre-haut,
 .zone-adresses-libre-bas {
-  padding: 1rem 15% 0;
   & > div {
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 2rem 15% 1rem;
     background-color: white;
   }
 }

@@ -1,10 +1,14 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
-import { zoneLibre, zoneLibreTitle } from "../styles/contenuLibre.module.scss"
+import {
+  zoneLibre,
+  zoneLibreTitle,
+  zoneLibreIndex,
+} from "../styles/contenuLibre.module.scss"
 import ContentTransformer from "./content-transformer"
 import Teleformulaire from "./teleformulaire/teleformulaire"
 
-const ContenuLibre = ({ zoneTaxoLibre }) => {
+const ContenuLibre = ({ zoneTaxoLibre, isIndex }) => {
   const data = useStaticQuery(graphql`
     query ContenuLibreQuery {
       allNodeContenuLibre(sort: { fields: created, order: DESC }) {
@@ -86,14 +90,14 @@ const ContenuLibre = ({ zoneTaxoLibre }) => {
   if (!result) return null
   if (result.node.internal.type === "node__contenu_libre") {
     return (
-      <div className={zoneLibre}>
+      <div className={isIndex ? zoneLibreIndex : zoneLibre}>
         <h2 className={zoneLibreTitle}>{result.node.title}</h2>
         <ContentTransformer content={result.node.body?.processed} />
       </div>
     )
   } else {
     return (
-      <div className={zoneLibre}>
+      <div className={isIndex ? zoneLibreIndex : zoneLibre}>
         <Teleformulaire zoneLibre={true} teleformulaire={result.node} />
       </div>
     )

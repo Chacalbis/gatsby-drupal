@@ -1,26 +1,22 @@
 @import "./variables.scss";
 
-.zone-events-libre-bas {
-  background-color: $a3;
-
-  & > div {
-    width: 100%;
-    padding: 1rem 0;
-  }
-}
-
-.zone-events-libre-haut {
-  & > div {
-    width: 100%;
-    padding: 1rem 0;
-    background-color: white;
-  }
-}
-
-.list-events-container,
 .zone-events-libre-bas,
 .zone-events-libre-haut {
-  padding: 1rem 15% 2rem;
+  & > div {
+    width: 100%;
+    padding: 2rem 15% 1rem;
+  }
+}
+
+.zone-events-libre-haut {
+  background-color: white;
+}
+.zone-events-libre-bas {
+  background-color: $a3;
+}
+
+.list-events-container {
+  padding: 2rem 15% 2rem;
 
   .events-container {
     display: flex;
