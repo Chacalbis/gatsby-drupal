@@ -11,7 +11,7 @@ type:
     target_uuid: d9ef3eee-e732-4b20-82d7-a00e7c2a295a
 revision_timestamp:
   -
-    value: '2020-01-27T12:35:26+00:00'
+    value: '2020-02-17T09:54:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 revision_uid:
   -
@@ -34,7 +34,7 @@ created:
     format: 'Y-m-d\TH:i:sP'
 changed:
   -
-    value: '2020-01-27T12:35:26+00:00'
+    value: '2020-02-17T09:54:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 promote:
   -
@@ -93,6 +93,11 @@ field_taxonomie_thematique:
 field_telephone:
   -
     value: '0102030405'
+field_url_lieu:
+  -
+    uri: 'https://www.google.com/maps/place/Mairie/@47.2257785,4.9715396,18.75z/data=!4m5!3m4!1s0x0:0x7faf1ddbd4c78c75!8m2!3d47.2256921!4d4.9715716'
+    title: 'Mairie Gevrey Chambertin sur Google Maps'
+    options: {  }
 field_ville:
   -
     value: Gevrey-Chambertin
