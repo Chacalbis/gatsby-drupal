@@ -1,4 +1,47 @@
 const path = require(`path`)
+const axios = require("axios")
+const { createContentDigest } = require('gatsby-core-utils')
+
+exports.sourceNodes = async ({ actions: { createNode } }) => {
+  // Add random string at the end of the route to force data reloading
+  const randomToken = Math.random().toString(36).slice(2)
+  const url = process.env.API_REQUEST + "?" + randomToken
+  const options = {
+    method: "GET",
+    headers: [
+      { key: "Content-Type", value: "application/json" },
+      { key: "Cache-Control", value: "no-cache" },
+    ],
+    url,
+  }
+  // await for results
+  const res = await axios(options)
+
+  const confNode = {
+    // Required fields
+    id: `0`,
+    parent: `__SOURCE__`,
+    internal: {
+      type: `GatsbyBuildConfiguration`, // name of the graphQL query
+    },
+    children: [],
+  }
+  // map into these results and add it to confNode
+  Object.entries(res.data).map((data, i) => {
+    const name = data[0]
+    const value = data[1]
+    // Other fields we want to query with graphQl
+    confNode[name] = value
+  })
+
+  // Use createContentDigest helper to generate the digest for the content of this node (required field).
+  // Helps Gatsby avoid doing extra work on data that hasn’t changed.
+  const contentDigest = createContentDigest(confNode)
+  confNode.internal.contentDigest = contentDigest
+
+  // Create node with the gatsby createNode() API
+  createNode(confNode)
+}
 
 // Add formatted date fields respecting GMT+1 timezone
 const moment = require("moment-timezone")

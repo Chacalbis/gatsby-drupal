@@ -1,3 +1,6 @@
+// load .env files
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby with Drupal`,

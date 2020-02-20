@@ -1,0 +1,10 @@
+gatsby_build_configuration.site_configuration_form:
+  path: '/admin/site-configuration'
+  defaults:
+    _form: '\Drupal\gatsby_build_configuration\Form\ConfigurationForm'
+    _title: 'Formulaire de configuration du site'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

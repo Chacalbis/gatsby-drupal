@@ -1,0 +1,6 @@
+{
+    "name": "atolcd/gatsby_build_configuration",
+    "type": "drupal-custom-module",
+    "description": "Drupal admin config form whose theme and site settings will be used in gatsby build",
+    "minimum-stability": "dev"
+}

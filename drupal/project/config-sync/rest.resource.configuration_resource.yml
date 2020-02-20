@@ -1,0 +1,19 @@
+uuid: 4bf1f0b6-61f3-4ba4-97f2-eb2fcb885ded
+langcode: fr
+status: true
+dependencies:
+  module:
+    - gatsby_build_configuration
+    - serialization
+    - user
+_core:
+  default_config_hash: OIvFExNCS6q2l3Tb3bRjiC8MGRra1IqUeg1lVdZggng
+id: configuration_resource
+plugin_id: configuration_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

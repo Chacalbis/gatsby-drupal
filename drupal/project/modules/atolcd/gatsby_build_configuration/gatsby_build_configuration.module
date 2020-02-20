@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains gatsby_build_configuration.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function gatsby_build_configuration_help(
+  $route_name,
+  RouteMatchInterface $route_match
+) {
+  switch ($route_name) {
+    // Main module help for the gatsby_build_configuration module.
+    case 'help.page.gatsby_build_configuration':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupal admin config form whose theme and site settings will be used in gatsby build') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function gatsby_build_configuration_theme() {
+  return [
+    'gatsby_build_configuration' => [
+      'render element' => 'children',
+    ],
+  ];
+}

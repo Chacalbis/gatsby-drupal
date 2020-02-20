@@ -1,0 +1,7 @@
+name: 'Configuration du build Gatsby'
+type: module
+description: 'Drupal admin config form whose theme and website settings will be used in gatsby build'
+core: 8.x
+package: 'atolcd'
+'interface translation project': gatsby_build_configuration
+'interface translation server pattern': modules/custom/gatsby_build_configuration/translations/gatsby_build_configuration-fr.po

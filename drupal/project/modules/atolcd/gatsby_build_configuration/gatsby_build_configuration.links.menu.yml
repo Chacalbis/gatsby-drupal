@@ -1,0 +1,6 @@
+gatsby_build_configuration.site_configuration_form:
+  title: 'Configuration de mon site'
+  route_name: gatsby_build_configuration.site_configuration_form
+  description: 'Configurer les informations de base du site ainsi que les couleurs du thème'
+  parent: system.admin_config_system
+  weight: 99
