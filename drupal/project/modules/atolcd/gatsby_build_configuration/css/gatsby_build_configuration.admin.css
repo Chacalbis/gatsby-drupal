@@ -1,0 +1,53 @@
+fieldset {
+    margin-bottom: 2em;
+}
+
+fieldset .form-radios {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+fieldset .form-radios .form-item-theme-select {
+    margin-left: 0.5em;
+}
+
+fieldset .form-radios .form-item-theme-select input {
+    display: none;
+}
+
+fieldset .form-radios .form-item-theme-select label {
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=radio]:checked + label {
+    filter: drop-shadow(0 0 1rem #cccccc);
+    font-size: larger;
+    font-weight: bolder;
+}
+
+fieldset .form-radios .form-item-theme-select label img {
+    margin-bottom: 0.5em;
+}
+
+#presets-wrapper #palette-wrapper .details-wrapper {
+    display: flex;
+}
+
+#presets-wrapper #palette-wrapper .form-type-color {
+    margin: 0 0.75em;
+}
+
+#presets-wrapper #palette-wrapper .form-color {
+    padding: 0;
+    width: 5rem;
+    height: 5rem;
+}
+
+#presets-wrapper #palette-wrapper .form-color:disabled {
+    cursor: not-allowed;
+}
+

@@ -1,0 +1,5 @@
+admin:
+  version: VERSION
+  css:
+    theme:
+      css/gatsby_build_configuration.admin.css: {}
