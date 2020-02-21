@@ -52,13 +52,14 @@ const processInlineImages = (content, allFiles) => {
         // Convert string style into object properties
         const style = node.attribs["style"]
         if (style) {
-          const regex = /([\w-]*)\s*:\s*([^;]*)/g;
+          const regex = /([\w-]*)\s*:\s*([^;]*)/g
           let match
           while ((match = regex.exec(style))) {
             properties[match[1]] = match[2].trim()
           }
         }
-        if (uuid) { // internal images
+        if (uuid) {
+          // internal images
           for (let i = 0; i < allFiles.edges.length; i++) {
             if (
               allFiles.edges[i].node.drupal_id === uuid &&
@@ -75,14 +76,11 @@ const processInlineImages = (content, allFiles) => {
               imgSharp.fluid.presentationHeight = height
               imgSharp["alt"] = alt
               imgSharp.style = properties
-              return (
-                <NonStretchedImage
-                  {...imgSharp}
-                />
-              )
+              return <NonStretchedImage {...imgSharp} />
             }
           }
-        } else { // external images
+        } else {
+          // external images
           const src = node.attribs["src"]
           if (width) {
             properties["width"] = width

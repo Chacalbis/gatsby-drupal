@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -618,5 +620,63 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+blockquote {
+  border-left: 3px solid $a1;
+  color: black;
+  font-style: italic;
+  padding: 1em 2em;
+  position: relative;
+  transition: 0.2s border ease-in-out;
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    height: 2em;
+    width: 5px;
+    background-color: white;
+    margin-top: -1em;
+  }
+  &::after {
+    content: "\201D";
+    position: absolute;
+    font-size: 4em;
+    top: 50%;
+    left: -15px;
+    color: $a1;
+    font-style: normal;
+    line-height: 1.5em;
+    text-align: center;
+    text-indent: -2px;
+    margin-top: -0.5em;
+    transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
+  }
+}
+@media (max-width: 900px) {
+  blockquote {
+    border-top: 2px solid $a1;
+    border-bottom: 2px solid $a1;
+    border-left: none;
+    margin: 1.5em 0;
+    padding: 1.5em 1em;
+    &::before {
+      left: 50%;
+      top: 0;
+      height: 4px;
+      margin-top: -3px;
+      margin-left: -1em;
+      width: 2em;
+    }
+
+    &::after {
+      font-size: 4em;
+      left: 50%;
+      top: 0;
+      margin-top: -0.5em;
+      margin-left: -0.2em;
+    }
   }
 }
