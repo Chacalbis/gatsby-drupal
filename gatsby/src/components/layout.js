@@ -20,10 +20,12 @@ const Layout = ({ children, isIndex, isDetail, message }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <HeaderTop isDetail={isDetail} isIndex={isIndex} message={message} />
-      <div>
-        <main>{children}</main>
-      </div>
+      <HeaderTop
+        children={children}
+        isDetail={isDetail}
+        isIndex={isIndex}
+        message={message}
+      />
       <Footer></Footer>
     </>
   )

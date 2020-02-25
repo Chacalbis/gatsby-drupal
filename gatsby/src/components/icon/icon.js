@@ -22,6 +22,7 @@ export const ICONS = [
   "twitter",
   "youtube",
   "linkedin2",
+  "search",
 ]
 
 const Icon = ({ size = 20, icon, className }) => {

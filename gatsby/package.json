@@ -11,6 +11,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.17.4",
     "gatsby-image": "^2.2.29",
+    "gatsby-plugin-lunr": "^1.5.2",
     "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
@@ -29,7 +30,8 @@
     "react-helmet": "^5.2.1",
     "react-html-parser": "^2.0.2",
     "typeface-poppins": "0.0.72",
-    "typeface-source-sans-pro": "0.0.75"
+    "typeface-source-sans-pro": "0.0.75",
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
