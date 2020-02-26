@@ -36,8 +36,8 @@ const processInlineImages = (content, allFiles) => {
       if (node.type === "tag" && node.name === "img") {
         let properties = {}
         const uuid = node.attribs["data-entity-uuid"]
-        let width = node.attribs["width"] + "px"
-        let height = node.attribs["height"] + "px"
+        let width = node.attribs["width"]
+        let height = node.attribs["height"]
         const alt = node.attribs["alt"] || ""
         // align
         const align = node.attribs["class"]
@@ -52,14 +52,13 @@ const processInlineImages = (content, allFiles) => {
         // Convert string style into object properties
         const style = node.attribs["style"]
         if (style) {
-          const regex = /([\w-]*)\s*:\s*([^;]*)/g
+          const regex = /([\w-]*)\s*:\s*([^;]*)/g;
           let match
           while ((match = regex.exec(style))) {
             properties[match[1]] = match[2].trim()
           }
         }
-        if (uuid) {
-          // internal images
+        if (uuid) { // internal images
           for (let i = 0; i < allFiles.edges.length; i++) {
             if (
               allFiles.edges[i].node.drupal_id === uuid &&
@@ -72,21 +71,24 @@ const processInlineImages = (content, allFiles) => {
               if (!height) {
                 height = imgSharp.fluid.presentationHeight
               }
-              imgSharp.fluid.presentationWidth = width
-              imgSharp.fluid.presentationHeight = height
+              imgSharp.fluid.presentationWidth = width + "px"
+              imgSharp.fluid.presentationHeight = height + "px"
               imgSharp["alt"] = alt
               imgSharp.style = properties
-              return <NonStretchedImage {...imgSharp} />
+              return (
+                <NonStretchedImage
+                  {...imgSharp}
+                />
+              )
             }
           }
-        } else {
-          // external images
+        } else { // external images
           const src = node.attribs["src"]
           if (width) {
-            properties["width"] = width
+            properties["width"] = width + "px"
           }
           if (height) {
-            properties["height"] = height
+            properties["height"] = height + "px"
           }
           if (src) {
             return <img src={src} alt={alt} style={properties} />
