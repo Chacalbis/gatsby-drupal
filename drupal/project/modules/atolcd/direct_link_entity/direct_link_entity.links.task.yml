@@ -1,9 +1,4 @@
 # Direct link entity routing definition
-direct_link_entity.settings_tab:
-  route_name: direct_link_entity.settings
-  title: 'Settings'
-  base_route: direct_link_entity.settings
-
 entity.direct_link_entity.canonical:
   route_name: entity.direct_link_entity.canonical
   base_route: entity.direct_link_entity.canonical

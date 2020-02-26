@@ -6,9 +6,3 @@ entity.direct_link_entity.collection:
   description: 'Liste des entités lien direct'
   parent: system.admin_structure
   weight: 100
-
-direct_link_entity.admin.structure.settings:
-  title: 'Paramètres des liens direct'
-  description: 'Permet la configuration des entités lien direct'
-  route_name: direct_link_entity.settings
-  parent: system.admin_structure

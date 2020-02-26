@@ -51,7 +51,6 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "delete-form" = "/admin/structure/direct_link_entity/{direct_link_entity}/delete",
  *     "collection" = "/admin/structure/direct_link_entity",
  *   },
- *   field_ui_base_route = "direct_link_entity.settings"
  * )
  */
 class DirectLinkEntity extends ContentEntityBase implements DirectLinkEntityInterface {
