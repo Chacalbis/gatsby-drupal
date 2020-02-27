@@ -1,0 +1,102 @@
+@import "../../../styles/variables.scss";
+
+.acces-direct-title {
+  padding: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.acces-direct-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .acces-direct-item {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-preferred-size: calc(20% - 1rem);
+    flex-basis: calc(20% - 1rem);
+    margin: 1rem 0.5rem;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 1;
+
+    & > a {
+      text-decoration: none;
+      color: white;
+    }
+
+    & > a:hover {
+      text-decoration: none;
+
+      .acces-direct-item-description::before {
+        opacity: 0.3;
+        transform: skewX(-15deg) translateX(0%);
+      }
+    }
+
+    & > a > .acces-direct-item-img {
+      width: 120px;
+      height: 90px;
+      max-height: 90px;
+      max-width: 100%;
+      margin: 0 auto 1rem auto;
+      display: block;
+    }
+
+    & > a > .acces-direct-item-description {
+      font-weight: 500;
+      text-align: center;
+      position: relative;
+      margin-top: 1rem;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -0.3rem;
+        left: -0.3rem;
+        width: 110%;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        padding: 1rem;
+        opacity: 0;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        -webkit-transform: skewX(0deg) translateX(-20%);
+        -ms-transform: skewX(0deg) translateX(-20%);
+        transform: skewX(0deg) translateX(-20%);
+        outline: 1px solid transparent;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .acces-direct-container {
+    justify-content: space-around;
+
+    .acces-direct-item {
+      flex-basis: calc(33.333% - 1rem);
+      margin: 1rem 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .acces-direct-container > .acces-direct-item {
+    flex: none;
+    flex-basis: calc(50% - 1rem);
+    margin: 1rem 0.5rem;
+  }
+}

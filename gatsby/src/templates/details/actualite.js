@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout/layout"
 import SEO from "../../components/seo"
-import NonStretchedImage from "../../components/non-stretched-image"
+import NonStretchedImage from "../../components/Image/non-stretched-image"
 import AdditionalInformation from "../../components/additional-information"
 import {
   pageActu,
@@ -15,8 +15,8 @@ import {
   actualiteContentFooter,
   actualiteContentFooterBack,
   actualiteContentFooterDate,
-} from "../../styles/detailsActu.module.scss"
-import ContentTransformer from "../../components/content-transformer"
+} from "./styles/detailsActu.module.scss"
+import ContentTransformer from "../../components/Transformers/content-transformer"
 
 const ActualiteContent = ({ actu }) => (
   <article className={actualite}>

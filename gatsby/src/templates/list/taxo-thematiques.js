@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import ResultsTaxo from "../../components/resultsTaxo/resultsTaxo"
+import Layout from "../../components/Layout/layout"
+import ResultsTaxo from "../../components/ResultsTaxo/results-taxo"
 
 const TaxoThematiquesTemplate = ({ data, pageContext }) => {
   const { skip, limit } = pageContext

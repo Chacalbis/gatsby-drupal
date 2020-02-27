@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout/layout"
 import SEO from "../../components/seo"
-import NonStretchedImage from "../../components/non-stretched-image"
+import NonStretchedImage from "../../components/Image/non-stretched-image"
 import AdditionalInformation from "../../components/additional-information"
-import ContentTransformer from "../../components/content-transformer"
+import ContentTransformer from "../../components/Transformers/content-transformer"
 import {
   pageEvent,
   pageEventAdditionalInfos,
@@ -21,8 +21,8 @@ import {
   eventPlace,
   eventPlaceIcon,
   eventPlaceTitle,
-} from "../../styles/detailsEvent.module.scss"
-import Icon from "../../components/icon/icon"
+} from "./styles/detailsEvent.module.scss"
+import Icon from "../../components/Icon/icon"
 
 const EvenementContent = ({ event }) => (
   <article className={evenement}>

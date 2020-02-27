@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout/layout"
 import SEO from "../../components/seo"
-import NonStretchedImage from "../../components/non-stretched-image"
+import NonStretchedImage from "../../components/Image/non-stretched-image"
 import AdditionalInformation from "../../components/additional-information"
-import ContentTransformer from "../../components/content-transformer"
-import SummaryTransformer from "../../components/summary-transformer"
+import ContentTransformer from "../../components/Transformers/content-transformer"
+import SummaryTransformer from "../../components/Transformers/summary-transformer"
 import {
   pageIntro,
   pageBody,
@@ -15,7 +15,7 @@ import {
   pageAdditionalInfos,
   pageFooter,
   pageFooterBack,
-} from "../../styles/detailsPage.module.scss"
+} from "./styles/detailsPage.module.scss"
 
 const PageTemplate = ({ data }) => {
   const page = data.nodePage

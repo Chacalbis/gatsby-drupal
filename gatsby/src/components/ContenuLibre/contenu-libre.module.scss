@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+.zone-libre-index {
+  padding: 2rem;
+}
+.zone-libre {
+  padding: 2rem 15% 1rem;
+}
+
+.zone-libre,
+.zone-libre-index {
+  width: 100%;
+  background-color: $a3;
+
+  .zone-libreTitle {
+    margin-bottom: 1rem;
+    font-size: 20px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 4px;
+      margin-top: 0.5rem;
+      border-radius: 15px;
+      background-color: $a1;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .zone-libre {
+    width: 100%;
+  }
+}

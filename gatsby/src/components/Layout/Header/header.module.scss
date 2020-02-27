@@ -1,0 +1,351 @@
+@import "../../../styles/variables.scss";
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas: "logo nav";
+  align-items: center;
+  -webkit-box-align: center;
+
+  .logo-site {
+    grid-area: logo;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem 10% 0.5rem 0.5rem;
+
+    & > a {
+      display: flex;
+      width: 100%;
+
+      & > .logo-site-img {
+        flex: 1 0 auto;
+        -webkit-box-flex: 1;
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .main-nav {
+    grid-area: nav;
+    font-size: 1em;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    transition: 0.25s ease-in-out;
+
+    .nav-list {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .nav-item {
+        padding: 1.8rem 1rem;
+
+        .nav-itemtitle {
+          position: relative;
+          font-weight: 500;
+
+          & > a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+
+        &:hover .sub-nav-container {
+          visibility: visible;
+          opacity: 1;
+          transition-delay: 0.2s;
+        }
+
+        .sub-nav-container {
+          position: absolute;
+          top: inherit;
+          left: 10%;
+          right: 10%;
+          visibility: hidden;
+          opacity: 0;
+          z-index: 1;
+          margin-top: calc(1.8rem + 2px);
+          padding: 2rem 5% 0.5rem;
+          background: white;
+          box-shadow: 0 5px 14px #777;
+          display: flex;
+          flex-wrap: wrap;
+
+          .sub-nav {
+            flex: 0 0 25%;
+            padding: 0 1.5rem;
+            margin-bottom: 1.5rem;
+            list-style: none;
+            -webkit-box-flex: 0;
+
+            & > a {
+              color: $a1;
+              font-weight: 700;
+              text-decoration: none;
+            }
+
+            .sub-navtitle {
+              display: block;
+              margin-bottom: 1.5rem;
+
+              &:hover p {
+                color: black;
+              }
+              &:hover {
+                cursor: pointer;
+              }
+              & > a {
+                color: $a1;
+                font-weight: 500;
+                text-decoration: none;
+              }
+            }
+
+            .sub-nav-item-title > a {
+              display: block;
+              padding: 0.5rem 0;
+              border-bottom: 1px solid $c2;
+              text-decoration: none;
+              color: inherit;
+
+              &:hover {
+                color: $a1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .nav-itemtitle {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      border-bottom: 4px solid transparent;
+    }
+  }
+
+  .nav-item:active .nav-itemtitle::after {
+    border-color: $a1;
+  }
+
+  .nav-item:hover {
+    .nav-itemtitle::after {
+      top: inherit;
+      bottom: -2rem;
+      border-color: $a1;
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    .logo-site {
+      justify-content: flex-end;
+      padding: 0.5rem 0 0.5rem 10%;
+
+      & > a {
+        width: 100%;
+        justify-content: flex-end;
+
+        .logo-site-img {
+          flex: unset;
+          width: 200px;
+          height: auto;
+          margin: 0;
+        }
+      }
+    }
+
+    .burger-menu,
+    .burger-menu-open {
+      flex: 0 0 auto;
+      display: block;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      margin: 1rem 0;
+      transform: rotate(0deg);
+      cursor: pointer;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: $d;
+        border-radius: 10px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+
+        &:nth-child(1) {
+          top: 0px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 10px;
+        }
+
+        &:nth-child(4) {
+          top: 20px;
+        }
+      }
+    }
+
+    .burger-menu-open {
+      ~ .main-nav {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      span {
+        &:nth-child(1) {
+          top: 10px;
+          width: 0%;
+          left: 50%;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+          top: 10px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+
+    .main-nav {
+      overflow: auto;
+      height: 80vh;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      background-color: #fff;
+      border-top: 4px solid $a1;
+
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+
+        .nav-item:hover {
+          top: 0;
+          left: 0;
+          padding: 0;
+          background-color: $a1;
+          color: #fff;
+
+          & .nav-itemtitle > a {
+            color: white;
+          }
+
+          & .sub-nav-container {
+            height: auto;
+            margin: 0;
+            transition: none;
+          }
+
+          & .nav-itemtitle {
+            display: block;
+            padding: 1rem;
+
+            &::before {
+              float: left;
+              margin-right: 1rem;
+              margin-top: 0.2rem;
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        .nav-item {
+          width: 100%;
+          padding: 1rem;
+          border-bottom: 2px solid $a3;
+          margin: 0;
+
+          .nav-itemtitle {
+            &::before {
+              content: "";
+              display: block;
+              float: right;
+              width: 17px;
+              height: 17px;
+              background: url(../../../images/arrow.svg) no-repeat center;
+              transition: 0.3s ease;
+            }
+          }
+          .sub-nav-container {
+            position: static;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            .sub-nav {
+              flex: 0 0 auto;
+              margin: 0;
+              padding: 0;
+
+              .sub-navtitle {
+                margin: 0;
+                padding: 1rem;
+                background-color: $a3;
+                color: $a1;
+              }
+
+              .sub-nav-item-title {
+                margin: 0;
+
+                & > a {
+                  color: $d;
+                  padding: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

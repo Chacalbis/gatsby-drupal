@@ -1,13 +1,13 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
-import ListActualites from "../components/listActualites"
-import ContenuLibre from "../components/contenuLibre"
-import CarnetAdresse from "../components/carnetAdresse"
-import AgendaEvenements from "../components/agendaEvenements"
-import ListNePasManquer from "../components/listNePasManquer"
-import ListPartenaires from "../components/listPartenaires"
-import AccesDirects from "../components/accesDirects"
+import ListActualites from "../components/Home/Actualites/actualites"
+import ContenuLibre from "../components/ContenuLibre/contenu-libre"
+import CarnetAdresse from "../components/Home/CarnetAdresse/carnet-adresse"
+import AgendaEvenements from "../components/Home/Agenda/agenda"
+import ListNePasManquer from "../components/Home/NePasManquer/ne-pas-manquer"
+import ListPartenaires from "../components/Home/Partenaires/partenaires"
+import AccesDirects from "../components/Home/AccesDirect/acces-direct"
 import {
   sectionFirst,
   sectionSecond,

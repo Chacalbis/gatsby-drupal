@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../../components/layout"
-import Pagination from "../../components/pagination/pagination"
-import ContenuLibre from "../../components/contenuLibre"
+import Layout from "../../components/Layout/layout"
+import Pagination from "../../components/Pagination/pagination"
+import ContenuLibre from "../../components/ContenuLibre/contenu-libre"
 import {
   zoneAdressesLibreBas,
   zoneAdressesLibreHaut,
@@ -18,7 +18,7 @@ import {
   adressItemTel,
   adressItemMail,
   adressMore,
-} from "../../styles/listAdresses.module.scss"
+} from "./styles/listAdresses.module.scss"
 
 const AdresseInfos = ({ adress }) => (
   <Link className={adressItemName} to={adress.path.alias}>

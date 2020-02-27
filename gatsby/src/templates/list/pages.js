@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../../components/layout"
-import Pagination from "../../components/pagination/pagination"
-import NonStretchedImage from "../../components/non-stretched-image"
-import ContenuLibre from "../../components/contenuLibre"
+import Layout from "../../components/Layout/layout"
+import Pagination from "../../components/Pagination/pagination"
+import NonStretchedImage from "../../components/Image/non-stretched-image"
+import ContenuLibre from "../../components/ContenuLibre/contenu-libre"
 import {
   nePasManquerContainer,
   nePasManquerWrapper,
@@ -12,7 +12,7 @@ import {
   nePasManquerItemImg,
   zoneAnePasManquerLibreBas,
   zoneAnePasManquerLibreHaut,
-} from "../../styles/listingNePasManquer.module.scss"
+} from "./styles/listPage.module.scss"
 
 const NePasManquer = ({ nePasManquer }) => (
   <Link to={nePasManquer.path.alias}>

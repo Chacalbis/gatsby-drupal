@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout/layout"
 import SEO from "../../components/seo"
 import AdditionalInformation from "../../components/additional-information"
-import ContentTransformer from "../../components/content-transformer"
+import ContentTransformer from "../../components/Transformers/content-transformer"
 import {
   pageAddress,
   pageAddressAdditionalInfos,
@@ -24,9 +24,9 @@ import {
   addressPlace,
   addressPlaceIcon,
   addressPlaceTitle,
-} from "../../styles/detailsAddress.module.scss"
-import Carousel from "../../components/carousel/carousel"
-import Icon from "../../components/icon/icon"
+} from "./styles/detailsAddress.module.scss"
+import Carousel from "../../components/Carousel/carousel"
+import Icon from "../../components/Icon/icon"
 
 const AddressContent = ({ address }) => (
   <div className={addressContent}>

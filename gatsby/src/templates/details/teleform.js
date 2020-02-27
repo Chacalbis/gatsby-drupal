@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout/layout"
 import SEO from "../../components/seo"
-import Teleformulaire from "../../components/teleformulaire/teleformulaire"
+import Teleformulaire from "../../components/Teleformulaire/teleformulaire"
 
 const TeleformTemplate = ({ data }) => {
   const teleformulaire = data.nodeTeleformulaires

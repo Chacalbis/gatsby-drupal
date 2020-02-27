@@ -1,0 +1,81 @@
+@import "../../../styles/variables.scss";
+
+.ne-pas-manquer-title {
+  padding: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+}
+
+.ne-pas-manquer-resume {
+  max-width: 50%;
+  margin: 0.75rem auto;
+  font-weight: 500;
+  font-size: 1.2em;
+  text-align: center;
+  color: white;
+}
+
+.ne-pas-manquer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & > a:hover .ne-pas-manquer-item {
+    transform: rotate(2deg);
+    border-color: white;
+    text-decoration: underline;
+
+    .ne-pas-manquer-item-img {
+      transform: scale(1.1);
+    }
+  }
+
+  & > a {
+    text-decoration: none;
+    color: inherit;
+
+    .ne-pas-manquer-item {
+      display: flex;
+      flex-direction: column;
+      max-width: 190px;
+      height: 100%;
+      margin: 0.5rem;
+      border: 4px solid transparent;
+      transition: 0.3s ease;
+      overflow: hidden;
+      outline: 1px solid transparent;
+
+      .ne-pas-manquer-item-img {
+        flex-grow: 1;
+        object-fit: cover;
+        transition: 0.3s ease;
+        display: block;
+        max-width: 100%;
+      }
+
+      .ne-pas-manquer-item-description {
+        padding: 0.5rem;
+        text-align: center;
+        background-color: white;
+        font-weight: 500;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.all-ne-pas-manquer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+
+  & > a {
+    color: black;
+    text-decoration: none;
+  }
+  & > a:after {
+    background-color: white;
+  }
+}

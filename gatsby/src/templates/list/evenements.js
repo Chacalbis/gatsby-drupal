@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../../components/layout"
-import Pagination from "../../components/pagination/pagination"
-import NonStretchedImage from "../../components/non-stretched-image"
-import ContenuLibre from "../../components/contenuLibre"
-import SummaryTransformer from "../../components/summary-transformer"
+import Layout from "../../components/Layout/layout"
+import Pagination from "../../components/Pagination/pagination"
+import NonStretchedImage from "../../components/Image/non-stretched-image"
+import ContenuLibre from "../../components/ContenuLibre/contenu-libre"
+import SummaryTransformer from "../../components/Transformers/summary-transformer"
 import {
   listEventsContainer,
   eventsContainer,
@@ -24,7 +24,7 @@ import {
   eventsFiltersTaxo,
   eventsFiltersTaxoActive,
   eventsFilterDelete,
-} from "../../styles/listEvents.module.scss"
+} from "./styles/listEvents.module.scss"
 
 const Filtres = ({ eventsData, pageContext }) => {
   const taxoData = eventsData.allTaxonomyTermThematiques.edges
