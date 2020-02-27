@@ -97,11 +97,16 @@ const AgendaEvenements = () => {
           }
         }
       }
+      taxonomyTermZoneDefinie(name: { eq: "evenements" }) {
+        field_label
+      }
     }
   `)
   return (
     <div className={listEventsContainer}>
-      <h2 className={listEventsTitle}>Agenda</h2>
+      <h2 className={listEventsTitle}>
+        {data.taxonomyTermZoneDefinie.field_label || "Évènements"}
+      </h2>
       <div className={eventsContainer}>
         <RenderEvenements eventsData={data} />
       </div>

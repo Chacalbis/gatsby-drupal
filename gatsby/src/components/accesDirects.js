@@ -87,11 +87,16 @@ const AccesDirects = () => {
           }
         }
       }
+      taxonomyTermTypeDeLienDirect(name: { eq: "acces_direct" }) {
+        field_label
+      }
     }
   `)
   return (
     <>
-      <h2 className={accesDirectTitle}>Accès Direct</h2>
+      <h2 className={accesDirectTitle}>
+        {data.taxonomyTermTypeDeLienDirect.field_label || "Accès Direct"}
+      </h2>
       <div className={accesDirectContainer}>
         <RenderAccesDirect accesDirectData={data} />
       </div>

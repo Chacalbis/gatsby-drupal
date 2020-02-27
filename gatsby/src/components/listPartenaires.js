@@ -79,11 +79,16 @@ const ListPartenaires = () => {
           }
         }
       }
+      taxonomyTermTypeDeLienDirect(name: { eq: "partenaire" }) {
+        field_label
+      }
     }
   `)
   return (
     <div className={listPartenairesContainer}>
-      <h2 className={partenairesTitle}>Nos partenaires</h2>
+      <h2 className={partenairesTitle}>
+        {data.taxonomyTermTypeDeLienDirect.field_label || "Partenaires"}
+      </h2>
       <div className={partenairesContainer}>
         <RenderPartenaires partenairesData={data} />
       </div>

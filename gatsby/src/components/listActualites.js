@@ -107,11 +107,16 @@ const ListActualites = () => {
           }
         }
       }
+      taxonomyTermZoneDefinie(name: { eq: "actualites" }) {
+        field_label
+      }
     }
   `)
   return (
     <div className={listActualitesContainer}>
-      <h2 className={listActualitesTitle}>A la une !</h2>
+      <h2 className={listActualitesTitle}>
+        {data.taxonomyTermZoneDefinie.field_label || "À la une"}
+      </h2>
       <div className={actualitesContainer}>
         <RenderActualites actualiteData={data} />
       </div>

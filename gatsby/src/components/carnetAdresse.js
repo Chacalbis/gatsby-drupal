@@ -89,11 +89,16 @@ const CarnetAdresse = () => {
           }
         }
       }
+      taxonomyTermZoneDefinie(name: { eq: "carnet_d_adresse" }) {
+        field_label
+      }
     }
   `)
   return (
     <div className={listAdressesContainer}>
-      <h2 className={listAdressesTitle}>Carnet d'adresses</h2>
+      <h2 className={listAdressesTitle}>
+        {data.taxonomyTermZoneDefinie.field_label || "Carnet d'adresses"}
+      </h2>
       <div className={adressesContainer}>
         <RenderAdresses adressesData={data} />
       </div>

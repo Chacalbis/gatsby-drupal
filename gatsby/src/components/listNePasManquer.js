@@ -61,11 +61,16 @@ const ListNePasManquer = () => {
           }
         }
       }
+      taxonomyTermZoneDefinie(name: { eq: "a_ne_pas_manquer" }) {
+        field_label
+      }
     }
   `)
   return (
     <>
-      <h2 className={nePasManquerTitle}>À ne pas manquer</h2>
+      <h2 className={nePasManquerTitle}>
+        {data.taxonomyTermZoneDefinie.field_label || "À ne pas manquer"}
+      </h2>
       <p className={nePasManquerResume}>{metaData.config.nepasManquerSlogan}</p>
       <div className={nePasManquerContainer}>
         <RenderNePasManquer nePasManquerData={data} />
