@@ -166,18 +166,20 @@
     padding: 0 1rem;
 
     .logo-site {
-      flex: 0;
       justify-content: flex-end;
       padding: 0.5rem 0 0.5rem 10%;
 
       & > a {
         width: 100%;
-      }
-    }
+        justify-content: flex-end;
 
-    .logo-site-img {
-      width: 80px;
-      height: auto;
+        .logo-site-img {
+          flex: unset;
+          width: 200px;
+          height: auto;
+          margin: 0;
+        }
+      }
     }
 
     .burger-menu,
