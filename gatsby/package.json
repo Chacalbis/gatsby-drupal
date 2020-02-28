@@ -34,9 +34,13 @@
     "window-or-global": "^1.0.1"
   },
   "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "10.0.8",
     "npm-run-all": "^4.1.5",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "keywords": [
     "gatsby"
@@ -47,21 +51,21 @@
     "build:pre-build": "run-p lint:*",
     "build:main": "gatsby build",
     "develop": "gatsby develop --host=0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,json,md,scss}\"",
-    "lint:prettier": "prettier --check \"**/*.{js,jsx,json,md,scss}\"",
-    "lint": "run-p lint:*",
+    "prettier": "prettier \"**/*.{json,md,scss,yaml,yml}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \" && exit 1"
+    "serve": "gatsby serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix"
+    ],
+    "*.{json,md,scss,yaml,yml}": [
+      "prettier --write"
+    ]
+  }
 }
