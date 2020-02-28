@@ -51,11 +51,11 @@
       .nav-item {
         padding: 1.8rem 1rem;
 
-        .nav-itemtitle {
+        // lvl 1
+        .nav-item-name {
           position: relative;
           font-weight: 500;
-
-          & > a {
+          & a {
             text-decoration: none;
             color: black;
           }
@@ -89,22 +89,25 @@
             list-style: none;
             -webkit-box-flex: 0;
 
-            & > a {
-              color: $a1;
-              font-weight: 700;
-              text-decoration: none;
-            }
-
-            .sub-navtitle {
+            // lvl 2
+            .sub-nav-name {
               display: block;
               margin-bottom: 1.5rem;
 
-              &:hover p {
-                color: black;
+              span {
+                color: $a1;
+                font-weight: 700;
+                text-decoration: none;
               }
-              &:hover {
+
+              &:hover a {
                 cursor: pointer;
               }
+
+              &:hover span {
+                color: black;
+              }
+
               & > a {
                 color: $a1;
                 font-weight: 500;
@@ -112,6 +115,7 @@
               }
             }
 
+            // lvl 3
             .sub-nav-item-title > a {
               display: block;
               padding: 0.5rem 0;
@@ -135,7 +139,8 @@
     display: none;
   }
 
-  .nav-itemtitle {
+  // lvl 1
+  .nav-item-name {
     &::after {
       content: "";
       display: block;
@@ -146,12 +151,12 @@
     }
   }
 
-  .nav-item:active .nav-itemtitle::after {
+  .nav-item:active .nav-item-name::after {
     border-color: $a1;
   }
 
   .nav-item:hover {
-    .nav-itemtitle::after {
+    .nav-item-name::after {
       top: inherit;
       bottom: -2rem;
       border-color: $a1;
@@ -274,7 +279,8 @@
           background-color: $a1;
           color: #fff;
 
-          & .nav-itemtitle > a {
+          // lvl 1
+          & .nav-item-name > a {
             color: white;
           }
 
@@ -284,7 +290,7 @@
             transition: none;
           }
 
-          & .nav-itemtitle {
+          & .nav-item-name {
             display: block;
             padding: 1rem;
 
@@ -303,7 +309,8 @@
           border-bottom: 2px solid $a3;
           margin: 0;
 
-          .nav-itemtitle {
+          // lvl 1
+          .nav-item-name {
             &::before {
               content: "";
               display: block;
@@ -327,13 +334,15 @@
               margin: 0;
               padding: 0;
 
-              .sub-navtitle {
+              // lvl 2
+              .sub-nav-name {
                 margin: 0;
                 padding: 1rem;
                 background-color: $a3;
                 color: $a1;
               }
 
+              // lvl 3
               .sub-nav-item-title {
                 margin: 0;
 

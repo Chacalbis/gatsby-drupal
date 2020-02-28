@@ -2,22 +2,25 @@
 
 /**
  * @file
- * Contains term_rights.module.
+ * Contains forms_alteration.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Implements hook_help().
  */
-function term_rights_help($route_name, RouteMatchInterface $route_match) {
+function forms_alteration_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the term_rights module.
-    case 'help.page.term_rights':
+    // Main module help for the forms_alteration module.
+    case 'help.page.forms_alteration':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Adjust rights of term fields for specific roles') . '</p>';
+      $output .= '<p>' . t('Enable modifications on multiple forms from Drupal Core') . '</p>';
       return $output;
 
     default:
@@ -26,8 +29,10 @@ function term_rights_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * implements hook_form_alter().
+ *
+ * Adjust rights of term fields for specific roles
  */
-function term_rights_form_alter(
+function forms_alteration_form_alter(
   &$form,
   FormStateInterface $form_state,
   $form_id
@@ -49,4 +54,18 @@ function term_rights_form_alter(
       $form['name']['#access'] = FALSE;
     }
   }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ *
+ */
+function forms_alteration_field_widget_link_default_form_alter(
+  &$element,
+  \Drupal\Core\Form\FormStateInterface $form_state,
+  $context
+) {
+  $element['uri']['#description']['#items'][] = t('Type %no-link if your link is active and has children but doesn\'t point directly to a specific page.',
+    ['%no-link' => 'route:<nolink>']);
 }

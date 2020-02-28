@@ -1,6 +1,0 @@
-{
-    "name": "atolcd/term_rights",
-    "type": "drupal-custom-module",
-    "description": "Adjust rights of term fields for specific roles",
-    "minimum-stability": "dev"
-}

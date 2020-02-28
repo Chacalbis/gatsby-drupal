@@ -47,7 +47,7 @@ module:
   system: 0
   taxonomy: 0
   taxonomy_menu_ui: 0
-  term_rights: 0
+  forms_alteration: 0
   text: 0
   token: 0
   toolbar: 0

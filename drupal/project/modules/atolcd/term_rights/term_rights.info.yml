@@ -1,7 +1,0 @@
-name: 'Droits des termes'
-type: module
-description: 'Gestion fine des champs des termes pour les différents rôles'
-core: 8.x
-package: 'atolcd'
-'interface translation project': direct_link_entity
-'interface translation server pattern': modules/custom/term_rights/translations/term_rights-fr.po

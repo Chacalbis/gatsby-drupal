@@ -1,0 +1,7 @@
+name: 'Modification des formulaires'
+type: module
+description: 'Permet des modifications sur différents formulaires provenant du Coeur Drupal'
+core: 8.x
+package: 'atolcd'
+'interface translation project': forms_alteration
+'interface translation server pattern': modules/custom/forms_alteration/translations/forms_alteration-fr.po

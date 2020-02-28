@@ -1,0 +1,6 @@
+{
+    "name": "atolcd/forms_alteration",
+    "type": "drupal-custom-module",
+    "description": "Enable modifications on multiple forms from Drupal Core",
+    "minimum-stability": "dev"
+}

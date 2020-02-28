@@ -7,11 +7,11 @@ import {
   logoSite,
   mainNav,
   navList,
-  navItemtitle,
+  navItemName,
   navItem,
   subNavContainer,
   subNav,
-  subNavtitle,
+  subNavName,
   subNavItemTitle,
   logoSiteImg,
 } from "./header.module.scss"
@@ -23,41 +23,45 @@ import { useAllTaxo } from "../../../hooks/use-all-taxo"
 const entityLinkParser = {
   "internal": {
     "regex": /internal:\/(?!node|taxo)/,
-    "parser": (regex, link, allData, allTaxo) => {
-      return link.replace(regex, "")
+    "parser": (children, regex, link, allData, allTaxo) => {
+      return <Link to={link.replace(regex, "")}>{children}</Link>
     }
   },
   "node": {
     "regex": /entity:node\/(\d+)/,
-    "parser": (regex, link, allData, allTaxo) => {
+    "parser": (children, regex, link, allData, allTaxo) => {
       let drupalId = link.match(regex)[1]
       let processedNode = allData.filter(
         ({ node }) => node.drupal_internal__nid == drupalId
       ).shift()
-
-      return processedNode.node.path.alias
+      return <Link to={processedNode.node.path.alias}>{children}</Link>
     }
   },
   "taxonomy": {
     "regex": /internal:\/taxonomy\/term\/(\d+)/,
-    "parser": (regex, link, allData, allTaxo) => {
+    "parser": (children, regex, link, allData, allTaxo) => {
       let drupalId = link.match(regex)[1]
       let processedNode = allTaxo.filter(
         ({ node }) => node.drupal_internal__tid == drupalId
       ).shift()
-      return processedNode.node.path.alias
+      return <Link to={processedNode.node.path.alias}>{children}</Link>
     }
-  }
+  },
+  "nolink": {
+    "regex": /^route:<nolink>$/,
+    "parser": (children, regex, link, allData, allTaxo) => {
+      return <>{children}</>
+    }
+  },
 }
 
-function replaceLink(link, allData, allTaxo){
+const ProcessedLink = ({ children, link, allData, allTaxo }) => {
   for (const linkType in entityLinkParser) {
     const typeDef = entityLinkParser[linkType];
     if(typeDef.regex.test(link)) {
-      return typeDef.parser(typeDef.regex, link, allData, allTaxo)
+      link = typeDef.parser(children, typeDef.regex, link, allData, allTaxo)
     }
   }
-
   return link
 }
 
@@ -82,11 +86,11 @@ const MainMenu = ({ mainMenuData }) => {
           )
           return (
             <li key={item.node.drupal_id} className={navItem}>
-              <span className={navItemtitle}>
-                <Link to={replaceLink(item.node.link.uri, allData, allTaxo)}>
-                  {item.node.title}
-                </Link>
-              </span>
+              <div className={navItemName}>
+                <ProcessedLink link={item.node.link.uri} allData={allData} allTaxo={allTaxo}>
+                  <span>{item.node.title}</span>
+                </ProcessedLink>
+              </div>
               {menuLevelTwo.length > 0 && (
                 <div className={subNavContainer}>
                   {menuLevelTwo.map(child => {
@@ -97,21 +101,19 @@ const MainMenu = ({ mainMenuData }) => {
                     )
                     return (
                       <ul key={child.node.drupal_id} className={subNav}>
-                        <Link to={replaceLink(child.node.link.uri, allData, allTaxo)}>
-                          <div className={subNavtitle}>
-                            <p>{child.node.title}</p>
-                          </div>
-                        </Link>
+                        <div className={subNavName}>
+                          <ProcessedLink link={child.node.link.uri} allData={allData} allTaxo={allTaxo}>
+                            <span>{child.node.title}</span>
+                          </ProcessedLink>
+                        </div>
                         {menuLevelThree.length > 0 && (
                           <>
                             {menuLevelThree.map(lastChild => {
                               return (
                                 <li key={lastChild.node.drupal_id} className={subNavItemTitle}>
-                                  <Link
-                                    to={replaceLink(lastChild.node.link.uri, allData, allTaxo)}
-                                  >
+                                  <ProcessedLink link={lastChild.node.link.uri} allData={allData} allTaxo={allTaxo}>
                                     {lastChild.node.title}
-                                  </Link>
+                                  </ProcessedLink>
                                 </li>
                               )
                             })}
