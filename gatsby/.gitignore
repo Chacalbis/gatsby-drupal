@@ -1,8 +1,12 @@
 # dotenv environment variables file
-.env
+/site/.env
 
-/.cache/*
+/site/.cache/
 
-/node_modules/*
+/site/public/
 
-/public/*
+/site/node_modules/
+
+/theme/gatsby-theme-lune/node_modules/
+
+/node_modules/

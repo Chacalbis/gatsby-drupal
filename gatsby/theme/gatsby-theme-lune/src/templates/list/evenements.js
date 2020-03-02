@@ -33,7 +33,7 @@ const Filtres = ({ eventsData, pageContext }) => {
     <>
       <section className={eventsFilters}>
         <div className={eventsFilterByTaxo}>
-          <h3>Types d'évènement(s) : </h3>
+          <h3>Types d&apos;évènement(s) : </h3>
           {taxoData.map(({ node }) => {
             let taxoActiveClass = false
             if (chooseTaxo === node.name) {
@@ -41,7 +41,9 @@ const Filtres = ({ eventsData, pageContext }) => {
             }
             return (
               <React.Fragment key={node.drupal_id}>
-                <span role="button"
+                <span
+                  tabIndex={0}
+                  role="button"
                   className={
                     taxoActiveClass
                       ? eventsFiltersTaxoActive
@@ -114,6 +116,7 @@ const FiltreEvenement = ({ eventsData, pageContext, taxoChoisie }) => {
 }
 
 const EvenementInfos = ({ evenement, taxoChoisie }) => {
+  const characterLength = 200
   if (
     taxoChoisie === "" &&
     evenement.relationships.field_taxonomie_thematique?.length > 0
@@ -141,7 +144,7 @@ const EvenementInfos = ({ evenement, taxoChoisie }) => {
         <div
           className={eventsItemResume}
           dangerouslySetInnerHTML={{
-            __html: SummaryTransformer(evenement.body, 200),
+            __html: SummaryTransformer(evenement.body, characterLength),
           }}
         />
       )}
@@ -164,7 +167,7 @@ const EvenementImg = ({ evenement }) => (
 )
 
 const RenderEvenements = ({ eventsData, filteredData, taxoChoisie }) => {
-  let events =
+  const events =
     taxoChoisie === "" ? eventsData.allNodeEvenements.edges : filteredData
   return (
     <>

@@ -1,4 +1,3 @@
-const path = require(`path`)
 const axios = require("axios")
 const { createContentDigest } = require('gatsby-core-utils')
 
@@ -70,40 +69,40 @@ exports.onCreateNode = onCreateNode
 const allTypeToCreate = {}
 const allTaxoToCreate = {}
 
-allTypeToCreate.allNodeActualites = {
-  detailTemplate: path.resolve(`./src/templates/details/actualite.js`),
-  listTemplate: path.resolve(`./src/templates/list/actualites.js`),
+allTypeToCreate["allNodeActualites"] = {
+  detailTemplate: require.resolve(`./src/templates/details/actualite.js`),
+  listTemplate: require.resolve(`./src/templates/list/actualites.js`),
   nodesPerPage: 5,
   baseLink: "actualites",
 }
-allTypeToCreate.allNodeCarnetDAdresse = {
-  detailTemplate: path.resolve(`./src/templates/details/adresse.js`),
-  listTemplate: path.resolve(`./src/templates/list/adresses.js`),
+allTypeToCreate["allNodeCarnetDAdresse"] = {
+  detailTemplate: require.resolve(`./src/templates/details/adresse.js`),
+  listTemplate: require.resolve(`./src/templates/list/adresses.js`),
   nodesPerPage: 8,
   baseLink: "adresses",
 }
-allTypeToCreate.allNodeEvenements = {
-  detailTemplate: path.resolve(`./src/templates/details/evenement.js`),
-  listTemplate: path.resolve(`./src/templates/list/evenements.js`),
+allTypeToCreate["allNodeEvenements"] = {
+  detailTemplate: require.resolve(`./src/templates/details/evenement.js`),
+  listTemplate: require.resolve(`./src/templates/list/evenements.js`),
   nodesPerPage: 6,
   baseLink: "evenements",
 }
-allTypeToCreate.allNodePage = {
-  detailTemplate: path.resolve(`./src/templates/details/page.js`),
-  listTemplate: path.resolve(`./src/templates/list/pages.js`),
+allTypeToCreate["allNodePage"] = {
+  detailTemplate: require.resolve(`./src/templates/details/page.js`),
+  listTemplate: require.resolve(`./src/templates/list/pages.js`),
   nodesPerPage: 10,
   baseLink: "pages",
 }
-allTypeToCreate.allNodeTeleformulaires = {
-  detailTemplate: path.resolve(`./src/templates/details/teleform.js`),
+allTypeToCreate["allNodeTeleformulaires"] = {
+  detailTemplate: require.resolve(`./src/templates/details/teleform.js`),
 }
 
-allTaxoToCreate.allTaxonomyTermThematiques = {
-  listTemplate: path.resolve(`./src/templates/list/taxo-thematiques.js`),
+allTaxoToCreate["allTaxonomyTermThematiques"] = {
+  listTemplate: require.resolve(`./src/templates/list/taxo-thematiques.js`),
   nodesPerPage: 5,
 }
-allTaxoToCreate.allTaxonomyTermTeleformulaires = {
-  listTemplate: path.resolve(`./src/templates/list/taxo-teleformulaires.js`),
+allTaxoToCreate["allTaxonomyTermTeleformulaires"] = {
+  listTemplate: require.resolve(`./src/templates/list/taxo-teleformulaires.js`),
   nodesPerPage: 5,
 }
 

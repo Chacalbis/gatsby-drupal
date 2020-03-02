@@ -51,7 +51,9 @@ const Footer = () => {
         </div>
       )}
       <div className={footerNewsletter}>
-        <h2 className={footerNewsletterTitle}>S'inscrire à notre newsletter</h2>
+        <h2 className={footerNewsletterTitle}>
+          S&apos;inscrire à notre newsletter
+        </h2>
         <div className={footerNewsletterInput}>
           <input
             type="email"
@@ -89,7 +91,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={goToHead}>
-        <a href="#">
+        <a href="#nav">
           <Icon className={goHeadIcon} size={65} icon="circle-up"></Icon>
         </a>
       </div>

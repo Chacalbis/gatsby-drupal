@@ -21,44 +21,48 @@ import { useAllContent } from "../../../hooks/use-all-content"
 import { useAllTaxo } from "../../../hooks/use-all-taxo"
 
 const entityLinkParser = {
-  "internal": {
-    "regex": /internal:\/(?!node|taxo)/,
-    "parser": (children, regex, link, allData, allTaxo) => {
+  internal: {
+    regex: /internal:\/(?!node|taxo)/,
+    parser: (children, regex, link, allData, allTaxo) => {
       return <Link to={link.replace(regex, "")}>{children}</Link>
-    }
+    },
   },
-  "node": {
-    "regex": /entity:node\/(\d+)/,
-    "parser": (children, regex, link, allData, allTaxo) => {
-      let drupalId = link.match(regex)[1]
-      let processedNode = allData.filter(
-        ({ node }) => node.drupal_internal__nid == drupalId
-      ).shift()
+  node: {
+    regex: /entity:node\/(\d+)/,
+    parser: (children, regex, link, allData, allTaxo) => {
+      const drupalId = link.match(regex)[1]
+      const processedNode = allData
+        .filter(
+          ({ node }) => node.drupal_internal__nid == drupalId // eslint-disable-line eqeqeq
+        )
+        .shift()
       return <Link to={processedNode.node.path.alias}>{children}</Link>
-    }
+    },
   },
-  "taxonomy": {
-    "regex": /internal:\/taxonomy\/term\/(\d+)/,
-    "parser": (children, regex, link, allData, allTaxo) => {
-      let drupalId = link.match(regex)[1]
-      let processedNode = allTaxo.filter(
-        ({ node }) => node.drupal_internal__tid == drupalId
-      ).shift()
+  taxonomy: {
+    regex: /internal:\/taxonomy\/term\/(\d+)/,
+    parser: (children, regex, link, allData, allTaxo) => {
+      const drupalId = link.match(regex)[1]
+      const processedNode = allTaxo
+        .filter(
+          ({ node }) => node.drupal_internal__tid == drupalId // eslint-disable-line eqeqeq
+        )
+        .shift()
       return <Link to={processedNode.node.path.alias}>{children}</Link>
-    }
+    },
   },
-  "nolink": {
-    "regex": /^route:<nolink>$/,
-    "parser": (children, regex, link, allData, allTaxo) => {
+  nolink: {
+    regex: /^route:<nolink>$/,
+    parser: (children, regex, link, allData, allTaxo) => {
       return <>{children}</>
-    }
+    },
   },
 }
 
 const ProcessedLink = ({ children, link, allData, allTaxo }) => {
   for (const linkType in entityLinkParser) {
-    const typeDef = entityLinkParser[linkType];
-    if(typeDef.regex.test(link)) {
+    const typeDef = entityLinkParser[linkType]
+    if (typeDef.regex.test(link)) {
       link = typeDef.parser(children, typeDef.regex, link, allData, allTaxo)
     }
   }
@@ -74,9 +78,10 @@ const MainMenu = ({ mainMenuData }) => {
   const menuWithParent = mainMenuData.filter(
     ({ node }) => node.drupal_parent_menu_item
   )
-  let menuLevelTwo, menuLevelThree
+  let menuLevelThree
+  let menuLevelTwo
   return (
-    <nav className={mainNav}>
+    <nav id="top" className={mainNav}>
       <ul className={navList}>
         {menuWithoutParent.map(item => {
           menuLevelTwo = menuWithParent.filter(
@@ -87,7 +92,11 @@ const MainMenu = ({ mainMenuData }) => {
           return (
             <li key={item.node.drupal_id} className={navItem}>
               <div className={navItemName}>
-                <ProcessedLink link={item.node.link.uri} allData={allData} allTaxo={allTaxo}>
+                <ProcessedLink
+                  link={item.node.link.uri}
+                  allData={allData}
+                  allTaxo={allTaxo}
+                >
                   <span>{item.node.title}</span>
                 </ProcessedLink>
               </div>
@@ -102,7 +111,11 @@ const MainMenu = ({ mainMenuData }) => {
                     return (
                       <ul key={child.node.drupal_id} className={subNav}>
                         <div className={subNavName}>
-                          <ProcessedLink link={child.node.link.uri} allData={allData} allTaxo={allTaxo}>
+                          <ProcessedLink
+                            link={child.node.link.uri}
+                            allData={allData}
+                            allTaxo={allTaxo}
+                          >
                             <span>{child.node.title}</span>
                           </ProcessedLink>
                         </div>
@@ -110,8 +123,15 @@ const MainMenu = ({ mainMenuData }) => {
                           <>
                             {menuLevelThree.map(lastChild => {
                               return (
-                                <li key={lastChild.node.drupal_id} className={subNavItemTitle}>
-                                  <ProcessedLink link={lastChild.node.link.uri} allData={allData} allTaxo={allTaxo}>
+                                <li
+                                  key={lastChild.node.drupal_id}
+                                  className={subNavItemTitle}
+                                >
+                                  <ProcessedLink
+                                    link={lastChild.node.link.uri}
+                                    allData={allData}
+                                    allTaxo={allTaxo}
+                                  >
                                     {lastChild.node.title}
                                   </ProcessedLink>
                                 </li>
@@ -158,7 +178,9 @@ const Header = () => {
   const menuData = data.allMenuLinkContentMenuLinkContent.edges
   return (
     <header className={header}>
-      <div role="button"
+      <div
+        tabIndex={0}
+        role="button"
         className={!openBurger ? burgerMenu : burgerMenuOpen}
         onClick={() => setOpenBurger(!openBurger)}
         onKeyDown={() => setOpenBurger(!openBurger)}
