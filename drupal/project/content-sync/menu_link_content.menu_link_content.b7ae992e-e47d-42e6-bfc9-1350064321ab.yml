@@ -25,7 +25,7 @@ menu_name:
     value: main
 link:
   -
-    uri: 'internal:/tourisme'
+    uri: 'route:entity.taxonomy_term.canonical;taxonomy_term=3'
     title: ''
     options: {  }
 external:
@@ -33,7 +33,7 @@ external:
     value: false
 rediscover:
   -
-    value: true
+    value: false
 weight:
   -
     value: -46
@@ -43,7 +43,7 @@ expanded:
 parent: {  }
 changed:
   -
-    value: '2020-01-27T12:51:37+00:00'
+    value: '2020-02-27T10:10:53+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

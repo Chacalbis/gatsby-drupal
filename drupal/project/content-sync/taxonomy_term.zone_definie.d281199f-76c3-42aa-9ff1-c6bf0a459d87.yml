@@ -34,7 +34,7 @@ parent:
     target_id: 0
 changed:
   -
-    value: '2020-01-24T14:54:14+00:00'
+    value: '2020-03-02T09:50:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -45,7 +45,9 @@ revision_translation_affected:
 path:
   -
     alias: /a-ne-pas-manquer
-field_label: {  }
+field_label:
+  -
+    value: 'À ne pas manquer'
 _content_sync:
   entity_type: taxonomy_term
   entity_dependencies: {  }
