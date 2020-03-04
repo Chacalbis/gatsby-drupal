@@ -1,11 +1,15 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "plugins": ["prettier"],
-  "extends": ["prettier", "plugin:react/recommended"],
-  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
@@ -15,16 +19,16 @@
     }
   },
   "rules": {
-    "curly": 2,
+    "curly": 0,
     "dot-notation": 2,
-    "id-length": 2,
+    "id-length": 1,
     "no-const-assign": 2,
     "no-dupe-class-members": 2,
     "no-else-return": 2,
     "no-inner-declarations": 2,
     "no-lonely-if": 2,
     "no-magic-numbers": [
-      2,
+      1,
       {
         "ignore": [-1, 0, 1]
       }
