@@ -56,7 +56,7 @@ const RenderActualites = ({ actualiteData }) => {
   return (
     <>
       {actus.map(({ node }) => (
-        <div className={actuItem}>
+        <div key={node.drupal_id} className={actuItem}>
           <Actu actu={node} />
         </div>
       ))}
@@ -98,6 +98,7 @@ export const query = graphql`
       edges {
         node {
           title
+          drupal_id
           created(formatString: "DD/MM/YYYY", locale: "fr")
           body {
             summary

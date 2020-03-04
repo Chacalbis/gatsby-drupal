@@ -34,7 +34,7 @@ const ResultsTaxo = ({ resultats, pageContext }) => {
       </div>
       <div className={resultsContainer}>
         {resultats.map(({ node }) => {
-          return <Result node={node} />
+          return <Result key={node.drupal_id} node={node} />
         })}
         <Pagination
           currentPage={currentPage}

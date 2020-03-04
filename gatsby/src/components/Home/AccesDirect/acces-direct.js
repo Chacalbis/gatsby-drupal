@@ -46,7 +46,7 @@ const RenderAccesDirect = ({ accesDirectData }) => {
   return (
     <>
       {accesDirects.map(({ node }) => (
-        <div className={accesDirectItem}>
+        <div key={node.drupal_id} className={accesDirectItem}>
           <AccesDirect accesDirect={node} />
         </div>
       ))}
@@ -67,6 +67,7 @@ const AccesDirects = () => {
         edges {
           node {
             name
+            drupal_id
             url
             image_direct_link {
               alt

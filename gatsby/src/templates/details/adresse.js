@@ -118,6 +118,7 @@ export const query = graphql`
   query($slug: String!) {
     nodeCarnetDAdresse(path: { alias: { eq: $slug } }) {
       title
+      drupal_id
       body {
         processed
       }

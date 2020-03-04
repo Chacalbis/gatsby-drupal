@@ -31,7 +31,7 @@ const NePasManquer = ({ nePasManquer }) => (
 
 const RenderNePasManquer = ({ nePasManquerData }) => {
   return nePasManquerData.allNodePage.edges.map(({ node }) => {
-    return <NePasManquer nePasManquer={node} />
+    return <NePasManquer key={node.drupal_id} nePasManquer={node} />
   })
 }
 
@@ -72,6 +72,7 @@ export const query = graphql`
       edges {
         node {
           title
+          drupal_id
           path {
             alias
           }

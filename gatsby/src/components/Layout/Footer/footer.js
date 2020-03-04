@@ -43,7 +43,7 @@ const Footer = () => {
         <div className={footerLinks}>
           <ul>
             {footerMenuData.map(link => (
-              <li>
+              <li key={link.label}>
                 <Link to={link.url.path}>{link.label}</Link>
               </li>
             ))}
@@ -89,9 +89,9 @@ const Footer = () => {
         </div>
       </div>
       <div className={goToHead}>
-        <Link to="#">
+        <a href="#">
           <Icon className={goHeadIcon} size={65} icon="circle-up"></Icon>
-        </Link>
+        </a>
       </div>
     </footer>
   )

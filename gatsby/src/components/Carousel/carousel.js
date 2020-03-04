@@ -24,7 +24,7 @@ const MyCarousel = ({ address }) => (
         const srcImg = img.localFile.childImageSharp.fluid.src
         const altImg = img.localFile.childImageSharp.fluid.originalName
         return (
-          <div className={addressImg}>
+          <div key={address.drupal_id} className={addressImg}>
             <img alt={altImg} src={srcImg} />
           </div>
         )

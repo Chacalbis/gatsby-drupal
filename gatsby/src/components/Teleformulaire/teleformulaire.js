@@ -33,7 +33,7 @@ const TeleformHeader = ({ teleform }) => (
     {teleform.relationships.field_taxonomie_teleformulaire?.length > 0 && (
       <div className={teleformTaxo}>
         {teleform.relationships.field_taxonomie_teleformulaire.map(taxo => (
-          <span className={teleformTaxoItem}>
+          <span key={taxo.name} className={teleformTaxoItem}>
             <Link to={taxo.path.alias}>{taxo.name}</Link>
           </span>
         ))}
@@ -51,14 +51,14 @@ const TeleformLinks = ({ teleform }) => {
           <>
             <h3 className={teleformLinksTitle}>Liens démarches simplifiées</h3>
             {teleform.field_lien_demarches_simplifiees.map(link => (
-              <>
+              <React.Fragment key={link.title}>
                 <li className={teleformLinksItem}>
                   <a target="_blank" rel="noopener noreferrer" href={link.uri}>
                     <p className={teleformLinksItemTitle}>{link.title}</p>
                   </a>
                 </li>
                 <br />
-              </>
+              </React.Fragment>
             ))}
           </>
         )}

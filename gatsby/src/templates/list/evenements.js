@@ -40,8 +40,8 @@ const Filtres = ({ eventsData, pageContext }) => {
               taxoActiveClass = true
             }
             return (
-              <>
-                <span
+              <React.Fragment key={node.drupal_id}>
+                <span role="button"
                   className={
                     taxoActiveClass
                       ? eventsFiltersTaxoActive
@@ -54,10 +54,17 @@ const Filtres = ({ eventsData, pageContext }) => {
                       setChooseTaxo("")
                     }
                   }}
+                  onKeyDown={() => {
+                    if (chooseTaxo === "" || chooseTaxo !== node.name) {
+                      setChooseTaxo(node.name)
+                    } else if (chooseTaxo === node.name) {
+                      setChooseTaxo("")
+                    }
+                  }}
                 >
                   {node.name}
                 </span>
-              </>
+              </React.Fragment>
             )
           })}
         </div>
@@ -162,7 +169,7 @@ const RenderEvenements = ({ eventsData, filteredData, taxoChoisie }) => {
   return (
     <>
       {events.map(({ node }) => (
-        <div className={eventsItem}>
+        <div key={node.title} className={eventsItem}>
           <EvenementImg evenement={node} />
           <EvenementInfos taxoChoisie={taxoChoisie} evenement={node} />
         </div>
@@ -193,6 +200,7 @@ export const query = graphql`
       edges {
         node {
           name
+          drupal_id
         }
       }
     }

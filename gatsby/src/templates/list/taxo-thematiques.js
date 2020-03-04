@@ -33,6 +33,7 @@ export const query = graphql`
       edges {
         node {
           title
+          drupal_id
           body {
             summary
             processed
@@ -68,6 +69,7 @@ export const query = graphql`
       edges {
         node {
           title
+          drupal_id
           body {
             summary
             processed
@@ -96,6 +98,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          drupal_id
           title
           body {
             summary

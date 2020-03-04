@@ -31,7 +31,7 @@ const ActualiteContent = ({ actu }) => (
       {actu.relationships.field_taxonomie_thematique && (
         <div className={actualiteTags}>
           {actu.relationships.field_taxonomie_thematique.map(taxo => (
-            <span className={actualiteTaxo}>
+            <span key={taxo.name} className={actualiteTaxo}>
               <Link to={taxo.path.alias}>{taxo.name}</Link>
             </span>
           ))}

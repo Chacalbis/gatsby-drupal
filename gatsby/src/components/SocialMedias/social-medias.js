@@ -10,7 +10,7 @@ const SocialMedias = () => {
   return (
     <ul className={footerSocialLinks}>
       {tabIcon.map(socialIcon => (
-        <li className={footerSocialItem}>
+        <li key={socialIcon} className={footerSocialItem}>
           <a href="/">
             <Icon size={20} icon={socialIcon} />
           </a>

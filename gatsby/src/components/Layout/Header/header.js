@@ -44,7 +44,7 @@ const MainMenu = ({ mainMenuData }) => {
               `menu_link_content:${item.node.drupal_id}`
           )
           return (
-            <li className={navItem}>
+            <li key={item.node.drupal_id} className={navItem}>
               <span className={navItemtitle}>
                 <Link to={replaceLink(item.node.link.uri)}>
                   {item.node.title}
@@ -59,7 +59,7 @@ const MainMenu = ({ mainMenuData }) => {
                         `menu_link_content:${child.node.drupal_id}`
                     )
                     return (
-                      <ul className={subNav}>
+                      <ul key={child.node.drupal_id} className={subNav}>
                         <Link to={replaceLink(child.node.link.uri)}>
                           <div className={subNavtitle}>
                             <p>{child.node.title}</p>
@@ -69,7 +69,7 @@ const MainMenu = ({ mainMenuData }) => {
                           <>
                             {menuLevelThree.map(lastChild => {
                               return (
-                                <li className={subNavItemTitle}>
+                                <li key={lastChild.node.drupal_id} className={subNavItemTitle}>
                                   <Link
                                     to={replaceLink(lastChild.node.link.uri)}
                                   >
@@ -119,10 +119,10 @@ const Header = () => {
   const menuData = data.allMenuLinkContentMenuLinkContent.edges
   return (
     <header className={header}>
-      <div
+      <div role="button"
         className={!openBurger ? burgerMenu : burgerMenuOpen}
-        openBurger={openBurger}
         onClick={() => setOpenBurger(!openBurger)}
+        onKeyDown={() => setOpenBurger(!openBurger)}
       >
         <span></span>
         <span></span>
@@ -130,7 +130,7 @@ const Header = () => {
         <span></span>
       </div>
       <div className={logoSite}>
-        <Link to="">
+        <Link to="/">
           <Image
             alt={metaData.config.logoHeaderAlt}
             className={logoSiteImg}

@@ -19,16 +19,15 @@ import SummaryTransformer from "../../Transformers/summary-transformer"
 
 const RenderActualites = ({ actualiteData }) => {
   const actus = actualiteData.allNodeActualites.edges
-  let myClassName = actualiteContainerFirst
   const firstActu = actus[0].node
   return (
     <>
       <Link className={linkActu} to={firstActu.path.alias}>
-        <Actu myClassName={myClassName} actu={firstActu} />
+        <Actu myClassName={actualiteContainerFirst} actu={firstActu} />
       </Link>
       <div className={autresActualites}>
         {actus.slice(1).map(({ node }) => {
-          return <Actu myClassName={actualiteContainer} actu={node} />
+          return <Actu key={node.drupal_id} myClassName={actualiteContainer} actu={node} />
         })}
         <div>
           <Link className="btn" to="/actualites">
@@ -40,17 +39,40 @@ const RenderActualites = ({ actualiteData }) => {
   )
 }
 
-const Actu = ({ actu, myClassName }) => (
+const Actu = ({ actu, myClassName }) => {
+  let image = ""
+  let title = ""
+  if (myClassName === actualiteContainerFirst){
+    image = (
+      <NonStretchedImage
+      className={actualiteImg}
+      {...actu.relationships.field_image_actus?.localFile.childImageSharp}
+    />
+    )
+    title = (
+      <div>{actu.title}</div>
+    )
+  } else {
+    image = (
+      <Link to={actu.path.alias}>
+         <NonStretchedImage
+           className={actualiteImg}
+           {...actu.relationships.field_image_actus?.localFile.childImageSharp}
+         />
+        </Link>
+    )
+    title = (
+      <Link to={actu.path.alias}>{actu.title}</Link>
+    )
+  }
+  return (
   <div className={myClassName}>
     {actu.relationships.field_image_actus?.localFile?.childImageSharp
       ?.fluid && (
-      <Link to={actu.path.alias}>
-        <NonStretchedImage
-          className={actualiteImg}
-          {...actu.relationships.field_image_actus.localFile.childImageSharp}
-        />
-      </Link>
-    )}
+        <>
+          {image}
+        </>
+      )}
     <div className={actualiteInfos}>
       {actu.relationships.field_taxonomie_thematique?.length > 0 && (
         <div className={actualiteCategorie}>
@@ -58,7 +80,7 @@ const Actu = ({ actu, myClassName }) => (
         </div>
       )}
       <h3 className={actualiteTitle}>
-        <Link to={actu.path.alias}>{actu.title}</Link>
+        {title}
       </h3>
       {actu.body && (
         <p
@@ -70,7 +92,8 @@ const Actu = ({ actu, myClassName }) => (
       )}
     </div>
   </div>
-)
+  )
+}
 
 const ListActualites = () => {
   const data = useStaticQuery(graphql`
@@ -79,6 +102,7 @@ const ListActualites = () => {
         edges {
           node {
             title
+            drupal_id
             path {
               alias
             }

@@ -60,7 +60,7 @@ const RenderAdresses = ({ adressesData }) => {
   return (
     <>
       {adresses.map(({ node }) => (
-        <div className={adressItem}>
+        <div key={node.drupal_id} className={adressItem}>
           <AdresseInfos adress={node} />
           <AdresseContact adress={node} />
         </div>
@@ -105,6 +105,7 @@ export const query = graphql`
       edges {
         node {
           title
+          drupal_id
           body {
             summary
             processed

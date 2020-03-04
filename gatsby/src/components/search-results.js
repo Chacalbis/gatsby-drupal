@@ -27,7 +27,7 @@ const SearchResults = ({ resultats, query }) => {
       </div>
       <div className={resultsContainer}>
         {resultats.map(result => {
-          return <Result result={result} />
+          return <Result key={result.url} result={result} />
         })}
       </div>
     </section>

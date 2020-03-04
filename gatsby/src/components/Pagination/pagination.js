@@ -40,7 +40,7 @@ const Pagination = ({ numPages, currentPage, contextPage }) => {
             const link =
               index === 1 ? `${baseLink}` : `${baseLink}/page/${index}`
             return (
-              <li current={currentPage === index} key={link}>
+              <li current={currentPage === index ? 1 : 0} key={link}>
                 {currentPage === index ? (
                   <span className={activeLink}>{index}</span>
                 ) : (

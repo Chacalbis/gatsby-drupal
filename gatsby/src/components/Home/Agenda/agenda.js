@@ -56,7 +56,7 @@ const RenderEvenements = ({ eventsData }) => {
   return (
     <>
       {events.map(({ node }) => (
-        <div className={eventsItem}>
+        <div key={node.drupal_id} className={eventsItem}>
           <EvenementImg evenement={node} />
           <EvenementInfos evenement={node} />
         </div>
@@ -77,6 +77,7 @@ const AgendaEvenements = () => {
             field_date_de_debut(formatString: "DD/MM/YYYY", locale: "fr")
             field_date_de_fin(formatString: "DD/MM/YYYY", locale: "fr")
             title
+            drupal_id
             path {
               alias
             }

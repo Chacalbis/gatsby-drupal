@@ -43,7 +43,7 @@ const Partenaire = ({ partenaire }) => {
 const RenderPartenaires = ({ partenairesData }) => {
   return partenairesData.allDirectLinkEntityDirectLinkEntity.edges.map(
     ({ node }) => {
-      return <Partenaire partenaire={node} />
+      return <Partenaire key={node.drupal_id} partenaire={node} />
     }
   )
 }
@@ -59,6 +59,7 @@ const ListPartenaires = () => {
       ) {
         edges {
           node {
+            drupal_id
             url
             image_direct_link {
               alt

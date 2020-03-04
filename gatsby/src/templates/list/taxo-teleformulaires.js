@@ -30,6 +30,7 @@ export const query = graphql`
       edges {
         node {
           title
+          drupal_id
           body {
             summary
             processed

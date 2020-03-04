@@ -29,7 +29,7 @@ const NePasManquer = ({ nePasManquer }) => (
 
 const RenderNePasManquer = ({ nePasManquerData }) => {
   return nePasManquerData.allNodePage.edges.map(({ node }) => {
-    return <NePasManquer nePasManquer={node} />
+    return <NePasManquer key={node.drupal_id} nePasManquer={node} />
   })
 }
 
@@ -44,6 +44,7 @@ const ListNePasManquer = () => {
         edges {
           node {
             title
+            drupal_id
             path {
               alias
             }
