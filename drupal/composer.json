@@ -43,6 +43,7 @@
     "drupal/pathauto": "^1.4",
     "drupal/sitemap": "^1.5",
     "drupal/svg_image": "^1.9",
+    "drupal/taxonomy_menu_ui": "^1.1",
     "drupal/token": "^1.5",
     "drupal/weight": "^3.1",
     "drush/drush": "*",

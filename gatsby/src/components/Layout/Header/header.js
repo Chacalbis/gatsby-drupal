@@ -17,16 +17,53 @@ import {
 } from "./header.module.scss"
 import Image from "../../Image/image"
 import { useSiteMetadata } from "../../../hooks/use-site-metadata"
+import { useAllContent } from "../../../hooks/use-all-content"
+import { useAllTaxo } from "../../../hooks/use-all-taxo"
 
-function replaceLink(link) {
-  const regex = new RegExp("internal:")
-  if (regex.test(link)) {
-    return link.replace(regex, "")
+const entityLinkParser = {
+  "internal": {
+    "regex": /internal:\/(?!node|taxo)/,
+    "parser": (regex, link, allData, allTaxo) => {
+      return link.replace(regex, "")
+    }
+  },
+  "node": {
+    "regex": /entity:node\/(\d+)/,
+    "parser": (regex, link, allData, allTaxo) => {
+      let drupalId = link.match(regex)[1]
+      let processedNode = allData.filter(
+        ({ node }) => node.drupal_internal__nid == drupalId
+      ).shift()
+
+      return processedNode.node.path.alias
+    }
+  },
+  "taxonomy": {
+    "regex": /internal:\/taxonomy\/term\/(\d+)/,
+    "parser": (regex, link, allData, allTaxo) => {
+      let drupalId = link.match(regex)[1]
+      let processedNode = allTaxo.filter(
+        ({ node }) => node.drupal_internal__tid == drupalId
+      ).shift()
+      return processedNode.node.path.alias
+    }
   }
+}
+
+function replaceLink(link, allData, allTaxo){
+  for (const linkType in entityLinkParser) {
+    const typeDef = entityLinkParser[linkType];
+    if(typeDef.regex.test(link)) {
+      return typeDef.parser(typeDef.regex, link, allData, allTaxo)
+    }
+  }
+
   return link
 }
 
 const MainMenu = ({ mainMenuData }) => {
+  const allData = useAllContent()
+  const allTaxo = useAllTaxo()
   const menuWithoutParent = mainMenuData.filter(
     ({ node }) => !node.drupal_parent_menu_item
   )
@@ -46,7 +83,7 @@ const MainMenu = ({ mainMenuData }) => {
           return (
             <li key={item.node.drupal_id} className={navItem}>
               <span className={navItemtitle}>
-                <Link to={replaceLink(item.node.link.uri)}>
+                <Link to={replaceLink(item.node.link.uri, allData, allTaxo)}>
                   {item.node.title}
                 </Link>
               </span>
@@ -60,7 +97,7 @@ const MainMenu = ({ mainMenuData }) => {
                     )
                     return (
                       <ul key={child.node.drupal_id} className={subNav}>
-                        <Link to={replaceLink(child.node.link.uri)}>
+                        <Link to={replaceLink(child.node.link.uri, allData, allTaxo)}>
                           <div className={subNavtitle}>
                             <p>{child.node.title}</p>
                           </div>
@@ -71,7 +108,7 @@ const MainMenu = ({ mainMenuData }) => {
                               return (
                                 <li key={lastChild.node.drupal_id} className={subNavItemTitle}>
                                   <Link
-                                    to={replaceLink(lastChild.node.link.uri)}
+                                    to={replaceLink(lastChild.node.link.uri, allData, allTaxo)}
                                   >
                                     {lastChild.node.title}
                                   </Link>
