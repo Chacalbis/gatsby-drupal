@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useAllTaxo = () => {
   const allTaxo = useStaticQuery(
     graphql`
-      query allTaxo {
+      query {
         allTaxonomyTermThematiques {
             edges {
               node {

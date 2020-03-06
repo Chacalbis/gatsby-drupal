@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useAllContent = () => {
   const allContent = useStaticQuery(
     graphql`
-      query allData {
+      query {
         allNodeActualites {
             edges {
               node {

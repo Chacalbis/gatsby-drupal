@@ -10,7 +10,7 @@ import ContentTransformer from "../Transformers/content-transformer"
 
 const ContenuLibre = ({ zoneTaxoLibre, isIndex }) => {
   const data = useStaticQuery(graphql`
-    query ContenuLibreQuery {
+    query {
       allNodeContenuLibre(sort: { fields: created, order: DESC }) {
         edges {
           node {

@@ -96,7 +96,7 @@ const AdressesTemplate = ({ data, pageContext }) => {
 export default AdressesTemplate
 
 export const query = graphql`
-  query addressesListQuery($skip: Int!, $limit: Int!) {
+  query($skip: Int!, $limit: Int!) {
     allNodeCarnetDAdresse(
       sort: { fields: field_ordre_carnet_d_adresse }
       limit: $limit

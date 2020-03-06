@@ -68,7 +68,7 @@ const RenderAdresses = ({ adressesData }) => {
 
 const CarnetAdresse = () => {
   const data = useStaticQuery(graphql`
-    query ListAdressesQuery {
+    query {
       allNodeCarnetDAdresse(
         sort: { fields: field_ordre_carnet_d_adresse, order: DESC }
       ) {

@@ -62,7 +62,7 @@ const NePasManquerTemplate = ({ data, pageContext }) => {
 export default NePasManquerTemplate
 
 export const query = graphql`
-  query NePasManquerListQuery($skip: Int!, $limit: Int!) {
+  query($skip: Int!, $limit: Int!) {
     allNodePage(
       filter: { field_mise_en_avant: { eq: true } }
       sort: { fields: field_ordre, order: DESC }

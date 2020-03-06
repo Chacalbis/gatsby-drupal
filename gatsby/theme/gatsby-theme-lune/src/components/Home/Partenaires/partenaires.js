@@ -50,7 +50,7 @@ const RenderPartenaires = ({ partenairesData }) => {
 
 const ListPartenaires = () => {
   const data = useStaticQuery(graphql`
-    query ListPartenairesQuery {
+    query {
       allDirectLinkEntityDirectLinkEntity(
         filter: {
           relationships: { direct_link_type: { name: { eq: "partenaire" } } }

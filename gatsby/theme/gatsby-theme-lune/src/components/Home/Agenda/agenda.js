@@ -67,7 +67,7 @@ const RenderEvenements = ({ eventsData }) => {
 
 const AgendaEvenements = () => {
   const data = useStaticQuery(graphql`
-    query ListEventsQuery {
+    query {
       allNodeEvenements(
         sort: { fields: field_date_de_debut, order: ASC }
         limit: 4

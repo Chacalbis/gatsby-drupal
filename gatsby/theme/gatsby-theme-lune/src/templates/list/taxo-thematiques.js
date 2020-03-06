@@ -21,7 +21,7 @@ const TaxoThematiquesTemplate = ({ data, pageContext }) => {
 export default TaxoThematiquesTemplate
 
 export const query = graphql`
-  query contentFilteredQuery($slugTerm: String!) {
+  query($slugTerm: String!) {
     allNodeCarnetDAdresse(
       sort: { fields: field_ordre_carnet_d_adresse }
       filter: {

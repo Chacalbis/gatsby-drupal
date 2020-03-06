@@ -198,7 +198,7 @@ const EvenementsTemplate = ({ data, pageContext }) => {
 export default EvenementsTemplate
 
 export const query = graphql`
-  query evenementsListQuery($skip: Int!, $limit: Int!) {
+  query($skip: Int!, $limit: Int!) {
     allTaxonomyTermThematiques {
       edges {
         node {

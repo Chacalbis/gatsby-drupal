@@ -89,7 +89,7 @@ const ActualitesTemplate = ({ data, pageContext }) => {
 export default ActualitesTemplate
 
 export const query = graphql`
-  query actualitesListQuery($skip: Int!, $limit: Int!) {
+  query($skip: Int!, $limit: Int!) {
     allNodeActualites(
       sort: { fields: created, order: DESC }
       limit: $limit

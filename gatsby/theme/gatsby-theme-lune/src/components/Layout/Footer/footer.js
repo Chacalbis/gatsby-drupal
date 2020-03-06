@@ -23,7 +23,7 @@ import SocialMedias from "../../SocialMedias/social-medias"
 const Footer = () => {
   const metaData = useSiteMetadata()
   const data = useStaticQuery(graphql`
-    query FooterQuery {
+    query {
       graphqlData {
         menuByName(name: "footer") {
           links {

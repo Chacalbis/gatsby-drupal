@@ -155,7 +155,7 @@ const MainMenu = ({ mainMenuData }) => {
 const Header = () => {
   const metaData = useSiteMetadata()
   const data = useStaticQuery(graphql`
-    query menuLinkQuery {
+    query {
       allMenuLinkContentMenuLinkContent(
         sort: { fields: weight, order: ASC }
         filter: { enabled: { eq: true } }

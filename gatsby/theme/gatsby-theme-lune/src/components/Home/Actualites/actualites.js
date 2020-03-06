@@ -97,7 +97,7 @@ const Actu = ({ actu, myClassName }) => {
 
 const ListActualites = () => {
   const data = useStaticQuery(graphql`
-    query ListActuQuery {
+    query {
       allNodeActualites(limit: 4, sort: { fields: created, order: DESC }) {
         edges {
           node {

@@ -56,7 +56,7 @@ const RenderAccesDirect = ({ accesDirectData }) => {
 
 const AccesDirects = () => {
   const data = useStaticQuery(graphql`
-    query ListAccesDirectQuery {
+    query {
       allDirectLinkEntityDirectLinkEntity(
         filter: {
           relationships: { direct_link_type: { name: { eq: "acces_direct" } } }

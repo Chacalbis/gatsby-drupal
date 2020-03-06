@@ -36,7 +36,7 @@ const RenderNePasManquer = ({ nePasManquerData }) => {
 const ListNePasManquer = () => {
   const metaData = useSiteMetadata()
   const data = useStaticQuery(graphql`
-    query ListNePasManquerQuery {
+    query {
       allNodePage(
         filter: { field_mise_en_avant: { eq: true } }
         sort: { fields: field_ordre, order: DESC }
