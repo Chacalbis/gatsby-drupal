@@ -75,6 +75,7 @@ permissions:
   - 'revert teleformulaires revisions'
   - 'search content'
   - 'switch shortcut sets'
+  - 'trigger deployments'
   - 'use advanced search'
   - 'use text format basic_html'
   - 'use text format full_html'

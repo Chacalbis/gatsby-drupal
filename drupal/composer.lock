@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef0495fd89f6a3a703208a1fc807283d",
+    "content-hash": "fff5d46d6ccedc264bc1337716d4c227",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -121,6 +121,17 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "atolcd/build_hooks",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "project/modules/atolcd/build_hooks",
+                "reference": "b57ffd5fb4277171ac2265141f076d5a26c79ccd"
+            },
+            "type": "drupal-custom-module",
+            "description": "This module allows to trigger a build hook "
         },
         {
             "name": "atolcd/direct_link_entity",

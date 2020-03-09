@@ -11,6 +11,7 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access custom rest endpoint'
   - 'access site-wide contact form'
   - 'execute graphql requests'
   - 'execute persisted graphql requests'

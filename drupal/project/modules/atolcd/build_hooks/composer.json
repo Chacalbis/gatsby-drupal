@@ -1,0 +1,6 @@
+{
+    "name": "atolcd/build_hooks",
+    "type": "drupal-custom-module",
+    "description": "This module allows to trigger a build hook ",
+    "minimum-stability": "dev"
+}

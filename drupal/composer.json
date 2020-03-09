@@ -34,6 +34,7 @@
     "atolcd/simplenews": "*",
     "atolcd/gatsby_build_configuration": "*",
     "atolcd/forms_alteration": "*",
+    "atolcd/build_hooks": "*",
     "drupal/console": "^1.9",
     "drupal/content_sync": "^2.1",
     "drupal/ctools": "^3.2",

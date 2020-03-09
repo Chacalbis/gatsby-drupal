@@ -1,0 +1,16 @@
+uuid: 07b3b74b-31cf-434f-9b39-d3c3ca224a4b
+langcode: fr
+status: true
+dependencies: {  }
+id: environnement_de_dev
+label: Dev
+weight: '0'
+provider: null
+plugin: generic
+settings:
+  id: generic
+  label: null
+  provider: build_hooks
+  build_hook_url: 'http://localhost:9000/'
+url: 'http://localhost:9000/'
+deployment_strategy: manual
